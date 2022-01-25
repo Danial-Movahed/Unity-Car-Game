@@ -1,0 +1,1 @@
+ffmpeg -i input.* -c:v libvpx -b:v 1M -c:a libvorbis output.webm
