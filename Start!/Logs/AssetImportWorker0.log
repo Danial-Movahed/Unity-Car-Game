@@ -357,3 +357,107 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1648.559635 seconds.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(4f95073bfc3fbbbcf8d2d9efd32e7445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(4f95073bfc3fbbbcf8d2d9efd32e7445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fd0ae91fca1d979279b71ca47c53145') in 0.492162 seconds 
+  Import took 0.495694 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.130809 seconds.
+  path: Assets/BEDRILL
+  artifactKey: Guid(382d1f08aed4f141b9d1e2d41e467407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BEDRILL using Guid(382d1f08aed4f141b9d1e2d41e467407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bc018de9ce96768712d71c904d7a5c4') in 0.000940 seconds 
+  Import took 0.003940 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.821831 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free
+  artifactKey: Guid(0a5cc2e7297a2b09a94bb4dae3da066e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free using Guid(0a5cc2e7297a2b09a94bb4dae3da066e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dea50e4812ead2983f42b212788c6036') in 0.000757 seconds 
+  Import took 0.003762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.441921 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs
+  artifactKey: Guid(078487c971fcf074581d08e7019d0a64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs using Guid(078487c971fcf074581d08e7019d0a64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc19ac17ec2f841609944bfba65d1eed') in 0.000846 seconds 
+  Import took 0.004797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.078700 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Lawn_plane_15m_free_obs.prefab
+  artifactKey: Guid(d9ab2401bf6839744952d1947386d8b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Lawn_plane_15m_free_obs.prefab using Guid(d9ab2401bf6839744952d1947386d8b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cee9f0a824ae0b0a5a7d64e8a1c81bae') in 0.902476 seconds 
+  Import took 0.907704 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_line_type_01_start_finish_15m_free_obs.prefab
+  artifactKey: Guid(419b5557461398443a4b99d9496015fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_line_type_01_start_finish_15m_free_obs.prefab using Guid(419b5557461398443a4b99d9496015fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18407ab730e5f352fa5336864ca2f3eb') in 0.017370 seconds 
+  Import took 0.020873 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000323 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Fence_line_type_01_15m_free_obs.prefab
+  artifactKey: Guid(87e0acbd6ddf7814097e377d5a5c716d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Fence_line_type_01_15m_free_obs.prefab using Guid(87e0acbd6ddf7814097e377d5a5c716d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a7bd615e69839dca5df4e1d6db049fd') in 0.022503 seconds 
+  Import took 0.031280 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_line_type_01_30m_free_obs.prefab
+  artifactKey: Guid(18ab59e03c7a63c4dbfb26d2ca862d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_line_type_01_30m_free_obs.prefab using Guid(18ab59e03c7a63c4dbfb26d2ca862d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2329816387989583b8e07981151129a') in 0.010005 seconds 
+  Import took 0.017561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Fence_line_type_01_white_block_1&5m_free_obs.prefab
+  artifactKey: Guid(484e95a1def424c4b9f1ad821e0c226a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Fence_line_type_01_white_block_1&5m_free_obs.prefab using Guid(484e95a1def424c4b9f1ad821e0c226a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7821f19dc7b2400a42e07a000ddaae19') in 0.010834 seconds 
+  Import took 0.015338 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_line_type_01_15m_free_obs.prefab
+  artifactKey: Guid(1060f28bab45ab94eb490830df68466e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_line_type_01_15m_free_obs.prefab using Guid(1060f28bab45ab94eb490830df68466e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77e5cc30b3df0372a82b0aa31a5e9f74') in 0.014138 seconds 
+  Import took 0.017910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Fence_line_type_01_red_block_1&5m_free_obs.prefab
+  artifactKey: Guid(f5d3c5e0f5f32c141911c08deee9e94d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Fence_line_type_01_red_block_1&5m_free_obs.prefab using Guid(f5d3c5e0f5f32c141911c08deee9e94d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dd4e0cab02851bd56db61ccd2d99ba0') in 0.016112 seconds 
+  Import took 0.020421 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000302 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Corner_90d_type_01_15x15m_free_obs.prefab
+  artifactKey: Guid(dd0831f60632baf4492b92858d493b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Corner_90d_type_01_15x15m_free_obs.prefab using Guid(dd0831f60632baf4492b92858d493b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '143cbe22ede77cc5ea62d28a39e7e34b') in 0.020219 seconds 
+  Import took 0.024246 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Corner_90d_type_01_30x30m_free_obs.prefab
+  artifactKey: Guid(233c6ac239f5f764f802f62bea56397e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Prefabs_Obs/Track_Corner_90d_type_01_30x30m_free_obs.prefab using Guid(233c6ac239f5f764f802f62bea56397e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ae00bb576fda51f853dcacb8059542c') in 0.019607 seconds 
+  Import took 0.026107 seconds .
+
