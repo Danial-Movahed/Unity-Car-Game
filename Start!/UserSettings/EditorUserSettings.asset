@@ -6,37 +6,34 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
-      value: 22424703114646692e254c705e7010231512162f3f67123f382a157df7ee3d2cfb
-      flags: 0
-    RecentlyUsedScenePath-1:
       value: 22424703114646692e254c705e7010231512162f3f67153920391136acf53a31f6fe
       flags: 0
-    RecentlyUsedScenePath-2:
+    RecentlyUsedScenePath-1:
       value: 2242470311464669080f002b0337561324161b2f183a27332666382be3ed2434e7d435ece93f702e3801ea28163f0234bc1f0702e212
       flags: 0
-    RecentlyUsedScenePath-3:
+    RecentlyUsedScenePath-2:
       value: 224247031146466b0202152502225b155923173a130c292723693036e6e9312ee3eb76caee2e26730e0be13809370d33cd2c1b0ef34426021f0be81e5fea1e1a05dc
       flags: 0
-    RecentlyUsedScenePath-4:
+    RecentlyUsedScenePath-3:
       value: 224247031146466b0202152502225b155923173a130c292723693036e6e9312ee3eb76caee2e26730e0be13809370d33cd2c1b0ef3443d021f0af0071df35e061fcc0cdc
       flags: 0
-    RecentlyUsedScenePath-5:
+    RecentlyUsedScenePath-4:
       value: 22424703114646760c1e5d6231304c150204571808046903282a0821ebf42d07d2e635e2a81f273d3412e3393b0d023afc0f4626f70204450400f41a08
       flags: 0
-    RecentlyUsedScenePath-6:
-      value: 22424703114646680e0b0227036c72110645563f22213229
-      flags: 0
-    RecentlyUsedScenePath-7:
+    RecentlyUsedScenePath-5:
       value: 22424703114646693d293c122f0f6b5f25141d24296734202a390d0ceef40b2be1e238ecd86b716c7717e1351027
       flags: 0
-    RecentlyUsedScenePath-8:
+    RecentlyUsedScenePath-6:
       value: 22424703114646693d29330420106017171a1d152d3b3535393a223aece4212bf6f53fe8eb751e2f2a07fb2f3b2d0930e5090818f33419081400f84004f1190708
       flags: 0
-    RecentlyUsedScenePath-9:
+    RecentlyUsedScenePath-7:
       value: 224247031146465f081803361927102017051323222f66172c3d187cd1e33136e7f479d9e62834353705af1b052a0471e704001fef
       flags: 0
     RecentlyUsedScenePath-8:
-      value: 22424703114646692922431115204a021f0301151c29253b620c0532eff0383dddd435ece93f7011380be1721130082beb
+      value: 22424703114646680e0b0227036c72110645563f22213229
+      flags: 0
+    RecentlyUsedScenePath-9:
+      value: 22424703114646680e0b0227036c72110646563f22213229
       flags: 0
     UnityEditor.ShaderGraph.Blackboard:
       value: 18135939215a0a5004000b0e15254b524c030a3f2964643d120d1230e9e93a3fd6e826abbd3c3e302a07a37e0901373ae01e0008f707250d171df81a53a5405d41895ac825e0100ec20313c0d91cddccd3d0c7efcca9bd80908fecb0f9cfddf1eff4e7a1b1eae482f0fdaee1e1928b86d888ed909c968797a7cf
