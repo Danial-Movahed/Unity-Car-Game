@@ -1,8 +1,8 @@
-
-Start!/Library/
-
-Start!/Temp/
-
-Start!/Logs/
-
-Start\!/UserSettings/
+Start\!/Library
+Start\!/Temp
+Start\!/Logs
+Start\!/UserSettings
+menu/Library
+menu/Temp
+menu/Logs
+menu/UserSettings
