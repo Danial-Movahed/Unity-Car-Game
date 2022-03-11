@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class OneWayCollider : MonoBehaviour
 {
-    void FixedUpdate()
+    void Update()
     {
         if(ifStillColliding)
         {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, Mathf.Abs(GetComponent<Rigidbody>().velocity.z)+0.5f);
         }
     }
     private bool ifStillColliding = false;
@@ -18,6 +18,7 @@ public class OneWayCollider : MonoBehaviour
         if(col.gameObject.name == "StartLapCollider" && GetComponent<Rigidbody>().velocity.z < 0)
         {
             ifStillColliding = true;
+            GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         }
     }
     void OnTriggerExit(Collider col)
