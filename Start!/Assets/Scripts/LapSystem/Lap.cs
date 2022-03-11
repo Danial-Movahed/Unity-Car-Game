@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Lap : MonoBehaviour
 {
-    public GameObject self;
     public int lap = 0;
     void OnTriggerEnter(Collider col)
     {
