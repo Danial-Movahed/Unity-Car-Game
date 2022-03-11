@@ -8,11 +8,17 @@ public class Lap : MonoBehaviour
     public int lap = 0;
     void OnTriggerEnter(Collider col)
     {
-        Rigidbody rb = self.GetComponent<Rigidbody>();
-        if(rb.velocity.z > 0 && lap < 3)
+        if(col.gameObject.name == "StartLapCounter")
         {
-            lap++;
-            Debug.Log(lap);
+            if(lap < 3)
+            {
+                lap++;
+                Debug.Log(lap);
+            }
+            else
+            {
+                Debug.Log("Done game!");
+            }
         }
     }
 }
