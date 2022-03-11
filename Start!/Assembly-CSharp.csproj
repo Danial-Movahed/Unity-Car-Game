@@ -42,7 +42,7 @@
      <Compile Include="Assets/UI/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/JustRotate.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXExporter.cs" />
      <Compile Include="Assets/Map1 Assets/Scripts/scr.cs" />
-     <Compile Include="Assets/Scripts/Lap.cs" />
+     <Compile Include="Assets/Scripts/LapSystem/Lap.cs" />
      <Compile Include="Assets/Map2 Assets/Wind Turbine/WindGeneratorRotator.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXUnityMeshGetter.cs" />
      <Compile Include="Assets/RCK 2.3/Scripts/PoliceLights.cs" />
@@ -57,6 +57,7 @@
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Resources/WaterReflection.cs" />
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/RCK 2.3/Scripts/VehicleCamera.cs" />
+     <Compile Include="Assets/Scripts/LapSystem/ShowLap.cs" />
      <None Include="Assets/Exterior_swimming_pool/Documentation/Readme.txt" />
      <None Include="Assets/RCK 2.3/Shaders/ReflectionBlurFresnel.shader" />
      <None Include="Assets/Map1 Assets/generic-f1-1990-race-car/Read - VFXDownload.txt" />

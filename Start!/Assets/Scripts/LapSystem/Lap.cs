@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lap : MonoBehaviour
 {
     public GameObject self;
-    private int lap = 0;
+    public int lap = 0;
     void OnTriggerEnter(Collider col)
     {
         Rigidbody rb = self.GetComponent<Rigidbody>();
