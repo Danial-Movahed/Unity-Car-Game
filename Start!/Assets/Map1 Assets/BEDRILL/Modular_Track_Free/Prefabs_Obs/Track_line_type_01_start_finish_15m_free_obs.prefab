@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7276925260861940167}
   - component: {fileID: 6004159689186684514}
   - component: {fileID: 8410463666442459816}
-  - component: {fileID: -4180479327332058295}
   m_Layer: 0
   m_Name: Track_line_type_01_start_finish_15m_free_obs
   m_TagString: Untagged
@@ -56,6 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,17 +80,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-4180479327332058295
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049907621329533821}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6577439885992035777, guid: 52aa1e347167b2645beee4bc691ffb17, type: 3}
+  m_AdditionalVertexStreams: {fileID: 0}
