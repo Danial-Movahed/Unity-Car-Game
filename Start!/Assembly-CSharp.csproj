@@ -37,21 +37,21 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/RCK 2.3/Scripts/VehicleControl.cs" />
+     <Compile Include="Assets/Scripts/LapSystem/ShowLap.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXUnityMaterialGetter.cs" />
      <Compile Include="Assets/RCK 2.3/Scripts/VehicleDamage.cs" />
+     <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Info/Scripts/Readme.cs" />
+     <Compile Include="Assets/RCK 2.3/Scripts/CarSwitch.cs" />
+     <Compile Include="Assets/Scripts/LapSystem/OneWayCollider.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXExporter.cs" />
      <Compile Include="Assets/Map1 Assets/Scripts/scr.cs" />
      <Compile Include="Assets/Scripts/LapSystem/Lap.cs" />
      <Compile Include="Assets/Map2 Assets/Wind Turbine/WindGeneratorRotator.cs" />
-     <Compile Include="Assets/Packages/UnityFBXExporter/FBXUnityMeshGetter.cs" />
-     <Compile Include="Assets/RCK 2.3/Scripts/PoliceLights.cs" />
-     <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Info/Scripts/Readme.cs" />
-     <Compile Include="Assets/RCK 2.3/Scripts/CarSwitch.cs" />
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Resources/WaterReflection.cs" />
+     <Compile Include="Assets/Packages/UnityFBXExporter/FBXUnityMeshGetter.cs" />
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
+     <Compile Include="Assets/RCK 2.3/Scripts/PoliceLights.cs" />
      <Compile Include="Assets/RCK 2.3/Scripts/VehicleCamera.cs" />
-     <Compile Include="Assets/Scripts/LapSystem/ShowLap.cs" />
-     <Compile Include="Assets/Scripts/LapSystem/OneWayCollider.cs" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Documentation/Readme.txt" />
      <None Include="Assets/RCK 2.3/Shaders/ReflectionBlurFresnel.shader" />
      <None Include="Assets/Map1 Assets/generic-f1-1990-race-car/Read - VFXDownload.txt" />
@@ -59,7 +59,7 @@
      <None Include="Assets/RCK 2.3/Standard Assets/Projectors/Guidelines.txt" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Water/Shaders/FXWater4Advanced.shader" />
      <None Include="Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Readme.txt" />
-     <None Include="Assets/Parkgarage/parkinggarage_readMe.txt" />
+     <None Include="Assets/Map2 Assets/Parkgarage/parkinggarage_readMe.txt" />
      <None Include="Assets/Map2 Assets/Sean&apos;s Water.shader" />
      <None Include="Assets/Map2 Assets/Stylize Water Texture/StylizedGrass/READMEdoc.txt" />
      <None Include="Assets/Map1 Assets/RealisticRaceTrack/Documentation.txt" />

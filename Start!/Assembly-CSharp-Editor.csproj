@@ -36,14 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/RuntimePrefabEditor/Scripts/Editor/PrefabSearchDB.cs" />
-     <Compile Include="Assets/RuntimePrefabEditor/Scripts/Editor/GameObjectDiff.cs" />
-     <Compile Include="Assets/RuntimePrefabEditor/Scripts/Editor/EditorUtils.cs" />
-     <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Info/Scripts/Editor/ReadmeEditor.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/Editor/ProceduralTest.cs" />
      <Compile Include="Assets/Map2 Assets/WhiteCity/Scripts/Editor/ALIyerEdonAssets_Lighting.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/Editor/ExporterMenu.cs" />
-     <Compile Include="Assets/RuntimePrefabEditor/Scripts/Editor/RuntimePrefabEditor.cs" />
+     <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Info/Scripts/Editor/ReadmeEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/home/danial/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
