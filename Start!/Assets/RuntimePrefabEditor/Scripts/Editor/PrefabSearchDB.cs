@@ -58,10 +58,10 @@ namespace RuntimePrefabEditor
                             continue;
 
                             // try find prefab for parent 
-                            prefabPath = EditorUtils.GetParentPath(prefabPath);
-                            GameObject prefabParent = prefabRoot.GetChildByPath(prefabPath);
-                            if(prefabParent == null)
-                                continue;
+                            // prefabPath = EditorUtils.GetParentPath(prefabPath);
+                            // GameObject prefabParent = prefabRoot.GetChildByPath(prefabPath);
+                            // if(prefabParent == null)
+                            //     continue;
                         }
 
                         PrefabCandidate candidate;

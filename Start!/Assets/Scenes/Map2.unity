@@ -18647,6 +18647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Freeway Straight 1
       objectReference: {fileID: 0}
+    - target: {fileID: 121254, guid: ad182cc030f80d2418924040efeaaedb, type: 3}
+      propertyPath: m_TagString
+      value: Street
+      objectReference: {fileID: 0}
     - target: {fileID: 423198, guid: ad182cc030f80d2418924040efeaaedb, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -18979,47 +18983,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 45414ae893ef0d24aaa8d91a7d834868, type: 3}
---- !u!1001 &545128077
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1448515591}
-    m_Modifications:
-    - target: {fileID: 400000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 331.50266
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.3803525
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 110.71237
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
 --- !u!1 &549581022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1232766363669618, guid: 2b519101e10d4a74580d4c86ac9e03e6, type: 3}
@@ -52180,7 +52143,6 @@ Transform:
   - {fileID: 252404706}
   - {fileID: 1025369581}
   - {fileID: 499896460}
-  - {fileID: 2083068279}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -67467,7 +67429,8 @@ PrefabInstance:
       propertyPath: carSetting.automaticGear
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11957938, guid: b82529e8ddfc06e4fb493d04ff82ec97, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b82529e8ddfc06e4fb493d04ff82ec97, type: 3}
 --- !u!1001 &1933863904
 PrefabInstance:
@@ -70138,7 +70101,7 @@ GameObject:
   - component: {fileID: 2028387319}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -71565,11 +71528,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 45414ae893ef0d24aaa8d91a7d834868, type: 3}
---- !u!4 &2083068279 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: cf16560804a0b324398e029ca649ad2d, type: 3}
-  m_PrefabInstance: {fileID: 545128077}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2083084254
 PrefabInstance:
   m_ObjectHideFlags: 0

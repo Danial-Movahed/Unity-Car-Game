@@ -45,8 +45,6 @@
      <Compile Include="Assets/Map2 Assets/Wind Turbine/WindGeneratorRotator.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXUnityMeshGetter.cs" />
      <Compile Include="Assets/RCK 2.3/Scripts/PoliceLights.cs" />
-     <Compile Include="Assets/RCK 2.3/Skidmarks/Skidmarks Essentials/Skidmarks.cs" />
-     <Compile Include="Assets/RCK 2.3/Skidmarks/WheelSkidmarks.cs" />
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Info/Scripts/Readme.cs" />
      <Compile Include="Assets/RCK 2.3/Scripts/CarSwitch.cs" />
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Resources/WaterReflection.cs" />
@@ -72,7 +70,6 @@
      <None Include="Assets/RCK 2.3/Shaders/TransparentRef.shader" />
      <None Include="Assets/RCK 2.3/Standard Assets/Projectors/Sources/Shaders/Projector Multiply.shader" />
      <None Include="Assets/Map2 Assets/Five Seamless Tileable Ground Textures/read me.txt" />
-     <None Include="Assets/RCK 2.3/Skidmarks/Skidmarks Essentials/Skidmarks.shader" />
      <None Include="Assets/_www.unityassetcollection.com.txt" />
      <None Include="Assets/Map2 Assets/BarProps/Credits.txt" />
      <None Include="Assets/Map1 Assets/generic-f1-vintage-car/Read - VFXDownload.txt" />

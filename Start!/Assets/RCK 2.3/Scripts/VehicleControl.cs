@@ -747,41 +747,47 @@ public class VehicleControl : MonoBehaviour
 
             if (shift && (currentGear > 1 && speed > 50.0f) && shifmotor && Mathf.Abs(steer) < 0.2f)
             {
-
                 if (powerShift == 0) { shifmotor = false; }
-
                 powerShift = Mathf.MoveTowards(powerShift, 0.0f, Time.deltaTime * 10.0f);
-
                 carSounds.nitro.volume = Mathf.Lerp(carSounds.nitro.volume, 1.0f, Time.deltaTime * 10.0f);
-
                 if (!carSounds.nitro.isPlaying)
                 {
                     carSounds.nitro.GetComponent<AudioSource>().Play();
 
                 }
-
-
                 curTorque = powerShift > 0 ? carSetting.shiftPower : carSetting.carPower;
-                carParticles.shiftParticle1.emissionRate = Mathf.Lerp(carParticles.shiftParticle1.emissionRate, powerShift > 0 ? 50 : 0, Time.deltaTime * 10.0f);
-                carParticles.shiftParticle2.emissionRate = Mathf.Lerp(carParticles.shiftParticle2.emissionRate, powerShift > 0 ? 50 : 0, Time.deltaTime * 10.0f);
+                ParticleSystem.EmissionModule yourEmissionModule;
+                yourEmissionModule = carParticles.shiftParticle1.emission;
+                ParticleSystem.MinMaxCurve tempCurve = carParticles.shiftParticle1.emission.rateOverTime;
+                tempCurve.constant = Mathf.Lerp(tempCurve.constant, powerShift > 0 ? 50 : 0, Time.deltaTime * 10.0f);
+                yourEmissionModule.rateOverTime = tempCurve;
+
+                yourEmissionModule = carParticles.shiftParticle2.emission;
+                tempCurve = carParticles.shiftParticle2.emission.rateOverTime;
+                tempCurve.constant = Mathf.Lerp(tempCurve.constant, powerShift > 0 ? 50 : 0, Time.deltaTime * 10.0f);
+                yourEmissionModule.rateOverTime = tempCurve;
             }
             else
             {
-
                 if (powerShift > 20)
                 {
                     shifmotor = true;
                 }
-
                 carSounds.nitro.volume = Mathf.MoveTowards(carSounds.nitro.volume, 0.0f, Time.deltaTime * 2.0f);
-
                 if (carSounds.nitro.volume == 0)
                     carSounds.nitro.Stop();
-
                 powerShift = Mathf.MoveTowards(powerShift, 100.0f, Time.deltaTime * 5.0f);
                 curTorque = carSetting.carPower;
-                carParticles.shiftParticle1.emissionRate = Mathf.Lerp(carParticles.shiftParticle1.emissionRate, 0, Time.deltaTime * 10.0f);
-                carParticles.shiftParticle2.emissionRate = Mathf.Lerp(carParticles.shiftParticle2.emissionRate, 0, Time.deltaTime * 10.0f);
+                ParticleSystem.EmissionModule yourEmissionModule;
+                yourEmissionModule = carParticles.shiftParticle1.emission;
+                ParticleSystem.MinMaxCurve tempCurve = carParticles.shiftParticle1.emission.rateOverTime;
+                tempCurve.constant = Mathf.Lerp(tempCurve.constant, 0, Time.deltaTime * 10.0f);
+                yourEmissionModule.rateOverTime = tempCurve;
+
+                yourEmissionModule = carParticles.shiftParticle2.emission;
+                tempCurve = carParticles.shiftParticle2.emission.rateOverTime;
+                tempCurve.constant = Mathf.Lerp(tempCurve.constant, 0, Time.deltaTime * 10.0f);
+                yourEmissionModule.rateOverTime = tempCurve;
             }
 
 
@@ -819,7 +825,6 @@ public class VehicleControl : MonoBehaviour
 
                     for (int i = 0; i < carSetting.hitGround.Length; i++)
                     {
-
                         if (hit.collider.CompareTag(carSetting.hitGround[i].tag))
                         {
                             WGrounded = carSetting.hitGround[i].grounded;
@@ -833,8 +838,8 @@ public class VehicleControl : MonoBehaviour
 
                                 Particle[currentWheel].GetComponent<AudioSource>().clip = carSetting.hitGround[i].groundSound;
                             }
-
-                            Particle[currentWheel].GetComponent<ParticleSystem>().startColor = carSetting.hitGround[i].brakeColor;
+                            ParticleSystem.MainModule psmain = Particle[currentWheel].GetComponent<ParticleSystem>().main;
+                            psmain.startColor = carSetting.hitGround[i].brakeColor;
 
                         }
 
@@ -846,8 +851,8 @@ public class VehicleControl : MonoBehaviour
 
                     if (WGrounded && speed > 5 && !brake)
                     {
-
-                        pc.enableEmission = true;
+                        var pcemission = pc.emission;
+                        pcemission.enabled = true;
 
                         Particle[currentWheel].GetComponent<AudioSource>().volume = 0.5f;
 
@@ -863,7 +868,8 @@ public class VehicleControl : MonoBehaviour
 
                             if (!Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
                                 Particle[currentWheel].GetComponent<AudioSource>().Play();
-                            pc.enableEmission = true;
+                            var pcemission = pc.emission;
+                            pcemission.enabled = true;
                             Particle[currentWheel].GetComponent<AudioSource>().volume = 10;
 
                         }
@@ -872,7 +878,8 @@ public class VehicleControl : MonoBehaviour
                     else
                     {
 
-                        pc.enableEmission = false;
+                        var pcemission = pc.emission;
+                        pcemission.enabled = false;
                         Particle[currentWheel].GetComponent<AudioSource>().volume = Mathf.Lerp(Particle[currentWheel].GetComponent<AudioSource>().volume, 0, Time.deltaTime * 10.0f);
                     }
 
@@ -891,7 +898,8 @@ public class VehicleControl : MonoBehaviour
                 if (Particle[currentWheel] != null)
                 {
                     var pc = Particle[currentWheel].GetComponent<ParticleSystem>();
-                    pc.enableEmission = false;
+                    var pcemission = pc.emission;
+                    pcemission.enabled = false;
                 }
 
 

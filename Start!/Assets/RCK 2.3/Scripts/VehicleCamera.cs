@@ -236,12 +236,6 @@ public class VehicleCamera : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Application.LoadLevel(Application.loadedLevel);
-        }
-
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             PoliceLightSwitch();
