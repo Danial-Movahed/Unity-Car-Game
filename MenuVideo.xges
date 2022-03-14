@@ -1,0 +1,32 @@
+<ges version='0.1'>
+  <project properties='properties;' metadatas='metadatas, name=(string)&quot;New\ Project&quot;, author=(string)&quot;Seyed\ Danial\ Movahed&quot;, render-scale=(double)100;'>
+    <encoding-profiles>
+      <encoding-profile name='pitivi-profile' description='Pitivi encoding profile' type='container' preset-name='mp4mux' format='video/quicktime, variant=(string)iso' >
+        <stream-profile parent='pitivi-profile' id='0' type='video' presence='1' format='video/x-h264, framerate=(fraction)[ 0/1, 2147483647/1 ], width=(int)[ 1, 2147483647 ], height=(int)[ 1, 2147483647 ], stream-format=(string){ avc, byte-stream }, alignment=(string)au, profile=(string){ high-4:4:4, high-4:2:2, high-10, high, main, baseline, constrained-baseline, high-4:4:4-intra, high-4:2:2-intra, high-10-intra }' preset='encoder_settings_22845c3f7270407181af930ef10b726a' preset-properties='properties, qos=(boolean)false, min-force-key-unit-interval=(guint64)0, threads=(uint)0, sliced-threads=(boolean)false, sync-lookahead=(int)-1, pass=(int)0, quantizer=(uint)21, multipass-cache-file=(string)x264.log, byte-stream=(boolean)false, bitrate=(uint)2048, intra-refresh=(boolean)false, vbv-buf-capacity=(uint)600, me=(int)1, subme=(uint)1, analyse=(int)0, dct8x8=(boolean)false, ref=(uint)1, bframes=(uint)0, b-adapt=(boolean)true, b-pyramid=(boolean)false, weightb=(boolean)false, sps-id=(uint)0, aud=(boolean)true, trellis=(boolean)true, key-int-max=(uint)0, cabac=(boolean)true, qp-min=(uint)10, qp-max=(uint)51, qp-step=(uint)4, ip-factor=(float)1.3999999761581421, pb-factor=(float)1.2999999523162842, mb-tree=(boolean)true, rc-lookahead=(int)40, noise-reduction=(uint)0, interlaced=(boolean)false, option-string=(string)&quot;&quot;, speed-preset=(int)6, psy-tune=(int)0, tune=(int)0, frame-packing=(int)-1, insert-vui=(boolean)true;' preset-name='x264enc' restriction='video/x-raw, framerate=(fraction)30/1, width=(int)1024, height=(int)576, pixel-aspect-ratio=(fraction)1/1' pass='0' variableframerate='0' />
+        <stream-profile parent='pitivi-profile' id='1' type='audio' presence='1' format='audio/mpeg, mpegversion=(int)4, rate=(int){ 8000, 11025, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 64000, 88200, 96000 }, channels=(int)[ 1, 2 ], stream-format=(string){ adts, raw }, base-profile=(string)lc' preset='encoder_settings_8a56211e513c4fa59bc221cb096e30b2' preset-properties='properties, perfect-timestamp=(boolean)false, hard-resync=(boolean)false, tolerance=(gint64)40000000, bitrate=(int)128000;' preset-name='voaacenc' restriction='audio/x-raw, rate=(int)48000, channels=(int)2' />
+      </encoding-profile>
+    </encoding-profiles>
+    <ressources>
+      <asset id='crossfade' extractable-type-name='GESTransitionClip' properties='properties;' metadatas='metadatas, description=(string)GES_VIDEO_STANDARD_TRANSITION_TYPE_CROSSFADE;' />
+      <asset id='file:///home/danial/Videos/2022-03-14-18-15-06.mp4' extractable-type-name='GESUriClip' properties='properties, supported-formats=(int)6, duration=(guint64)1340033000000;' metadatas='metadatas, video-codec=(string)&quot;H.264\ /\ AVC&quot;, bitrate=(uint)1500548, audio-codec=(string)&quot;MPEG-4\ AAC\ audio&quot;, maximum-bitrate=(uint)160000, private-qt-tag=(sample)0000000e6e616d65547261636b31:None:c2VnbWVudCwgZmxhZ3M9KEdzdFNlZ21lbnRGbGFncylHU1RfU0VHTUVOVF9GTEFHX05PTkUsIHJhdGU9KGRvdWJsZSkxLCBhcHBsaWVkLXJhdGU9KGRvdWJsZSkxLCBmb3JtYXQ9KEdzdEZvcm1hdCl0aW1lLCBiYXNlPShndWludDY0KTAsIG9mZnNldD0oZ3VpbnQ2NCkwLCBzdGFydD0oZ3VpbnQ2NCkwLCBzdG9wPShndWludDY0KTE4NDQ2NzQ0MDczNzA5NTUxNjE1LCB0aW1lPShndWludDY0KTAsIHBvc2l0aW9uPShndWludDY0KTAsIGR1cmF0aW9uPShndWludDY0KTE4NDQ2NzQ0MDczNzA5NTUxNjE1OwA_:YXBwbGljYXRpb24veC1nc3QtcXQtbmFtZS10YWcsIHN0eWxlPShzdHJpbmcpaXNvOwA_, encoder=(string)Lavf58.29.100, container-format=(string)&quot;ISO\ MP4/M4A&quot;, file-size=(guint64)307163724;' />
+    </ressources>
+    <timeline properties='properties, auto-transition=(boolean)true, snapping-distance=(guint64)315038149;' metadatas='metadatas, duration=(guint64)102633393390;'>
+      <track caps='video/x-raw(ANY)' track-type='4' track-id='0' properties='properties, async-handling=(boolean)false, message-forward=(boolean)true, caps=(string)&quot;video/x-raw\(ANY\)&quot;, restriction-caps=(string)&quot;video/x-raw\,\ width\=\(int\)1024\,\ height\=\(int\)576\,\ framerate\=\(fraction\)30/1\,\ pixel-aspect-ratio\=\(fraction\)1/1&quot;, mixing=(boolean)true;' metadatas='metadatas;'/>
+      <track caps='audio/x-raw(ANY)' track-type='2' track-id='1' properties='properties, async-handling=(boolean)false, message-forward=(boolean)true, caps=(string)&quot;audio/x-raw\(ANY\)&quot;, restriction-caps=(string)&quot;audio/x-raw\,\ rate\=\(int\)48000\,\ channels\=\(int\)2&quot;, mixing=(boolean)true;' metadatas='metadatas;'/>
+      <layer priority='0' properties='properties, auto-transition=(boolean)true;' metadatas='metadatas, volume=(float)1;'>
+        <clip id='0' asset-id='file:///home/danial/Videos/2022-03-14-18-15-06.mp4' type-name='GESUriClip' layer-priority='0' track-types='6' start='0' duration='102633393390' inpoint='1237399606610' rate='0' properties='properties, name=(string)uriclip10, mute=(boolean)false, is-image=(boolean)false;' metadatas='metadatas;'>
+          <source track-id='0' children-properties='properties, GstFramePositioner::alpha=(double)1, GstDeinterlace::fields=(int)0, GstFramePositioner::height=(int)576, GstDeinterlace::mode=(int)0, GstFramePositioner::posx=(int)0, GstFramePositioner::posy=(int)0, GstDeinterlace::tff=(int)0, GstVideoDirection::video-direction=(int)8, GstFramePositioner::width=(int)1024;'>
+            <binding type='direct' source_type='interpolation' property='alpha' mode='1' track_id='0' values =' 1237399606610:1  1340033000000:1 '/>
+          </source>
+          <source track-id='1' children-properties='properties, GstVolume::mute=(boolean)false, GstVolume::volume=(double)1;'>
+            <binding type='direct' source_type='interpolation' property='volume' mode='1' track_id='1' values =' 1237399606610:0.10000000149011612  1340033000000:0.10000000000000001 '/>
+          </source>
+        </clip>
+      </layer>
+      <layer priority='1' properties='properties, auto-transition=(boolean)true;' metadatas='metadatas, volume=(float)1;'>
+      </layer>
+      <groups>
+      </groups>
+    </timeline>
+</project>
+</ges>
