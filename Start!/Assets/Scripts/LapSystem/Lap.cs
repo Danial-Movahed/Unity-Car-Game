@@ -16,7 +16,7 @@ public class Lap : MonoBehaviour
             }
             else
             {
-                Debug.Log("Done game!");
+               Debug.Log("Done game");
             }
         }
     }
