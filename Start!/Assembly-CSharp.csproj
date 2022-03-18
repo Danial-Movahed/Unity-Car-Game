@@ -45,7 +45,10 @@
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXExporter.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController.cs" />
      <Compile Include="Assets/Map1 Assets/Scripts/scr.cs" />
+<<<<<<< HEAD
+=======
      <Compile Include="Assets/Scripts/GhostSystem/Save.cs" />
+>>>>>>> master
      <Compile Include="Assets/Scripts/Menu/MenuController5.cs" />
      <Compile Include="Assets/Scripts/LapSystem/Lap.cs" />
      <Compile Include="Assets/Map2 Assets/Wind Turbine/WindGeneratorRotator.cs" />
@@ -53,11 +56,13 @@
      <Compile Include="Assets/RCK 2.3/Scripts/PoliceLights.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/CircleSlider.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/SliderRunTo1.cs" />
+     <Compile Include="Assets/Scripts/MapControllers/Map2Controller.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/PressedBtn.cs" />
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Info/Scripts/Readme.cs" />
      <Compile Include="Assets/RCK 2.3/Scripts/CarSwitch.cs" />
      <Compile Include="Assets/Scripts/LapSystem/OneWayCollider.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/SliderValuePass.cs" />
+     <Compile Include="Assets/Scripts/MapControllers/Map1Contoller.cs" />
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Resources/WaterReflection.cs" />
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
