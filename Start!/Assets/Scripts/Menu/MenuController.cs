@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour {
 	public Button quitBtn;
@@ -16,6 +17,7 @@ public class MenuController : MonoBehaviour {
         startBtn.onClick.AddListener( () => 
         {
             Debug.Log("Start");
+            SceneManager.LoadScene("5");
         });
 	}
 }

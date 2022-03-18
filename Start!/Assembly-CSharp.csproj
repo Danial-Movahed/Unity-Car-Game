@@ -52,7 +52,6 @@
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXUnityMeshGetter.cs" />
      <Compile Include="Assets/RCK 2.3/Scripts/PoliceLights.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/CircleSlider.cs" />
-     <Compile Include="Assets/Scripts/Menu/MenuController678.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/SliderRunTo1.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/PressedBtn.cs" />
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Info/Scripts/Readme.cs" />
@@ -63,6 +62,9 @@
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
      <Compile Include="Assets/RCK 2.3/Scripts/VehicleCamera.cs" />
+     <Compile Include="Assets/Scripts/Menu/MenuController6.cs" />
+     <Compile Include="Assets/Scripts/Menu/MenuController8.cs" />
+     <Compile Include="Assets/Scripts/Menu/MenuController7.cs" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Documentation/Readme.txt" />
      <None Include="Assets/RCK 2.3/Shaders/ReflectionBlurFresnel.shader" />
      <None Include="Assets/Map1 Assets/generic-f1-1990-race-car/Read - VFXDownload.txt" />

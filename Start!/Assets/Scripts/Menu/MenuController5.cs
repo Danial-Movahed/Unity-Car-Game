@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuController5 : MonoBehaviour {
 	public Button quitBtn;
@@ -13,14 +14,17 @@ public class MenuController5 : MonoBehaviour {
         });
         backbtn.onClick.AddListener( () => {
             Debug.Log("back");
+            SceneManager.LoadScene("1");
         });
         singleplayerBtn.onClick.AddListener( () => 
         {
             Debug.Log("singleplayer");
+            SceneManager.LoadScene("10");
         });
         multiplayerBtn.onClick.AddListener( () => 
         {
             Debug.Log("multiplayer");
+            SceneManager.LoadScene("6");
         });
 	}
 }

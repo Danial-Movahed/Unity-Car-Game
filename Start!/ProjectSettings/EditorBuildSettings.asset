@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Maps/Map2Ghost.unity
-    guid: 0564e694cba60be2489d55576d759fba
+    path: Assets/Scenes/Menu/1.unity
+    guid: e84a6c1ee83f105feb37d77085ad6278
+  - enabled: 1
+    path: Assets/Scenes/Menu/5.unity
+    guid: 69e61b5d1383a42c184c562df7b02c23
+  - enabled: 1
+    path: Assets/Scenes/Menu/6.unity
+    guid: be8ee05bfde9fb3539445c02b0dfdbef
+  - enabled: 1
+    path: Assets/Scenes/Menu/7.unity
+    guid: f26f2b93f820caf88ae62dca9564b377
+  - enabled: 1
+    path: Assets/Scenes/Menu/8.unity
+    guid: fcdf3e7816181163581d629bad91cb25
+  - enabled: 1
+    path: Assets/Scenes/Menu/10.unity
+    guid: f59f9772a3034d59797184ca0702e10a
   m_configObjects: {}
