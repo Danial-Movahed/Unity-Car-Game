@@ -1530,8 +1530,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitBtn: {fileID: 2136910993472456873}
   backbtn: {fileID: 3010873923380603855}
-  map1Btn: {fileID: 0}
-  map2Btn: {fileID: 0}
+  map1Btn: {fileID: 126134137}
+  map2Btn: {fileID: 506638210}
 --- !u!4 &8492774541632874724
 Transform:
   m_ObjectHideFlags: 0

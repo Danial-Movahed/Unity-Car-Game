@@ -9,7 +9,6 @@ public class Server : MonoBehaviour
     private static EventBasedNetListener listener = new EventBasedNetListener();
     private NetManager server = new NetManager(listener);
     private NetPeer[] players = new NetPeer[4];
-    private string[] players = new string[4];
     private int onlineCount = 0;
     public int connectionLimit = 4;
     public int port = 3344;

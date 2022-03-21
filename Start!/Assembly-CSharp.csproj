@@ -37,44 +37,41 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/GhostSystem/Load.cs" />
-     <Compile Include="Assets/RCK 2.3/Scripts/VehicleControl.cs" />
+     <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleControl.cs" />
      <Compile Include="Assets/Scripts/LapSystem/ShowLap.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXUnityMaterialGetter.cs" />
-     <Compile Include="Assets/RCK 2.3/Scripts/VehicleDamage.cs" />
+     <Compile Include="Assets/Scripts/Menu/MenuController6.cs" />
+     <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleDamage.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/JustRotate.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXExporter.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController.cs" />
+     <Compile Include="Assets/Scripts/Menu/MenuController8.cs" />
      <Compile Include="Assets/Map1 Assets/Scripts/scr.cs" />
-<<<<<<< HEAD
-=======
      <Compile Include="Assets/Scripts/GhostSystem/Save.cs" />
->>>>>>> master
+     <Compile Include="Assets/Scripts/Menu/MenuController7.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController5.cs" />
      <Compile Include="Assets/Scripts/LapSystem/Lap.cs" />
      <Compile Include="Assets/Map2 Assets/Wind Turbine/WindGeneratorRotator.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXUnityMeshGetter.cs" />
-     <Compile Include="Assets/RCK 2.3/Scripts/PoliceLights.cs" />
+     <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/PoliceLights.cs" />
+     <Compile Include="Assets/Scripts/Multiplayer/Client.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/CircleSlider.cs" />
+     <Compile Include="Assets/Scripts/Multiplayer/Server.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/SliderRunTo1.cs" />
-     <Compile Include="Assets/Scripts/MapControllers/Map2Controller.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/PressedBtn.cs" />
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Info/Scripts/Readme.cs" />
-     <Compile Include="Assets/RCK 2.3/Scripts/CarSwitch.cs" />
+     <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/CarSwitch.cs" />
      <Compile Include="Assets/Scripts/LapSystem/OneWayCollider.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/SliderValuePass.cs" />
-     <Compile Include="Assets/Scripts/MapControllers/Map1Contoller.cs" />
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Resources/WaterReflection.cs" />
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
-     <Compile Include="Assets/RCK 2.3/Scripts/VehicleCamera.cs" />
-     <Compile Include="Assets/Scripts/Menu/MenuController6.cs" />
-     <Compile Include="Assets/Scripts/Menu/MenuController8.cs" />
-     <Compile Include="Assets/Scripts/Menu/MenuController7.cs" />
+     <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCamera.cs" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Documentation/Readme.txt" />
-     <None Include="Assets/RCK 2.3/Shaders/ReflectionBlurFresnel.shader" />
+     <None Include="Assets/Resources/Car/RCK 2.3/Shaders/ReflectionBlurFresnel.shader" />
      <None Include="Assets/Map1 Assets/generic-f1-1990-race-car/Read - VFXDownload.txt" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Water/Shaders/WaterInclude.cginc" />
-     <None Include="Assets/RCK 2.3/Standard Assets/Projectors/Guidelines.txt" />
+     <None Include="Assets/Resources/Car/RCK 2.3/Standard Assets/Projectors/Guidelines.txt" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Water/Shaders/FXWater4Advanced.shader" />
      <None Include="Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Readme.txt" />
      <None Include="Assets/Map2 Assets/Parkgarage/parkinggarage_readMe.txt" />
@@ -84,9 +81,9 @@
      <None Include="Assets/Map2 Assets/greyRoadStudio/LowPolyTreePack/readme.txt" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Water/Shaders/FXWater4Simple.shader" />
      <None Include="Assets/Map1 Assets/generic-f1-1970-race-car/Read - VFXDownload.txt" />
-     <None Include="Assets/RCK 2.3/Standard Assets/Projectors/Sources/Shaders/Projector Light.shader" />
-     <None Include="Assets/RCK 2.3/Shaders/TransparentRef.shader" />
-     <None Include="Assets/RCK 2.3/Standard Assets/Projectors/Sources/Shaders/Projector Multiply.shader" />
+     <None Include="Assets/Resources/Car/RCK 2.3/Standard Assets/Projectors/Sources/Shaders/Projector Light.shader" />
+     <None Include="Assets/Resources/Car/RCK 2.3/Shaders/TransparentRef.shader" />
+     <None Include="Assets/Resources/Car/RCK 2.3/Standard Assets/Projectors/Sources/Shaders/Projector Multiply.shader" />
      <None Include="Assets/Map2 Assets/Five Seamless Tileable Ground Textures/read me.txt" />
      <None Include="Assets/Map2 Assets/BarProps/Credits.txt" />
      <None Include="Assets/Map1 Assets/generic-f1-vintage-car/Read - VFXDownload.txt" />
@@ -659,6 +656,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{33c9b8ba-f9c4-f8f7-2a45-6a694a0f092d}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{6814d8d1-498f-92a0-6dc9-64021186e5c3}</Project>
       <Name>Unity.VSCode.Editor</Name>
