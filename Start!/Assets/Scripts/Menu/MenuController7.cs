@@ -7,7 +7,10 @@ public class MenuController7 : MonoBehaviour {
     public Button backbtn;
     public Button map1Btn;
     public Button map2Btn;
-	void Start () {
+    private Config configScript;
+	void Start()
+    {
+        configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();
@@ -18,11 +21,13 @@ public class MenuController7 : MonoBehaviour {
         });
         map1Btn.onClick.AddListener( () => {
             Debug.Log("map1");
-            SceneManager.LoadScene("Map1");
+            configScript.mapSelector = 1;
+            SceneManager.LoadScene("8");
         });
         map2Btn.onClick.AddListener( () => {
             Debug.Log("map2");
-            SceneManager.LoadScene("Map2");
+            configScript.mapSelector = 2;
+            SceneManager.LoadScene("8");
         });
 	}
 }
