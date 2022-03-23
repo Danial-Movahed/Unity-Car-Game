@@ -257,7 +257,7 @@ RectTransform:
   m_GameObject: {fileID: 1098095136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9994357, y: 0.37489927, z: 0.076461524}
+  m_LocalScale: {x: 0.56, y: 0.56, z: 0.56}
   m_Children: []
   m_Father: {fileID: 856743346382462459}
   m_RootOrder: 0
@@ -265,7 +265,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -11}
-  m_SizeDelta: {x: 1920, y: 1500}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098095138
 MonoBehaviour:
@@ -1288,8 +1288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e920e74a80896c6f4a7437ab7078a51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSelector: 1
-  carSelector: 1
   quitBtn: {fileID: 3323526330544861831}
   backbtn: {fileID: 1905191199406510561}
   startBtn: {fileID: 1138749891}
