@@ -15,6 +15,7 @@ public class Config : MonoBehaviour
             Destroy(GameObject.Find("ConfigStart"));
             Destroy(GameObject.Find("Video"));
             Destroy(GameObject.Find("VideoMainCamera"));
+            SceneManager.SetActiveScene( SceneManager.GetSceneByName( "Map1" ) );
         }
         else
         {
@@ -22,6 +23,7 @@ public class Config : MonoBehaviour
             Destroy(GameObject.Find("ConfigStart"));
             Destroy(GameObject.Find("Video"));
             Destroy(GameObject.Find("VideoMainCamera"));
+            SceneManager.SetActiveScene( SceneManager.GetSceneByName( "Map2" ) );
         }
     }
 }

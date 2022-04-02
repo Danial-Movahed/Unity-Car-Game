@@ -10,6 +10,7 @@ public class MenuController8 : MonoBehaviour {
     public Button prevCarBtn;
     public int carIndex;
     public Image carImage;
+    public Image carImageThingy;
     private Config configScript;
 	void Start()
     {
@@ -50,5 +51,6 @@ public class MenuController8 : MonoBehaviour {
             carIndex = 5;
         }
         carImage.sprite = Resources.Load<Sprite>("Car/Pics/" + carIndex);
+        carImageThingy.sprite = Resources.Load<Sprite>("Car/Pics/Thingy" + carIndex);
     }
 }
