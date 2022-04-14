@@ -14076,7 +14076,6 @@ Transform:
   - {fileID: 4882553694131932382}
   - {fileID: 4852988347759031572}
   - {fileID: 2435215106188360089}
-  - {fileID: 8142894015422765043}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22192,88 +22191,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c54ed3b5483cd694ebcccbd355718386, type: 3}
   m_PrefabInstance: {fileID: 5812438638238132471}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8142894015422631283
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7497668577093773377}
-    m_Modifications:
-    - target: {fileID: 100000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_Name
-      value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.992915
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.11882726
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 13.649
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 7497668577093773377}
-    - target: {fileID: 11400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: CarUI.GearText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: CarUI.speedText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: CarUI.barShiftGUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-      propertyPath: CarUI.tachometerNeedle
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
---- !u!4 &8142894015422765043 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 8512d52775bf95340b741dfb9552c938, type: 3}
-  m_PrefabInstance: {fileID: 8142894015422631283}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8869033007923104621
 PrefabInstance:
