@@ -204,8 +204,8 @@
      <Compile Include="Library/PackageCache/com.unity.shadergraph@10.8.1/Editor/Data/Graphs/GraphData.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@10.8.1/Editor/Data/Nodes/Input/Lighting/ReflectionProbeNode.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@10.8.1/Editor/Data/Nodes/Math/Wave/TriangleWaveNode.cs" />
-     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.8.1/Editor/Data/Nodes/Input/Lighting/BakedGINode.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@10.8.1/Editor/Data/Nodes/Math/Trigonometry/HyperbolicCosineNode.cs" />
+     <Compile Include="Library/PackageCache/com.unity.shadergraph@10.8.1/Editor/Data/Nodes/Input/Lighting/BakedGINode.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@10.8.1/Editor/Drawing/Colors/CategoryColors.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@10.8.1/Editor/Drawing/Controls/ChannelEnumControl.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@10.8.1/Editor/Serialization/JsonRef.cs" />
