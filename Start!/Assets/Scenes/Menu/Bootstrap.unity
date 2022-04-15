@@ -301,6 +301,8 @@ MonoBehaviour:
   - {fileID: 0}
   cars2:
   - {fileID: 7153617762889773819, guid: 69c46884aa2939117a987a1183426431, type: 3}
+  - {fileID: 7575765316382502298, guid: c97ee4af1a379a7498fe5c6f2504c691, type: 3}
+  - {fileID: 1859432607289386086, guid: de7736b92e2f1de4e9187cf68da8abeb, type: 3}
 --- !u!4 &419600870
 Transform:
   m_ObjectHideFlags: 0
