@@ -205,10 +205,19 @@ public class VehicleCamera : MonoBehaviour
     }
 
 
+    private Config configScript;
+    private GameObject carLoaded;
 
     void Start()
     {
-
+        configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
+        if(configScript.mapSelector == 2)
+            carLoaded = Instantiate(configScript.cars2[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
+        else
+            carLoaded = Instantiate(configScript.cars1[configScript.carSelector - 1], new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
+        carLoaded.GetComponent<ShowLap>().lapText = GameObject.Find("lapCount").GetComponent<Text>();
+       
         carScript = (VehicleControl)target.GetComponent<VehicleControl>();
 
         myRigidbody = target.GetComponent<Rigidbody>();

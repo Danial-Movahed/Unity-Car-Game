@@ -14137,9 +14137,9 @@ MonoBehaviour:
       groundSound: {fileID: 8300000, guid: e74738166dc243747b9979b0cd3b6875, type: 3}
       brakeColor: {r: 0.8088235, g: 0.6295862, b: 0.24383649, a: 0.78431374}
     cameraSwitchView:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 6892512017187200734}
+    - {fileID: 6410998026289495635}
+    - {fileID: 4090807369604629325}
     springs: 25000
     dampers: 1500
     carPower: 120

@@ -297,6 +297,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapSelector: 1
   carSelector: 1
+  cars1:
+  - {fileID: 0}
+  cars2:
+  - {fileID: 7153617762889773819, guid: 69c46884aa2939117a987a1183426431, type: 3}
 --- !u!4 &419600870
 Transform:
   m_ObjectHideFlags: 0
