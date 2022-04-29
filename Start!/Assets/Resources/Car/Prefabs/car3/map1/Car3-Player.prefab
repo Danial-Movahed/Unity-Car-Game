@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1015815461743487789}
   - component: {fileID: 5210852224947496551}
   m_Layer: 0
-  m_Name: free-1972-datsun-240k-gt
+  m_Name: Car3-Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

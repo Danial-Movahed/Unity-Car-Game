@@ -15978,14 +15978,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3965520203116795387}
-  - component: {fileID: 8856911823948242683}
   - component: {fileID: 2024702038220231729}
   - component: {fileID: 3564377519252345764}
   - component: {fileID: 8573448684155463497}
   - component: {fileID: 9140432055803132244}
   - component: {fileID: 4747939292790556741}
   m_Layer: 0
-  m_Name: 2020-lamborghini-sian-fkp37-texture-reupload
+  m_Name: Car1-Bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16016,100 +16015,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8856911823948242683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4342467511688171329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00030e199cdd9934dbd15380a1bcabab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controlMode: 1
-  activeControl: 1
-  carWheels:
-    wheels:
-      frontWheelDrive: 1
-      frontRight: {fileID: 3244253022180593109}
-      frontLeft: {fileID: 9137475411681510435}
-      backWheelDrive: 1
-      backRight: {fileID: 2073655782840234340}
-      backLeft: {fileID: 2043523128195827886}
-    setting:
-      Radius: 0.3
-      Weight: 500
-      Distance: 0.2
-  carLights:
-    brakeLights:
-    - {fileID: 6837007180496302627}
-    - {fileID: 6031144709915634718}
-    reverseLights:
-    - {fileID: 355333774125742508}
-    - {fileID: 9072521646347441566}
-  carSounds:
-    IdleEngine: {fileID: 3523672705212998422}
-    LowEngine: {fileID: 16618392091807832}
-    HighEngine: {fileID: 6369481789649410654}
-    nitro: {fileID: 9177465667090963024}
-    switchGear: {fileID: 7070543535977060796}
-  carParticles:
-    brakeParticlePerfab: {fileID: 100000, guid: 7688b4d44a0c11a43b20da32baad8732, type: 3}
-    shiftParticle1: {fileID: 2332715343412661352}
-    shiftParticle2: {fileID: 6121511770083652663}
-  carSetting:
-    showNormalGizmos: 0
-    carSteer: {fileID: 4965017955594716967}
-    hitGround:
-    - tag: Street
-      grounded: 0
-      brakeSound: {fileID: 8300000, guid: 334cc9dcd313b2f48bda705e3eefc2df, type: 3}
-      groundSound: {fileID: 0}
-      brakeColor: {r: 0.6727941, g: 0.72763693, b: 0.75, a: 0.78431374}
-    - tag: Grass
-      grounded: 1
-      brakeSound: {fileID: 8300000, guid: 48557c3f3613c2e4babd9ef286d0b659, type: 3}
-      groundSound: {fileID: 8300000, guid: e74738166dc243747b9979b0cd3b6875, type: 3}
-      brakeColor: {r: 0.8088235, g: 0.6295862, b: 0.24383649, a: 0.78431374}
-    cameraSwitchView:
-    - {fileID: 45692871787733860}
-    - {fileID: 575681168655385577}
-    - {fileID: 7476043435342085879}
-    springs: 25000
-    dampers: 1500
-    carPower: 120
-    shiftPower: 150
-    brakePower: 12000
-    shiftCentre: {x: 0, y: -0.05, z: 0}
-    maxSteerAngle: 30
-    shiftDownRPM: 2000
-    shiftUpRPM: 4000
-    idleRPM: 700
-    stiffness: 3.69
-    automaticGear: 1
-    gears:
-    - -9
-    - 9
-    - 4
-    - 3
-    - 2
-    - 1
-    LimitBackwardSpeed: 60
-    LimitForwardSpeed: 220
-  brake: 0
-  curTorque: 100
-  powerShift: 100
-  shift: 0
-  speed: 0
-  currentGear: 0
-  NeutralGear: 1
-  motorRPM: 0
-  Backward: 0
-  accelFwd: 0
-  accelBack: 0
-  steerAmount: 0
 --- !u!114 &2024702038220231729
 MonoBehaviour:
   m_ObjectHideFlags: 0
