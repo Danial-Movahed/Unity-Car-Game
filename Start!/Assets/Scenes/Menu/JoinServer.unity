@@ -893,8 +893,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitBtn: {fileID: 6798669628980349873}
   backbtn: {fileID: 7653492470923634903}
-  Createbtn: {fileID: 1360036856}
-  Joinbtn: {fileID: 1433774252}
 --- !u!4 &3900691537273809916
 Transform:
   m_ObjectHideFlags: 0

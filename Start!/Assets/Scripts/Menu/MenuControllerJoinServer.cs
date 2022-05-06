@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuController6 : MonoBehaviour {
+public class MenuControllerJoinServer : MonoBehaviour {
 	public Button quitBtn;
     public Button backbtn;
     public Button Createbtn;
