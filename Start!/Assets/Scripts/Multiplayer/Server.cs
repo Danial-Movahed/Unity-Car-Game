@@ -65,4 +65,11 @@ public class Server : MonoBehaviour
     {
         server.Stop();
     }
+
+    public void sendData(string data)
+    {
+        NetDataWriter writer = new NetDataWriter();
+        writer.Put(data);
+        server.SendToAll(writer, DeliveryMethod.ReliableOrdered);
+    }
 }

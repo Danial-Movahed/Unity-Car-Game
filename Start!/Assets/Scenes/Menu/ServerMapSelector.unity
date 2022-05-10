@@ -1375,11 +1375,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8492774541632874722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e46f27cd7c898e1c88593688157ac81, type: 3}
+  m_Script: {fileID: 11500000, guid: ab35cc0869988c7ba86ce4011cffba24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSelector: 1
-  carSelector: 1
   quitBtn: {fileID: 2136910993472456873}
   backbtn: {fileID: 3010873923380603855}
   map1Btn: {fileID: 126134137}

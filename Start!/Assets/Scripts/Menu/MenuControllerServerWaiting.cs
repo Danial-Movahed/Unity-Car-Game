@@ -9,6 +9,7 @@ public class MenuControllerServerWaiting : MonoBehaviour {
     public Text text;
     private Server server;
     public GameObject StartBtn;
+    public Button startbtn;
     private string strHostName = "";
 	void Start() {
         StartBtn.SetActive(false);
@@ -20,6 +21,10 @@ public class MenuControllerServerWaiting : MonoBehaviour {
         backbtn.onClick.AddListener( () => {
             Debug.Log("back");
             SceneManager.LoadScene("5");
+        });
+        startbtn.onClick.AddListener( () => {
+            Debug.Log("start");
+            SceneManager.LoadScene("ServerMapSelector");
         });
         
         IPHostEntry ipEntry = Dns.GetHostEntry(Dns.GetHostName());

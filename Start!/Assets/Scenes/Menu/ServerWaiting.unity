@@ -601,7 +601,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 2117547760}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -835,6 +835,7 @@ MonoBehaviour:
   backbtn: {fileID: 7653492470923634903}
   text: {fileID: 791118803}
   StartBtn: {fileID: 1294152145}
+  startbtn: {fileID: 2117547759}
 --- !u!4 &3900691537273809916
 Transform:
   m_ObjectHideFlags: 0

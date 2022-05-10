@@ -19,6 +19,11 @@ public class Client : MonoBehaviour
         };
         client.Start();
         client.Connect(ip, port, "SomeConnectionKey");
+        listener.NetworkReceiveEvent += (fromPeer, dataReader, deliveryMethod) =>
+        {
+            string tmp = dataReader.GetString(400);
+            Debug.Log($"Received: {tmp}");
+        };
     }
 
     void LateUpdate()
