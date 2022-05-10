@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 public class MenuControllerJoinServer : MonoBehaviour {
 	public Button quitBtn;
     public Button backbtn;
-    public Button Createbtn;
     public Button Joinbtn;
+    public InputField ipInput;
+    public Client client;
 	void Start () {
+        client = GameObject.Find("Client").GetComponent<Client>();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();
@@ -16,13 +18,11 @@ public class MenuControllerJoinServer : MonoBehaviour {
             Debug.Log("back");
             SceneManager.LoadScene("5");
         });
-        Createbtn.onClick.AddListener( () => {
-            Debug.Log("create");
-            SceneManager.LoadScene("ServerWaiting");
-        });
         Joinbtn.onClick.AddListener( () => {
             Debug.Log("join");
-            SceneManager.LoadScene("JoinServer");
+            client.ip = ipInput.text;
+            client.connect();
+            SceneManager.LoadScene("ClientWaiting");
         });
 	}
 }

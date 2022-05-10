@@ -24,6 +24,8 @@ public class MenuControllerServerWaiting : MonoBehaviour {
         });
         startbtn.onClick.AddListener( () => {
             Debug.Log("start");
+            server.Key = "hmmm I wonder why can't you connect to server?!?";
+            server.sendData((server.connectedNow+1).ToString());
             SceneManager.LoadScene("ServerMapSelector");
         });
         

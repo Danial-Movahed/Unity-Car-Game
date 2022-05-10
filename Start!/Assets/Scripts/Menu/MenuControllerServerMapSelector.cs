@@ -25,11 +25,13 @@ public class MenuControllerServerMapSelector : MonoBehaviour {
             Debug.Log("map1");
             configScript.mapSelector = 1;
             server.sendData("map1");
+            SceneManager.LoadScene("ServerCarSelector");
         });
         map2Btn.onClick.AddListener( () => {
             Debug.Log("map2");
             configScript.mapSelector = 2;
             server.sendData("map2");
+            SceneManager.LoadScene("ServerCarSelector");
         });
 	}
 }
