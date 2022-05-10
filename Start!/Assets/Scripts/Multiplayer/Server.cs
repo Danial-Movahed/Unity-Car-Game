@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using LiteNetLib;
 using LiteNetLib.Utils;
-using LiteNetLib.Layers;
 using System.Globalization;
 
 public class Server : MonoBehaviour
@@ -12,9 +9,9 @@ public class Server : MonoBehaviour
     private NetManager server = new NetManager(listener);
     public int connectionLimit = 4;
     public int port = 3344;
-    private int fCount = 0;
-    private bool isSend = true;
-    public string selfCarName = "RallyCar";
+    public bool isSend = false;
+    public string selfCarName = "hmm";
+    public int connectedNow = 0;
     void Awake()
     {
         server.Start(port);
@@ -30,7 +27,21 @@ public class Server : MonoBehaviour
         listener.PeerConnectedEvent += peer =>
         {
             Debug.Log("We got connection: " + peer.EndPoint);
+            connectedNow++;
         };
+
+        listener.PeerDisconnectedEvent += (peer, dcInfo) =>
+        {
+            Debug.Log("Disconnected "+peer.EndPoint);
+            connectedNow--;
+        };
+    }
+    void Update()
+    {
+        server.PollEvents();
+    }
+    void setupUpdating()
+    {
         listener.NetworkReceiveEvent += (fromPeer, dataReader, deliveryMethod) =>
         {
             string[] tmp = dataReader.GetString(400).Split(' ');
@@ -43,10 +54,12 @@ public class Server : MonoBehaviour
     }
     void LateUpdate()
     {
-        server.PollEvents();
-        NetDataWriter writer = new NetDataWriter();
-        writer.Put(selfCarName+" "+GameObject.Find(selfCarName).transform.position.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.position.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.position.z.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().velocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().velocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().velocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().angularVelocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().angularVelocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().angularVelocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.localEulerAngles.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.localEulerAngles.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.localEulerAngles.z.ToString(CultureInfo.InvariantCulture.NumberFormat));
-        server.SendToAll(writer, DeliveryMethod.ReliableOrdered);
+        if(isSend)
+        {
+            NetDataWriter writer = new NetDataWriter();
+            writer.Put(selfCarName+" "+GameObject.Find(selfCarName).transform.position.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.position.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.position.z.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().velocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().velocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().velocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().angularVelocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().angularVelocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).GetComponent<Rigidbody>().angularVelocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.localEulerAngles.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.localEulerAngles.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfCarName).transform.localEulerAngles.z.ToString(CultureInfo.InvariantCulture.NumberFormat));
+            server.SendToAll(writer, DeliveryMethod.ReliableOrdered);
+        }
     }
     private void OnApplicationQuit()
     {
