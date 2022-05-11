@@ -29,8 +29,8 @@ public class MenuControllerClientCarSelector : MonoBehaviour {
         startBtn.onClick.AddListener( () => {
             Debug.Log("start");
             configScript.carSelector = carIndex;
-            clientScript.sendData((int.Parse(clientScript.selfName)-1).ToString()+ " " + carIndex);
-            clientScript.playerCars[int.Parse(clientScript.selfName)-1] = carIndex;
+            clientScript.sendData((int.Parse(clientScript.selfName)-1).ToString()+ " " + carIndex.ToString());
+            configScript.playerCars[(int.Parse(clientScript.selfName)-1)] = carIndex;
             SceneManager.LoadScene("ClientWaiting2");
         });
         nextCarBtn.onClick.AddListener( () => {

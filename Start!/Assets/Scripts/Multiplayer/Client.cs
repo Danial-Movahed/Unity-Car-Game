@@ -18,10 +18,8 @@ public class Client : MonoBehaviour
     public string selfName = "";
     public string mapName = "";
     public bool isStarted = false;
-    public bool isSend = false;
     private bool connected = false;
     private Config config;
-    public int[] playerCars = new int[4];
     private int totalConnected = 0;
     public void connect()
     {
@@ -40,7 +38,7 @@ public class Client : MonoBehaviour
                 GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[10], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[11], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[12], CultureInfo.InvariantCulture.NumberFormat));
                 dataReader.Recycle();
             }
-            else if (selfName == "")
+            if (selfName == "")
             {
                 selfName = dataReader.GetString(400);
                 if (selfName != "")
@@ -53,6 +51,7 @@ public class Client : MonoBehaviour
             else if (totalConnected == 0)
             {
                 totalConnected = int.Parse(dataReader.GetString(400));
+                Debug.Log(totalConnected);
                 dataReader.Recycle();
             }
             else if (mapName == "")
@@ -76,23 +75,69 @@ public class Client : MonoBehaviour
             }
             else
             {
-                int knownCarNum = 0;
-                for (int i = 0; i < totalConnected; i++)
+                string tmp2 = dataReader.GetString(400);
+                if (tmp2 == "start")
                 {
-                    if (playerCars[i] != 0)
+                    isStarted = true;
+                    if (mapName == "map1")
                     {
-                        knownCarNum++;
+                        config.mapSelector = 1;
                     }
-                }
-                if (knownCarNum == totalConnected)
-                {
-                    Debug.Log("Yay!");
+                    else if (mapName == "map2")
+                    {
+                        config.mapSelector = 2;
+                    }
+                    config.startGame();
+                    dataReader.Recycle();
                 }
                 else
                 {
-                    string[] tmp = dataReader.GetString(400).Split(' ');
-                    playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
-                    dataReader.Recycle();
+                    int knownCarNum = 0;
+                    for (int i = 0; i < totalConnected; i++)
+                    {
+                        if (config.playerCars[i] != 0)
+                        {
+                            knownCarNum++;
+                        }
+                    }
+                    if (knownCarNum == totalConnected)
+                    {
+                        Debug.Log("Yay!");
+                        isStarted = true;
+                        if (mapName == "map1")
+                        {
+                            config.mapSelector = 1;
+                        }
+                        else if (mapName == "map2")
+                        {
+                            config.mapSelector = 2;
+                        }
+                        config.startGame();
+                        sendData("start");
+                    }
+                    else
+                    {
+                        Debug.Log(tmp2);
+                        string[] tmp = tmp2.Split(' ');
+                        config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
+                        dataReader.Recycle();
+                        knownCarNum++;
+                        if (knownCarNum == totalConnected)
+                        {
+                            Debug.Log("Yay!");
+                            isStarted = true;
+                            if (mapName == "map1")
+                            {
+                                config.mapSelector = 1;
+                            }
+                            else if (mapName == "map2")
+                            {
+                                config.mapSelector = 2;
+                            }
+                            config.startGame();
+                            sendData("start");
+                        }
+                    }
                 }
             }
         };
@@ -103,7 +148,7 @@ public class Client : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (isSend)
+        if (isStarted)
         {
             NetDataWriter writer = new NetDataWriter();
             writer.Put(selfName + " " + GameObject.Find(selfName).transform.position.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.z.ToString(CultureInfo.InvariantCulture.NumberFormat));

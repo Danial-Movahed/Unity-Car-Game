@@ -35,4 +35,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/ServerWaiting.unity
     guid: 65684ea3e0c655b32ab3a4ef342f0ad1
+  - enabled: 1
+    path: Assets/Scenes/Menu/JoinServer.unity
+    guid: 9b14d72bac1fe12b3af1db5dbd0bcc1b
+  - enabled: 1
+    path: Assets/Scenes/Menu/ClientWaiting.unity
+    guid: f28f116d0bcae6886abafbc6eb02f6c4
+  - enabled: 1
+    path: Assets/Scenes/Menu/ServerCarSelector.unity
+    guid: 710d75786b94f42dba28eed040fc02c6
+  - enabled: 1
+    path: Assets/Scenes/Menu/ClientCarSelector.unity
+    guid: 26ecd9065735e651792b8f20d3c90386
+  - enabled: 1
+    path: Assets/Scenes/Menu/ServerWaiting2.unity
+    guid: 4a1bbcf9a1fe571f69d89fc0ba9d02d5
+  - enabled: 1
+    path: Assets/Scenes/Menu/ClientWaiting2.unity
+    guid: dea48e59add4ebc9fa57cde1f7523a84
+  - enabled: 1
+    path: Assets/Scenes/Menu/ServerMapSelector.unity
+    guid: 8770f8241999a6ca7b6980b0f65f9610
   m_configObjects: {}

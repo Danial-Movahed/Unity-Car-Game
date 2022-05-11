@@ -54,7 +54,7 @@ public class VehicleCamera : MonoBehaviour
     }
 
 
-    
+
 
 
     ////////////////////////////////////////////// TouchMode (Control) ////////////////////////////////////////////////////////////////////
@@ -119,7 +119,7 @@ public class VehicleCamera : MonoBehaviour
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    
+
 
     public void RestCar()
     {
@@ -207,17 +207,23 @@ public class VehicleCamera : MonoBehaviour
 
     private Config configScript;
     private GameObject carLoaded;
-
     void Start()
     {
-        configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
-        if(configScript.mapSelector == 2)
-            carLoaded = Instantiate(configScript.cars2[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
+        if (GameObject.Find("Client") || GameObject.Find("Server"))
+        {
+            Debug.Log("Client or Server is existent");
+            
+        }
         else
-            carLoaded = Instantiate(configScript.cars1[configScript.carSelector - 1], new Vector3(0, 0, 0), Quaternion.identity);
-        GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
-        carLoaded.GetComponent<ShowLap>().lapText = GameObject.Find("lapCount").GetComponent<Text>();
-       
+        {
+            configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
+            if (configScript.mapSelector == 2)
+                carLoaded = Instantiate(configScript.cars2[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
+            else
+                carLoaded = Instantiate(configScript.cars1[configScript.carSelector - 1], new Vector3(0, 0, 0), Quaternion.identity);
+            GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
+            carLoaded.GetComponent<ShowLap>().lapText = GameObject.Find("lapCount").GetComponent<Text>();
+        }
         carScript = (VehicleControl)target.GetComponent<VehicleControl>();
 
         myRigidbody = target.GetComponent<Rigidbody>();
@@ -251,8 +257,8 @@ public class VehicleCamera : MonoBehaviour
         }
 
 
-        if (restTime!=0.0f)
-        restTime=Mathf.MoveTowards(restTime ,0.0f,Time.deltaTime);
+        if (restTime != 0.0f)
+            restTime = Mathf.MoveTowards(restTime, 0.0f, Time.deltaTime);
 
 
 
@@ -282,7 +288,7 @@ public class VehicleCamera : MonoBehaviour
             target.eulerAngles.y, ref yVelocity, smooth);
 
             // Look at the target
-            transform.eulerAngles = new Vector3(xAngle, yAngle,0.0f);
+            transform.eulerAngles = new Vector3(xAngle, yAngle, 0.0f);
 
             var direction = transform.rotation * -Vector3.forward;
             var targetDistance = AdjustLineOfSight(target.position + new Vector3(0, height, 0), direction);

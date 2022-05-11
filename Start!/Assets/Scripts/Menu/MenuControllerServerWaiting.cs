@@ -25,7 +25,7 @@ public class MenuControllerServerWaiting : MonoBehaviour {
         startbtn.onClick.AddListener( () => {
             Debug.Log("start");
             server.Key = "hmmm I wonder why can't you connect to server?!?";
-            server.sendData((server.connectedNow+1).ToString());
+            server.sendData((server.connectedNow).ToString());
             SceneManager.LoadScene("ServerMapSelector");
         });
         
@@ -40,7 +40,7 @@ public class MenuControllerServerWaiting : MonoBehaviour {
 	}
     void Update()
     {
-        if(server.connectedNow > 0)
+        if(server.connectedNow > 1)
         {
             StartBtn.SetActive(true);
             text.text = server.connectedNow+" Players joined...\n Your ip is: " + strHostName;

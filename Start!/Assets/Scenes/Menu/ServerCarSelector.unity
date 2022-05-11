@@ -1344,6 +1344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5072242707460985546}
+  - component: {fileID: 5072242707460985549}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1351,6 +1352,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5072242707460985549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072242707460985548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ada10e807a01bad18868913325a69bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quitBtn: {fileID: 3323526330544861831}
+  backbtn: {fileID: 1905191199406510561}
+  startBtn: {fileID: 1138749891}
+  nextCarBtn: {fileID: 1812311168}
+  prevCarBtn: {fileID: 2116954567}
+  carIndex: 0
+  carImage: {fileID: 1098095138}
+  carImageThingy: {fileID: 546498198}
 --- !u!114 &5072242707628483034
 MonoBehaviour:
   m_ObjectHideFlags: 0

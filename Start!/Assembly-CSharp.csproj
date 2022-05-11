@@ -77,7 +77,6 @@
      <Compile Include="Assets/Scripts/Menu/MenuControllerClientCarSelector.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerServerWaiting2.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerClientWaiting.cs" />
-     <Compile Include="Assets/Scripts/Multiplayer/tempCodeRunnerFile.cs" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Documentation/Readme.txt" />
      <None Include="Assets/Resources/Car/RCK 2.3/Shaders/ReflectionBlurFresnel.shader" />
      <None Include="Assets/Map1 Assets/generic-f1-1990-race-car/Read - VFXDownload.txt" />

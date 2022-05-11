@@ -9,14 +9,15 @@ public class Server : MonoBehaviour
     private NetManager server = new NetManager(listener);
     public int connectionLimit = 3;
     public int port = 3344;
-    public bool isSend = false;
-    public string selfName = "";
-    public int connectedNow = 0;
+    public string selfName = "1";
+    public int connectedNow = 1;
     public bool isStarted = false;
     public string Key = "SomeConnectionKey";
-    public int[] playerCars = new int[4];
+    private Config config;
     void Awake()
     {
+        config = GameObject.Find("ConfigStart").GetComponent<Config>();
+        connectedNow = 1;
         server.Start(port);
         Debug.Log("started server");
         listener.ConnectionRequestEvent += request =>
@@ -31,18 +32,19 @@ public class Server : MonoBehaviour
             Debug.Log("We got connection: " + peer.EndPoint);
             connectedNow++;
             NetDataWriter writer = new NetDataWriter();
-            writer.Put(connectedNow+1);
+            Debug.Log(connectedNow);
+            writer.Put(connectedNow.ToString());
             peer.Send(writer, DeliveryMethod.ReliableOrdered);
         };
 
         listener.PeerDisconnectedEvent += (peer, dcInfo) =>
         {
-            Debug.Log("Disconnected "+peer.EndPoint);
+            Debug.Log("Disconnected " + peer.EndPoint);
             connectedNow--;
         };
         listener.NetworkReceiveEvent += (fromPeer, dataReader, deliveryMethod) =>
         {
-            if(isStarted)
+            if (isStarted)
             {
                 string[] tmp = dataReader.GetString(400).Split(' ');
                 GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
@@ -53,23 +55,45 @@ public class Server : MonoBehaviour
             }
             else
             {
-                int knownCarNum = 0;
-                for (int i = 0; i < connectedNow+1; i++)
+                string tmp2 = dataReader.GetString(400);
+                if (tmp2 == "start")
                 {
-                    if (playerCars[i] != 0)
-                    {
-                        knownCarNum++;
-                    }
-                }
-                if (knownCarNum == connectedNow+1)
-                {
-                    Debug.Log("Yay!");
+                    isStarted = true;
+                    config.startGame();
+                    dataReader.Recycle();
                 }
                 else
                 {
-                    string[] tmp = dataReader.GetString(400).Split(' ');
-                    playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
-                    dataReader.Recycle();
+                    int knownCarNum = 0;
+                    for (int i = 0; i < connectedNow; i++)
+                    {
+                        if (config.playerCars[i] != 0)
+                        {
+                            knownCarNum++;
+                        }
+                    }
+                    if (knownCarNum == connectedNow)
+                    {
+                        Debug.Log("Yay!");
+                        isStarted = true;
+                        config.startGame();
+                        sendData("start");
+                    }
+                    else
+                    {
+                        Debug.Log(tmp2);
+                        string[] tmp = tmp2.Split(' ');
+                        config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
+                        dataReader.Recycle();
+                        knownCarNum++;
+                        if (knownCarNum == connectedNow)
+                        {
+                            Debug.Log("Yay!");
+                            isStarted = true;
+                            config.startGame();
+                            sendData("start");
+                        }
+                    }
                 }
             }
         };
@@ -80,10 +104,10 @@ public class Server : MonoBehaviour
     }
     void LateUpdate()
     {
-        if(isSend)
+        if (isStarted)
         {
             NetDataWriter writer = new NetDataWriter();
-            writer.Put(selfName+" "+GameObject.Find(selfName).transform.position.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).transform.position.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).transform.position.z.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).transform.localEulerAngles.x.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).transform.localEulerAngles.y.ToString(CultureInfo.InvariantCulture.NumberFormat)+" "+GameObject.Find(selfName).transform.localEulerAngles.z.ToString(CultureInfo.InvariantCulture.NumberFormat));
+            writer.Put(selfName + " " + GameObject.Find(selfName).transform.position.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.z.ToString(CultureInfo.InvariantCulture.NumberFormat));
             server.SendToAll(writer, DeliveryMethod.ReliableOrdered);
         }
     }

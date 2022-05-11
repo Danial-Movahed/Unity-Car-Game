@@ -30,7 +30,7 @@ public class MenuControllerServerCarSelector : MonoBehaviour {
             Debug.Log("start");
             configScript.carSelector = carIndex;
             serverScript.sendData("0 " + carIndex);
-            serverScript.playerCars[0] = carIndex;
+            configScript.playerCars[0] = carIndex;
             SceneManager.LoadScene("ServerWaiting2");
         });
         nextCarBtn.onClick.AddListener( () => {

@@ -7,6 +7,7 @@ public class Config : MonoBehaviour
     public int carSelector = 1;
     public GameObject[] cars1;
     public GameObject[] cars2;
+    public int[] playerCars = new int[4];
     public void startGame()
     {
         Debug.Log(mapSelector);
