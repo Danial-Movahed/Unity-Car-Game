@@ -85,7 +85,7 @@ MonoBehaviour:
       backRight: {fileID: 957201684046848126}
       backLeft: {fileID: 4047734863470111030}
     setting:
-      Radius: 0.3
+      Radius: 0.9
       Weight: 500
       Distance: 0.2
   carLights:

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -298,7 +298,11 @@ MonoBehaviour:
   mapSelector: 1
   carSelector: 1
   cars1:
-  - {fileID: 0}
+  - {fileID: 4342467511688171329, guid: 5ac6e51c992a0c7478c554cdfaef08dd, type: 3}
+  - {fileID: 5191346056404199743, guid: 7edafdd45e66b534dbdce7125522e928, type: 3}
+  - {fileID: 101209189993834993, guid: 0dde0db41f2e46847a2cf590912a6f6f, type: 3}
+  - {fileID: 5113000560207926579, guid: 27970a14db941c7418c0861adf49f873, type: 3}
+  - {fileID: 6530462776660403369, guid: 12528359ac928844c9af0b41383a4543, type: 3}
   cars2:
   - {fileID: 7153617762889773819, guid: 69c46884aa2939117a987a1183426431, type: 3}
   - {fileID: 576011273009767253, guid: e87d5bdf4e76f9bd2a0f9b4823f087be, type: 3}
