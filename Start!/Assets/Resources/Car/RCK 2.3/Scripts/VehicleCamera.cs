@@ -209,10 +209,27 @@ public class VehicleCamera : MonoBehaviour
     private GameObject carLoaded;
     void Start()
     {
+        configScript = GameObject.Find("Config").GetComponent<Config>();
         if (GameObject.Find("Client") || GameObject.Find("Server"))
         {
             Debug.Log("Client or Server is existent");
-            
+            for (int i = 0; i < 4; i++)
+            {
+                if (configScript.playerCars[i] > 0)
+                {
+                    if (configScript.mapSelector == 2)
+                    {
+                        if(i != int.Parse(configScript.selfName))
+                            carLoaded = Instantiate(configScript.cars2bots[configScript.playerCars[i]], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
+                        else
+                            carLoaded = Instantiate(configScript.cars2[configScript.playerCars[i]], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
+                    }
+                    else
+                    {
+                        carLoaded = Instantiate(configScript.cars1[configScript.carSelector - 1], new Vector3(0, 0, 0), Quaternion.identity);
+                    }
+                }
+            }
         }
         else
         {

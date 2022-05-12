@@ -305,6 +305,15 @@ MonoBehaviour:
   - {fileID: 1426790804926192305, guid: 3d7650e40c39a0577b81b4001a286c1c, type: 3}
   - {fileID: 7575765316382502298, guid: c97ee4af1a379a7498fe5c6f2504c691, type: 3}
   - {fileID: 8718579520838718854, guid: 27e0f084a6af2bddea9f00ee85338639, type: 3}
+  cars2bots:
+  - {fileID: 7153617762889773819, guid: 620cd2d352cca2e4f99c5aabe6dae953, type: 3}
+  - {fileID: 576011273009767253, guid: cc672f4beccfbb144afca22139cb606a, type: 3}
+  - {fileID: 1426790804926192305, guid: 085238d8133be164f8f8f9d64916d1a1, type: 3}
+  - {fileID: 7575765316382502298, guid: ca029154ba6a8b14bb30ec8f99c008e6, type: 3}
+  - {fileID: 8718579520838718854, guid: b2e062395ff776d4b87b006f6ef6e646, type: 3}
+  cars1bots: []
+  playerCars: 00000000000000000000000000000000
+  selfName: 
 --- !u!4 &419600870
 Transform:
   m_ObjectHideFlags: 0

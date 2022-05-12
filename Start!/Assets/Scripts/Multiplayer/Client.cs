@@ -45,6 +45,7 @@ public class Client : MonoBehaviour
                 {
                     GameObject.Find("StatusText").GetComponent<Text>().text = "We are Player" + selfName;
                     Debug.Log(selfName);
+                    config.selfName = selfName;
                 }
                 dataReader.Recycle();
             }

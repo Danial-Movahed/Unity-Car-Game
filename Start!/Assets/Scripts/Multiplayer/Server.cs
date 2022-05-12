@@ -18,6 +18,7 @@ public class Server : MonoBehaviour
     {
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
         connectedNow = 1;
+        config.selfName = selfName;
         server.Start(port);
         Debug.Log("started server");
         listener.ConnectionRequestEvent += request =>
