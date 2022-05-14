@@ -215,14 +215,23 @@ public class VehicleCamera : MonoBehaviour
             Debug.Log("Client or Server is existent");
             for (int i = 0; i < 4; i++)
             {
+                Debug.Log("car #" + i + " is " + configScript.playerCars[i]);
                 if (configScript.playerCars[i] > 0)
                 {
                     if (configScript.mapSelector == 2)
                     {
-                        if(i != int.Parse(configScript.selfName))
-                            carLoaded = Instantiate(configScript.cars2bots[configScript.playerCars[i]], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
+                        if(i != int.Parse(configScript.selfName)-1)
+                        {
+                            carLoaded = Instantiate(configScript.cars2bots[configScript.playerCars[i] - 1], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
+                            carLoaded.name = (i+1).ToString();
+                        }
                         else
-                            carLoaded = Instantiate(configScript.cars2[configScript.playerCars[i]], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
+                        {
+                            carLoaded = Instantiate(configScript.cars2[configScript.playerCars[i] - 1], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
+                            carLoaded.name = (i+1).ToString();
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
+                            carLoaded.GetComponent<ShowLap>().lapText = GameObject.Find("lapCount").GetComponent<Text>();
+                        }
                     }
                     else
                     {
