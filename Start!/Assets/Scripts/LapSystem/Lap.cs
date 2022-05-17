@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lap : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Lap : MonoBehaviour
             if(lap < 3)
             {
                 lap++;
+                GameObject.Find("LapCount").GetComponent<Text>().text = lap.ToString();
                 Debug.Log(lap);
             }
             else

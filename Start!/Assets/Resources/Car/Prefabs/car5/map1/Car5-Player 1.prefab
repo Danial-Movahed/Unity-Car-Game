@@ -15111,7 +15111,6 @@ GameObject:
   - component: {fileID: 1664132517276061872}
   - component: {fileID: 4613880481190123305}
   - component: {fileID: 1023985125330223925}
-  - component: {fileID: 4978662918538618359}
   m_Layer: 0
   m_Name: Car5-Player 1
   m_TagString: Untagged
@@ -15301,20 +15300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lap: 0
---- !u!114 &4978662918538618359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6530462776660403369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c66c406469d0fcf3f943706c0afb703b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lap: 0
-  lapText: {fileID: 0}
 --- !u!1 &6614057169150097511
 GameObject:
   m_ObjectHideFlags: 0

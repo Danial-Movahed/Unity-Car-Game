@@ -6283,10 +6283,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5602150591039098761}
   - component: {fileID: 240053642341983255}
-  - component: {fileID: 719580477006128947}
   - component: {fileID: 1783691305448935038}
   - component: {fileID: 3232910871444330837}
-  - component: {fileID: 6058805895199028427}
   m_Layer: 0
   m_Name: Car4-Bot
   m_TagString: Untagged
@@ -6350,19 +6348,6 @@ MonoBehaviour:
   - {fileID: 7998487856364238035}
   - {fileID: 3022944557470635058}
   crashSound: {fileID: 1156008249013917698}
---- !u!114 &719580477006128947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5113000560207926579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1acef20f85bbc2e1b51df1cd7abd983, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lap: 0
 --- !u!114 &1783691305448935038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6391,20 +6376,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6058805895199028427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5113000560207926579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c66c406469d0fcf3f943706c0afb703b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lap: 0
-  lapText: {fileID: 0}
 --- !u!1 &5156882461973344014
 GameObject:
   m_ObjectHideFlags: 0
