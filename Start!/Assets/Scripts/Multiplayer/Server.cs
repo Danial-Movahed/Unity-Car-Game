@@ -48,9 +48,9 @@ public class Server : MonoBehaviour
             string data = dataReader.GetString(400);
             NetDataWriter writer = new NetDataWriter();
             writer.Put(data);
-            server.SendToAll(writer, DeliveryMethod.ReliableOrdered, fromPeer);
             if (isStarted)
             {
+                server.SendToAll(writer, DeliveryMethod.Sequenced, fromPeer);
                 string[] tmp = data.Split(' ');
                 GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
                 GameObject.Find(tmp[0]).GetComponent<Rigidbody>().velocity = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
@@ -60,6 +60,7 @@ public class Server : MonoBehaviour
             }
             else
             {
+                server.SendToAll(writer, DeliveryMethod.ReliableOrdered, fromPeer);
                 if (data == "start")
                 {
                     isStarted = true;
@@ -112,7 +113,7 @@ public class Server : MonoBehaviour
         {
             NetDataWriter writer = new NetDataWriter();
             writer.Put(selfName + " " + GameObject.Find(selfName).transform.position.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().velocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.z.ToString(CultureInfo.InvariantCulture.NumberFormat));
-            server.SendToAll(writer, DeliveryMethod.ReliableOrdered);
+            server.SendToAll(writer, DeliveryMethod.Sequenced);
         }
     }
     private void OnApplicationQuit()
