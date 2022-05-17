@@ -45,9 +45,13 @@ public class Server : MonoBehaviour
         };
         listener.NetworkReceiveEvent += (fromPeer, dataReader, deliveryMethod) =>
         {
+            string data = dataReader.GetString(400);
+            NetDataWriter writer = new NetDataWriter();
+            writer.Put(dataReader.GetString(400));
+            server.SendToAll(writer, DeliveryMethod.ReliableOrdered, fromPeer);
             if (isStarted)
             {
-                string[] tmp = dataReader.GetString(400).Split(' ');
+                string[] tmp = data.Split(' ');
                 GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
                 GameObject.Find(tmp[0]).GetComponent<Rigidbody>().velocity = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
                 GameObject.Find(tmp[0]).GetComponent<Rigidbody>().angularVelocity = new Vector3(float.Parse(tmp[7], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[8], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[9], CultureInfo.InvariantCulture.NumberFormat));
@@ -56,8 +60,7 @@ public class Server : MonoBehaviour
             }
             else
             {
-                string tmp2 = dataReader.GetString(400);
-                if (tmp2 == "start")
+                if (data == "start")
                 {
                     isStarted = true;
                     config.startGame();
@@ -82,8 +85,8 @@ public class Server : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log(tmp2);
-                        string[] tmp = tmp2.Split(' ');
+                        Debug.Log(data);
+                        string[] tmp = data.Split(' ');
                         config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
                         dataReader.Recycle();
                         knownCarNum++;
