@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class Save : MonoBehaviour
+public class Save : Lap
 {
     public GameObject car;
     private FileStream fs;
     private StreamWriter sw;
+    private Config config;
     void Start()
     {
+        config = GameObject.Find("ConfigStart").GetComponent<Config>();
         fs = new FileStream(Application.dataPath + "/" + "tmp.ghost", FileMode.OpenOrCreate, FileAccess.Write);
         sw = new StreamWriter(fs);
-        InvokeRepeating("copy", 0, 0.05f);
+        InvokeRepeating("copy", 0, 0.01f);
     }
     void copy()
     {
@@ -37,7 +39,7 @@ public class Save : MonoBehaviour
     void CopyFile()
     {
         string filePath = Application.dataPath + "/" + "tmp.ghost";
-        string filePath2 = Application.dataPath + "/" + "saved.ghost";
+        string filePath2 = Application.dataPath + "/" + "saved" + config.mapSelector.ToString() + config.carSelector.ToString() + ".ghost";
 
         // check if file exists
         if (!File.Exists(filePath))
@@ -51,12 +53,20 @@ public class Save : MonoBehaviour
             File.Copy(filePath, filePath2);
         }
     }
-    void OnDisable()
+    void LateUpdate()
+    {
+        if(lap == 3)
+        {
+            fixAndCopyFiles();
+        }
+    }
+    void fixAndCopyFiles()
     {
         sw.Flush();
         sw.Close();
         fs.Close();
-        DeleteFile("saved.ghost");
+        CancelInvoke();
+        DeleteFile("saved" + config.mapSelector.ToString() + config.carSelector.ToString() + ".ghost");
         CopyFile();
         DeleteFile("tmp.ghost");
     }
