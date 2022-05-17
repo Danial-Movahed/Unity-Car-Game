@@ -13,7 +13,7 @@ public class Lap : MonoBehaviour
             if(lap < 3)
             {
                 lap++;
-                GameObject.Find("LapCount").GetComponent<Text>().text = lap.ToString();
+                GameObject.Find("lapCount").GetComponent<Text>().text = lap.ToString();
                 Debug.Log(lap);
             }
             else
