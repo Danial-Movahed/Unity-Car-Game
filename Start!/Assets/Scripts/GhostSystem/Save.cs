@@ -5,7 +5,6 @@ using System.IO;
 
 public class Save : Lap
 {
-    public GameObject car;
     private FileStream fs;
     private StreamWriter sw;
     private Config config;
@@ -14,11 +13,14 @@ public class Save : Lap
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
         fs = new FileStream(Application.dataPath + "/" + "tmp.ghost", FileMode.OpenOrCreate, FileAccess.Write);
         sw = new StreamWriter(fs);
-        InvokeRepeating("copy", 0, 0.01f);
+        // InvokeRepeating("copy", 0, 0.03f);
+    }
+    void FixedUpdate() {
+        copy();
     }
     void copy()
     {
-        sw.WriteLine(car.transform.position.x + "/" + car.transform.position.y + "/" + car.transform.position.z + "/" + car.transform.rotation.x + "/" + car.transform.rotation.y + "/" + car.transform.rotation.z + "/" + car.transform.rotation.w);
+        sw.WriteLine(gameObject.transform.position.x + "/" + gameObject.transform.position.y + "/" + gameObject.transform.position.z + "/" + gameObject.transform.rotation.x + "/" + gameObject.transform.rotation.y + "/" + gameObject.transform.rotation.z + "/" + gameObject.transform.rotation.w);
     }
     void DeleteFile(string input)
     {
@@ -58,6 +60,7 @@ public class Save : Lap
         if(lap == 3)
         {
             fixAndCopyFiles();
+            lap=-1;
         }
     }
     void fixAndCopyFiles()

@@ -207,6 +207,7 @@ public class VehicleCamera : MonoBehaviour
 
     private Config configScript;
     private GameObject carLoaded;
+    private GameObject carGhost;
     void Start()
     {
         configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
@@ -220,15 +221,15 @@ public class VehicleCamera : MonoBehaviour
                 {
                     if (configScript.mapSelector == 2)
                     {
-                        if(i != int.Parse(configScript.selfName)-1)
+                        if (i != int.Parse(configScript.selfName) - 1)
                         {
                             carLoaded = Instantiate(configScript.cars2bots[configScript.playerCars[i] - 1], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
-                            carLoaded.name = (i+1).ToString();
+                            carLoaded.name = (i + 1).ToString();
                         }
                         else
                         {
                             carLoaded = Instantiate(configScript.cars2[configScript.playerCars[i] - 1], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
-                            carLoaded.name = (i+1).ToString();
+                            carLoaded.name = (i + 1).ToString();
                             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
                             carLoaded.GetComponent<ShowLap>().lapText = GameObject.Find("lapCount").GetComponent<Text>();
                         }
@@ -242,13 +243,21 @@ public class VehicleCamera : MonoBehaviour
         }
         else
         {
-            configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
             if (configScript.mapSelector == 2)
                 carLoaded = Instantiate(configScript.cars2[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
             else
                 carLoaded = Instantiate(configScript.cars1[configScript.carSelector - 1], new Vector3(537.3964f, 1.5f, 224.3f), Quaternion.Euler(0, 90, 0));
             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
             carLoaded.GetComponent<ShowLap>().lapText = GameObject.Find("lapCount").GetComponent<Text>();
+        }
+        if (configScript.modeSelector == 1)
+        {
+            if (configScript.mapSelector == 2)
+                carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
+            else
+                carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(537.3964f, 1.5f, 224.3f), Quaternion.Euler(0, 90, 0));
+            
+            carLoaded.AddComponent<Save>();
         }
         carScript = (VehicleControl)target.GetComponent<VehicleControl>();
 

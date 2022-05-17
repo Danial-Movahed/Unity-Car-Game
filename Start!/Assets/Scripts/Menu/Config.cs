@@ -18,35 +18,17 @@ public class Config : MonoBehaviour
     {
         Debug.Log(mapSelector);
         Debug.Log(carSelector);
-        if (modeSelector == 0)
+        if (mapSelector == 1)
         {
-            if (mapSelector == 1)
-            {
-                SceneManager.LoadScene("Map1");
-                Destroy(GameObject.Find("Video"));
-                Destroy(GameObject.Find("VideoMainCamera"));
-            }
-            else
-            {
-                SceneManager.LoadScene("Map2");
-                Destroy(GameObject.Find("Video"));
-                Destroy(GameObject.Find("VideoMainCamera"));
-            }
+            SceneManager.LoadScene("Map1");
+            Destroy(GameObject.Find("Video"));
+            Destroy(GameObject.Find("VideoMainCamera"));
         }
         else
         {
-            if (mapSelector == 1)
-            {
-                SceneManager.LoadScene("Map1Ghost");
-                Destroy(GameObject.Find("Video"));
-                Destroy(GameObject.Find("VideoMainCamera"));
-            }
-            else
-            {
-                SceneManager.LoadScene("Map2Ghost");
-                Destroy(GameObject.Find("Video"));
-                Destroy(GameObject.Find("VideoMainCamera"));
-            }
+            SceneManager.LoadScene("Map2");
+            Destroy(GameObject.Find("Video"));
+            Destroy(GameObject.Find("VideoMainCamera"));
         }
     }
 }
