@@ -6282,7 +6282,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5602150591039098761}
-  - component: {fileID: 240053642341983255}
   - component: {fileID: 1783691305448935038}
   - component: {fileID: 3232910871444330837}
   m_Layer: 0
@@ -6316,38 +6315,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &240053642341983255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5113000560207926579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa078d2d0ce344ab4de361da32ebfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMoveDelta: 1
-  maxCollisionStrength: 50
-  YforceDamp: 0.1
-  demolutionRange: 0.5
-  impactDirManipulator: 0
-  optionalMeshList:
-  - {fileID: 4673064425137016437}
-  - {fileID: 8240678123058469131}
-  - {fileID: 6370350262975639104}
-  - {fileID: 2140713188395893851}
-  - {fileID: 6496657550005607324}
-  - {fileID: 8155168853097674421}
-  - {fileID: 2791957996558955763}
-  - {fileID: 7200022282491256920}
-  - {fileID: 2911255378488973543}
-  - {fileID: 900078716740429518}
-  - {fileID: 4153495345123034966}
-  - {fileID: 7998487856364238035}
-  - {fileID: 3022944557470635058}
-  crashSound: {fileID: 1156008249013917698}
 --- !u!114 &1783691305448935038
 MonoBehaviour:
   m_ObjectHideFlags: 0

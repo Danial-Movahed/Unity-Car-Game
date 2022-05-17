@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 733032944392090443}
   - component: {fileID: 4407422789759360763}
   - component: {fileID: 6080418248728440463}
-  - component: {fileID: 5846595337961108730}
   - component: {fileID: 5210852224947496551}
   m_Layer: 0
   m_Name: Car3-Player
@@ -154,28 +153,6 @@ MonoBehaviour:
   accelFwd: 0
   accelBack: 0
   steerAmount: 0
---- !u!114 &5846595337961108730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101209189993834993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa078d2d0ce344ab4de361da32ebfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMoveDelta: 1
-  maxCollisionStrength: 50
-  YforceDamp: 0.1
-  demolutionRange: 0.5
-  impactDirManipulator: 0
-  optionalMeshList:
-  - {fileID: 9185554611845701945}
-  - {fileID: 5398830362614468250}
-  - {fileID: 595874424349657683}
-  crashSound: {fileID: 4478471050781974552}
 --- !u!114 &5210852224947496551
 MonoBehaviour:
   m_ObjectHideFlags: 0

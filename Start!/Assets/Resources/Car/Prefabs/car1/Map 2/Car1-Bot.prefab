@@ -14073,7 +14073,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7497668577093773377}
-  - component: {fileID: 4835851713757931915}
   - component: {fileID: 7958560096933228062}
   - component: {fileID: 3025935587833109235}
   m_Layer: 0
@@ -14108,30 +14107,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4835851713757931915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7153617762889773819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa078d2d0ce344ab4de361da32ebfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMoveDelta: 1
-  maxCollisionStrength: 50
-  YforceDamp: 0.1
-  demolutionRange: 0.5
-  impactDirManipulator: 0
-  optionalMeshList:
-  - {fileID: 1307636239765751567}
-  - {fileID: 2872882954989308914}
-  - {fileID: 7266198104150361271}
-  - {fileID: 4782230382590169613}
-  - {fileID: 6163070699669618340}
-  crashSound: {fileID: 92472445954503338}
 --- !u!54 &7958560096933228062
 Rigidbody:
   m_ObjectHideFlags: 0

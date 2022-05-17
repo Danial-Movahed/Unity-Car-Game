@@ -91,7 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 915839996675389935}
   - component: {fileID: 2033555870750631610}
-  - component: {fileID: 9012961526858920847}
   - component: {fileID: 5013264179801076265}
   - component: {fileID: 752870702316994859}
   - component: {fileID: 1819858430011994504}
@@ -220,31 +219,6 @@ MonoBehaviour:
   accelFwd: 0
   accelBack: 0
   steerAmount: 0
---- !u!114 &9012961526858920847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576011273009767253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa078d2d0ce344ab4de361da32ebfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMoveDelta: 1
-  maxCollisionStrength: 50
-  YforceDamp: 0.1
-  demolutionRange: 0.5
-  impactDirManipulator: 0
-  optionalMeshList:
-  - {fileID: 770838386441774414}
-  - {fileID: 2692115827746026607}
-  - {fileID: 938647215462675277}
-  - {fileID: 3901323932771628983}
-  - {fileID: 2097882379709872}
-  - {fileID: 1672495910840179735}
-  crashSound: {fileID: 7352939625550353994}
 --- !u!114 &5013264179801076265
 MonoBehaviour:
   m_ObjectHideFlags: 0

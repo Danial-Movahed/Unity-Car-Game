@@ -16943,7 +16943,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8337655278508314428}
   - component: {fileID: 522690630679587028}
-  - component: {fileID: 3838877912107180447}
   - component: {fileID: 7086848802285774342}
   m_Layer: 0
   m_Name: Car5-Bot
@@ -16993,28 +16992,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3838877912107180447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8718579520838718854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa078d2d0ce344ab4de361da32ebfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMoveDelta: 1
-  maxCollisionStrength: 50
-  YforceDamp: 0.1
-  demolutionRange: 0.5
-  impactDirManipulator: 0
-  optionalMeshList:
-  - {fileID: 5859143390004410594}
-  - {fileID: 5089033065197201499}
-  - {fileID: 8078218355376773761}
-  crashSound: {fileID: 5720278120133021193}
 --- !u!114 &7086848802285774342
 MonoBehaviour:
   m_ObjectHideFlags: 0
