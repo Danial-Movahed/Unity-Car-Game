@@ -77,33 +77,10 @@ public class Client : MonoBehaviour
             else
             {
                 string tmp2 = dataReader.GetString(400);
-                if (tmp2 == "start")
+                if (tmp2 != null)
                 {
-                    isStarted = true;
-                    if (mapName == "map1")
+                    if (tmp2 == "start")
                     {
-                        config.mapSelector = 1;
-                    }
-                    else if (mapName == "map2")
-                    {
-                        config.mapSelector = 2;
-                    }
-                    config.startGame();
-                    dataReader.Recycle();
-                }
-                else
-                {
-                    int knownCarNum = 0;
-                    for (int i = 0; i < totalConnected; i++)
-                    {
-                        if (config.playerCars[i] != 0)
-                        {
-                            knownCarNum++;
-                        }
-                    }
-                    if (knownCarNum == totalConnected)
-                    {
-                        Debug.Log("Yay!");
                         isStarted = true;
                         if (mapName == "map1")
                         {
@@ -114,15 +91,18 @@ public class Client : MonoBehaviour
                             config.mapSelector = 2;
                         }
                         config.startGame();
-                        sendData("start");
+                        dataReader.Recycle();
                     }
                     else
                     {
-                        Debug.Log(tmp2);
-                        string[] tmp = tmp2.Split(' ');
-                        config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
-                        dataReader.Recycle();
-                        knownCarNum++;
+                        int knownCarNum = 0;
+                        for (int i = 0; i < totalConnected; i++)
+                        {
+                            if (config.playerCars[i] != 0)
+                            {
+                                knownCarNum++;
+                            }
+                        }
                         if (knownCarNum == totalConnected)
                         {
                             Debug.Log("Yay!");
@@ -137,6 +117,29 @@ public class Client : MonoBehaviour
                             }
                             config.startGame();
                             sendData("start");
+                        }
+                        else
+                        {
+                            Debug.Log(tmp2);
+                            string[] tmp = tmp2.Split(' ');
+                            config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
+                            dataReader.Recycle();
+                            knownCarNum++;
+                            if (knownCarNum == totalConnected)
+                            {
+                                Debug.Log("Yay!");
+                                isStarted = true;
+                                if (mapName == "map1")
+                                {
+                                    config.mapSelector = 1;
+                                }
+                                else if (mapName == "map2")
+                                {
+                                    config.mapSelector = 2;
+                                }
+                                config.startGame();
+                                sendData("start");
+                            }
                         }
                     }
                 }
