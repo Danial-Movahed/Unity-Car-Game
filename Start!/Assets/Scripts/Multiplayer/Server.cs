@@ -51,7 +51,6 @@ public class Server : MonoBehaviour
             {
                 server.SendToAll(writer, DeliveryMethod.Sequenced, fromPeer);
                 string[] tmp = data.Split(' ');
-                Debug.Log(tmp);
                 GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
                 GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
                 dataReader.Recycle();
