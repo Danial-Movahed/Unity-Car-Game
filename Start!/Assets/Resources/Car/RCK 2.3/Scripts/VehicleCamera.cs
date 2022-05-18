@@ -237,14 +237,18 @@ public class VehicleCamera : MonoBehaviour
                     {
                         if (i != int.Parse(configScript.selfName) - 1)
                         {
-                            carLoaded = Instantiate(configScript.cars1bots[configScript.playerCars[i] - 1], new Vector3(517f, 0.5f, 223.3f + i*6f), Quaternion.Euler(0,90,0));
+                            carLoaded = Instantiate(configScript.cars1bots[configScript.playerCars[i] - 1], new Vector3(517f, 0.5f, 223.3f + i * 6f), Quaternion.Euler(0, 90, 0));
                             carLoaded.name = (i + 1).ToString();
                         }
                         else
                         {
-                            carLoaded = Instantiate(configScript.cars1[configScript.playerCars[i] - 1], new Vector3(517f, 0.5f, 223.3f+ i * 6f), Quaternion.Euler(0,90,0));
+                            carLoaded = Instantiate(configScript.cars1[configScript.playerCars[i] - 1], new Vector3(517f, 0.5f, 223.3f + i * 6f), Quaternion.Euler(0, 90, 0));
                             carLoaded.name = (i + 1).ToString();
                             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = 0.3f;
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().distance = 16.2f;
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().height = 5.1f;
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = 11.67f;
                         }
                     }
                 }
@@ -255,7 +259,13 @@ public class VehicleCamera : MonoBehaviour
             if (configScript.mapSelector == 2)
                 carLoaded = Instantiate(configScript.cars2[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
             else
+            {
                 carLoaded = Instantiate(configScript.cars1[configScript.carSelector - 1], new Vector3(537.3964f, 1.5f, 224.3f), Quaternion.Euler(0, 90, 0));
+                GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = 0.3f;
+                GameObject.Find("camera").GetComponent<VehicleCamera>().distance = 16.2f;
+                GameObject.Find("camera").GetComponent<VehicleCamera>().height = 5.1f;
+                GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = 11.67f;
+            }
             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
         }
         if (configScript.modeSelector == 1)
@@ -263,8 +273,14 @@ public class VehicleCamera : MonoBehaviour
             if (configScript.mapSelector == 2)
                 carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
             else
+            {
                 carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(537.3964f, 1.5f, 224.3f), Quaternion.Euler(0, 90, 0));
-            
+                GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = 0.3f;
+                GameObject.Find("camera").GetComponent<VehicleCamera>().distance = 16.2f;
+                GameObject.Find("camera").GetComponent<VehicleCamera>().height = 5.1f;
+                GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = 11.67f;
+            }
+            GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
             carLoaded.AddComponent<Save>();
         }
         carScript = (VehicleControl)target.GetComponent<VehicleControl>();
