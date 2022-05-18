@@ -20384,7 +20384,7 @@ GameObject:
   - component: {fileID: 616946927}
   - component: {fileID: 616946928}
   m_Layer: 0
-  m_Name: 2
+  m_Name: khoobi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49542,7 +49542,7 @@ GameObject:
   - component: {fileID: 1526369458}
   - component: {fileID: 1526369459}
   m_Layer: 0
-  m_Name: 1
+  m_Name: salaam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
