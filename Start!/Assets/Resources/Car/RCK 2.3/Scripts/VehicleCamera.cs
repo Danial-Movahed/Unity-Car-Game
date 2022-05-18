@@ -235,7 +235,17 @@ public class VehicleCamera : MonoBehaviour
                     }
                     else
                     {
-                        carLoaded = Instantiate(configScript.cars1[configScript.carSelector - 1], new Vector3(0, 0, 0), Quaternion.identity);
+                        if (i != int.Parse(configScript.selfName) - 1)
+                        {
+                            carLoaded = Instantiate(configScript.cars1bots[configScript.playerCars[i] - 1], new Vector3(517 + i * 6.18f, 0.001999855f, 223.3f), Quaternion.Euler(0,90,0));
+                            carLoaded.name = (i + 1).ToString();
+                        }
+                        else
+                        {
+                            carLoaded = Instantiate(configScript.cars1[configScript.playerCars[i] - 1], new Vector3(517 + i * 6.18f, 0.001999855f, 223.3f), Quaternion.Euler(0,90,0));
+                            carLoaded.name = (i + 1).ToString();
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
+                        }
                     }
                 }
             }
