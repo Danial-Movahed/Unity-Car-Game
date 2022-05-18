@@ -47,7 +47,6 @@ public class Server : MonoBehaviour
         {
             string data = dataReader.GetString(400);
             NetDataWriter writer = new NetDataWriter();
-            writer.Put(data);
             if (isStarted)
             {
                 server.SendToAll(writer, DeliveryMethod.Sequenced, fromPeer);
