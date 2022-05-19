@@ -10,6 +10,16 @@ public class MenuControllerFinish : MonoBehaviour
 	void Start () {
 		okBtn.onClick.AddListener( () => {
             Debug.Log("ok");
+            if(GameObject.Find("Server"))
+            {
+                GameObject.Find("Server").GetComponent<Server>().isStarted = false;
+                GameObject.Find("Server").GetComponent<Server>().server.Stop();
+            }
+            if(GameObject.Find("Client"))
+            {
+                GameObject.Find("Client").GetComponent<Client>().isStarted = false;
+                GameObject.Find("Client").GetComponent<Client>().client.Stop();
+            }
             Destroy(GameObject.Find("VideoMainCamera"));
             Destroy(GameObject.Find("ConfigStart"));
             Destroy(GameObject.Find("Config"));

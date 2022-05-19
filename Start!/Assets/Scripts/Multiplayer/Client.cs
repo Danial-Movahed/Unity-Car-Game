@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class Client : MonoBehaviour
 {
     private static EventBasedNetListener listener = new EventBasedNetListener();
-    private NetManager client = new NetManager(listener);
+    public NetManager client = new NetManager(listener);
     public string ip = "localhost";
     public int port = 3344;
     private NetPacketProcessor netProcessor;

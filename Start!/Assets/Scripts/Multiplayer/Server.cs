@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class Server : MonoBehaviour
 {
     private static EventBasedNetListener listener = new EventBasedNetListener();
-    private NetManager server = new NetManager(listener);
+    public NetManager server = new NetManager(listener);
     public int connectionLimit = 3;
     public int port = 3344;
     public string selfName = "1";
