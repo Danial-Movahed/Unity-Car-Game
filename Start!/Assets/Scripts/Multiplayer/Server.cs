@@ -1,7 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using LiteNetLib;
 using LiteNetLib.Utils;
+using LiteNetLib.Layers;
 using System.Globalization;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Server : MonoBehaviour
 {
@@ -14,6 +19,7 @@ public class Server : MonoBehaviour
     public bool isStarted = false;
     public string Key = "SomeConnectionKey";
     private Config config;
+    private Dictionary<string, string> peerNames = new Dictionary<string, string>();
     void Awake()
     {
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
@@ -35,12 +41,15 @@ public class Server : MonoBehaviour
             NetDataWriter writer = new NetDataWriter();
             Debug.Log(connectedNow);
             writer.Put(connectedNow.ToString());
+            peerNames.Add(peer.EndPoint.ToString(), connectedNow.ToString());
             peer.Send(writer, DeliveryMethod.ReliableOrdered);
         };
 
         listener.PeerDisconnectedEvent += (peer, dcInfo) =>
         {
             Debug.Log("Disconnected " + peer.EndPoint);
+            sendData("DC" + peerNames[peer.EndPoint.ToString()]);
+            Destroy(GameObject.Find(peerNames[peer.EndPoint.ToString()]));
             connectedNow--;
         };
         listener.NetworkReceiveEvent += (fromPeer, dataReader, deliveryMethod) =>
