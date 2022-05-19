@@ -19,6 +19,7 @@ public class Lap : MonoBehaviour
             else
             {
                Debug.Log("Done game");
+               lap=-1;
             }
         }
     }

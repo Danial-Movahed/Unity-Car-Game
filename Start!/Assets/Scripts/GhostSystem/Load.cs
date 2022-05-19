@@ -5,18 +5,20 @@ using System.IO;
 
 public class Load : MonoBehaviour
 {
-    private StreamReader reader;
+    public StreamReader reader;
     private string line;
     private Config config;
+    public bool running = false;
     void Start()
     {
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
         reader = new StreamReader(Application.dataPath + "/" + "saved" + config.mapSelector.ToString() + config.carSelector.ToString() + ".ghost");
-        // InvokeRepeating("paste", 0, 0.03f);
+        running = true;
     }
     void FixedUpdate()
     {
-        paste();
+        if(running)
+            paste();
     }
     void paste()
     {
@@ -27,5 +29,11 @@ public class Load : MonoBehaviour
             gameObject.transform.position = new Vector3(float.Parse(values[0]), float.Parse(values[1]), float.Parse(values[2]));
             gameObject.transform.rotation = new Quaternion(float.Parse(values[3]), float.Parse(values[4]), float.Parse(values[5]), float.Parse(values[6]));
         }
+        else
+        {
+            running = false;
+            reader.Close();
+        }
     }
+    
 }
