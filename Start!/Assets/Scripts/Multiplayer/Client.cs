@@ -47,7 +47,7 @@ public class Client : MonoBehaviour
             {
                 if (selfName == "")
                 {
-                    selfName = dataReader.GetString(400);
+                    selfName = data;
                     if (selfName != "")
                     {
                         GameObject.Find("StatusText").GetComponent<Text>().text = "We are Player" + selfName;
@@ -58,13 +58,13 @@ public class Client : MonoBehaviour
                 }
                 else if (totalConnected == 0)
                 {
-                    totalConnected = int.Parse(dataReader.GetString(400));
+                    totalConnected = int.Parse(data);
                     Debug.Log(totalConnected);
                     dataReader.Recycle();
                 }
                 else if (mapName == "")
                 {
-                    mapName = dataReader.GetString(400);
+                    mapName = data;
                     if (mapName != "")
                     {
                         GameObject.Find("StatusText").GetComponent<Text>().text = "Map is " + mapName;
@@ -83,7 +83,7 @@ public class Client : MonoBehaviour
                 }
                 else
                 {
-                    string tmp2 = dataReader.GetString(400);
+                    string tmp2 = data;
                     if (tmp2 != null)
                     {
                         if (tmp2 == "start")
