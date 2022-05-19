@@ -76,6 +76,7 @@
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCamera.cs" />
+     <Compile Include="Assets/Scripts/Menu/MenuControllerFinish.cs" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Documentation/Readme.txt" />
      <None Include="Assets/Resources/Car/RCK 2.3/Shaders/ReflectionBlurFresnel.shader" />
      <None Include="Assets/Map1 Assets/generic-f1-1990-race-car/Read - VFXDownload.txt" />
