@@ -16,7 +16,8 @@ public class MenuControllerJoinServer : MonoBehaviour {
         });
         backbtn.onClick.AddListener( () => {
             Debug.Log("back");
-            SceneManager.LoadScene("5");
+            Destroy(GameObject.Find("Client"));
+            SceneManager.LoadScene("6");
         });
         Joinbtn.onClick.AddListener( () => {
             Debug.Log("join");

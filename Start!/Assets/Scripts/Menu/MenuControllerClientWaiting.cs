@@ -14,7 +14,9 @@ public class MenuControllerClientWaiting : MonoBehaviour {
         backBtn.onClick.AddListener( () => 
         {
             Debug.Log("back");
-            SceneManager.LoadScene("5");
+            GameObject.Find("Client").GetComponent<Client>().client.DisconnectAll();
+            Destroy(GameObject.Find("Client"));
+            SceneManager.LoadScene("JoinServer");
         });
 	}
 }

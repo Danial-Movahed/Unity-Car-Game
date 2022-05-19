@@ -24,7 +24,9 @@ public class MenuControllerClientCarSelector : MonoBehaviour {
         });
         backbtn.onClick.AddListener( () => {
             Debug.Log("back");
-            SceneManager.LoadScene("7");
+            clientScript.client.DisconnectAll();
+            Destroy(GameObject.Find("Client"));
+            SceneManager.LoadScene("JoinServer");
         });
         startBtn.onClick.AddListener( () => {
             Debug.Log("start");

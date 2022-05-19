@@ -20,7 +20,9 @@ public class MenuControllerServerWaiting : MonoBehaviour {
         });
         backbtn.onClick.AddListener( () => {
             Debug.Log("back");
-            SceneManager.LoadScene("5");
+            server.server.Stop();
+            Destroy(GameObject.Find("Server"));
+            SceneManager.LoadScene("6");
         });
         startbtn.onClick.AddListener( () => {
             Debug.Log("start");

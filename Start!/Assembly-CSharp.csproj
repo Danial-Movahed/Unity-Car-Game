@@ -45,6 +45,7 @@
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/JustRotate.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXExporter.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController.cs" />
+     <Compile Include="Assets/Scripts/Maps/PauseSystem.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController8.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerServerWaiting2.cs" />
      <Compile Include="Assets/Map1 Assets/Scripts/scr.cs" />
@@ -77,7 +78,7 @@
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCamera.cs" />
-     <Compile Include="Assets/Scripts/Maps/PauseSystem.cs" />
+     <Compile Include="Assets/Scripts/Menu/MenuControllerClientWaiting2.cs" />
      <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Documentation/Readme.txt" />
      <None Include="Assets/Resources/Car/RCK 2.3/Shaders/ReflectionBlurFresnel.shader" />
      <None Include="Assets/Map1 Assets/generic-f1-1990-race-car/Read - VFXDownload.txt" />
