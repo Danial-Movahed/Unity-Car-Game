@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 public class MenuControllerServerWaiting2 : MonoBehaviour {
 	public Button quitBtn;
     public Button backBtn;
+    private Config configScript;
+    private Server serverScript;
 	void Start()
     {
+        configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
+        serverScript = GameObject.Find("Server").GetComponent<Server>();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();
@@ -14,7 +18,10 @@ public class MenuControllerServerWaiting2 : MonoBehaviour {
         backBtn.onClick.AddListener( () => 
         {
             Debug.Log("back");
-            SceneManager.LoadScene("5");
+            configScript.carSelector = 0;
+            serverScript.sendData("0 0");
+            configScript.playerCars[0] = 0;
+            SceneManager.LoadScene("ServerCarSelector");
         });
 	}
 }

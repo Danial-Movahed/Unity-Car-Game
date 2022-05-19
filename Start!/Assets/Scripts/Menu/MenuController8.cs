@@ -16,6 +16,11 @@ public class MenuController8 : MonoBehaviour {
     {
         configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         updateCarSelector();
+        quitBtn.onClick.RemoveAllListeners();
+        backbtn.onClick.RemoveAllListeners();
+        startBtn.onClick.RemoveAllListeners();
+        nextCarBtn.onClick.RemoveAllListeners();
+        prevCarBtn.onClick.RemoveAllListeners();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();

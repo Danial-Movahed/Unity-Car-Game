@@ -8,6 +8,10 @@ public class MenuController5 : MonoBehaviour {
     public Button singleplayerBtn;
     public Button multiplayerBtn;
 	void Start () {
+        quitBtn.onClick.RemoveAllListeners();
+        backbtn.onClick.RemoveAllListeners();
+        singleplayerBtn.onClick.RemoveAllListeners();
+        multiplayerBtn.onClick.RemoveAllListeners();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();

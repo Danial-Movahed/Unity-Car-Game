@@ -19,6 +19,10 @@ public class MenuControllerServerMapSelector : MonoBehaviour {
         });
         backbtn.onClick.AddListener( () => {
             Debug.Log("back");
+            server.Key = "SomeConnectionKey";
+            server.connected = false;
+            server.isStarted = false;
+            server.server.Stop();
             SceneManager.LoadScene("ServerWaiting");
         });
         map1Btn.onClick.AddListener( () => {

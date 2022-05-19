@@ -17,13 +17,25 @@ public class Server : MonoBehaviour
     public string selfName = "1";
     public int connectedNow = 1;
     public bool isStarted = false;
+    public bool connected = false;
     public string Key = "SomeConnectionKey";
     private Config config;
     private Dictionary<string, string> peerNames = new Dictionary<string, string>();
     public Dictionary<string, string> scoreboard = new Dictionary<string, string>();
     public int num = 1;
-    void Awake()
+    public void connect()
     {
+        scoreboard.Clear();
+        peerNames.Clear();
+        listener = new EventBasedNetListener();
+        server = new NetManager(listener);
+        connectionLimit = 3;
+        connectedNow = 1;
+        isStarted = false;
+        connected = false;
+        Key = "SomeConnectionKey";
+        num = 1;
+        connected = true;
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
         connectedNow = 1;
         config.selfName = selfName;
@@ -46,7 +58,6 @@ public class Server : MonoBehaviour
             peerNames.Add(peer.EndPoint.ToString(), connectedNow.ToString());
             peer.Send(writer, DeliveryMethod.ReliableOrdered);
         };
-
         listener.PeerDisconnectedEvent += (peer, dcInfo) =>
         {
             Debug.Log("Disconnected " + peer.EndPoint);
@@ -59,7 +70,7 @@ public class Server : MonoBehaviour
             string data = dataReader.GetString(400);
             NetDataWriter writer = new NetDataWriter();
             writer.Put(data);
-            if(data.Contains("FN"))
+            if (data.Contains("FN"))
             {
                 num++;
                 string[] dataSplit = data.Split(' ');
@@ -84,6 +95,8 @@ public class Server : MonoBehaviour
                 }
                 else
                 {
+                    string[] tmp = data.Split(' ');
+                    config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
                     int knownCarNum = 0;
                     for (int i = 0; i < connectedNow; i++)
                     {
@@ -99,28 +112,14 @@ public class Server : MonoBehaviour
                         config.startGame();
                         sendData("start");
                     }
-                    else
-                    {
-                        Debug.Log(data);
-                        string[] tmp = data.Split(' ');
-                        config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
-                        dataReader.Recycle();
-                        knownCarNum++;
-                        if (knownCarNum == connectedNow)
-                        {
-                            Debug.Log("Yay!");
-                            isStarted = true;
-                            config.startGame();
-                            sendData("start");
-                        }
-                    }
                 }
             }
         };
     }
     void Update()
     {
-        server.PollEvents();
+        if (connected)
+            server.PollEvents();
     }
     void LateUpdate()
     {
@@ -133,7 +132,11 @@ public class Server : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        server.Stop();
+        if (connected)
+        {
+            server.Stop();
+            connected = false;
+        }
     }
 
     public void sendData(string data)

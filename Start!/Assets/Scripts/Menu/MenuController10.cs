@@ -10,6 +10,10 @@ public class MenuController10 : MonoBehaviour {
     private Config config;
 	void Start () {
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
+        quitBtn.onClick.RemoveAllListeners();
+        backbtn.onClick.RemoveAllListeners();
+        PracticeBtn.onClick.RemoveAllListeners();
+        TimeRacerBtn.onClick.RemoveAllListeners();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();

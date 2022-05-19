@@ -15,6 +15,7 @@ public class MenuControllerFinish : MonoBehaviour
     void Start()
     {
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
+        okBtn.onClick.RemoveAllListeners();
         try
         {
             server = GameObject.Find("Server").GetComponent<Server>();
@@ -47,22 +48,23 @@ public class MenuControllerFinish : MonoBehaviour
         okBtn.onClick.AddListener(() =>
         {
             Debug.Log("ok");
-            if (GameObject.Find("Server"))
-            {
-                GameObject.Find("Server").GetComponent<Server>().isStarted = false;
-                GameObject.Find("Server").GetComponent<Server>().server.Stop();
-            }
-            if (GameObject.Find("Client"))
-            {
-                GameObject.Find("Client").GetComponent<Client>().isStarted = false;
-                GameObject.Find("Client").GetComponent<Client>().client.Stop();
-            }
             Destroy(GameObject.Find("VideoMainCamera"));
             Destroy(GameObject.Find("ConfigStart"));
             Destroy(GameObject.Find("Config"));
             Destroy(GameObject.Find("Video"));
-            Destroy(GameObject.Find("Server"));
-            Destroy(GameObject.Find("Client"));
+            if(server)
+            {
+                server.Key = "SomeConnectionKey";
+                server.connected = false;
+                server.isStarted = false;
+                server.server.Stop();
+            }
+            if(client)
+            {
+                client.isStarted = false;
+                client.connected = false;
+                client.client.Stop();
+            }
             SceneManager.LoadScene("Bootstrap");
         });
     }

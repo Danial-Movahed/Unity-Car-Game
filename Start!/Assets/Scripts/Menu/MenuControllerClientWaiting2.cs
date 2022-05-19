@@ -11,7 +11,9 @@ public class MenuControllerClientWaiting2 : MonoBehaviour {
     {
         configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         clientScript = GameObject.Find("Client").GetComponent<Client>();
-		quitBtn.onClick.AddListener( () => {
+        quitBtn.onClick.RemoveAllListeners();
+        backBtn.onClick.RemoveAllListeners();
+        quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();
         });

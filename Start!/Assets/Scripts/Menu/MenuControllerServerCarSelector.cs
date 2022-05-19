@@ -24,7 +24,8 @@ public class MenuControllerServerCarSelector : MonoBehaviour {
         });
         backbtn.onClick.AddListener( () => {
             Debug.Log("back");
-            SceneManager.LoadScene("7");
+            serverScript.sendData("RM");
+            SceneManager.LoadScene("ServerMapSelector");
         });
         startBtn.onClick.AddListener( () => {
             Debug.Log("start");

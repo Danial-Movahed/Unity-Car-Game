@@ -8,6 +8,10 @@ public class MenuController6 : MonoBehaviour {
     public Button Createbtn;
     public Button Joinbtn;
 	void Start () {
+        quitBtn.onClick.RemoveAllListeners();
+        backbtn.onClick.RemoveAllListeners();
+        Createbtn.onClick.RemoveAllListeners();
+        Joinbtn.onClick.RemoveAllListeners();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();

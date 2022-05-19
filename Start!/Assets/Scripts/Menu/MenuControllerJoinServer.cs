@@ -2,28 +2,38 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuControllerJoinServer : MonoBehaviour {
-	public Button quitBtn;
+public class MenuControllerJoinServer : MonoBehaviour
+{
+    public Button quitBtn;
     public Button backbtn;
     public Button Joinbtn;
     public InputField ipInput;
     public Client client;
-	void Start () {
+    void Start()
+    {
         client = GameObject.Find("Client").GetComponent<Client>();
-		quitBtn.onClick.AddListener( () => {
+        quitBtn.onClick.RemoveAllListeners();
+        backbtn.onClick.RemoveAllListeners();
+        Joinbtn.onClick.RemoveAllListeners();
+        quitBtn.onClick.AddListener(() =>
+        {
             Debug.Log("quit");
             Application.Quit();
         });
-        backbtn.onClick.AddListener( () => {
+        backbtn.onClick.AddListener(() =>
+        {
             Debug.Log("back");
-            Destroy(GameObject.Find("Client"));
+            client.isStarted = false;
+            client.connected = false;
+            client.client.Stop();
             SceneManager.LoadScene("6");
         });
-        Joinbtn.onClick.AddListener( () => {
+        Joinbtn.onClick.AddListener(() =>
+        {
             Debug.Log("join");
             client.ip = ipInput.text;
             client.connect();
             SceneManager.LoadScene("ClientWaiting");
         });
-	}
+    }
 }

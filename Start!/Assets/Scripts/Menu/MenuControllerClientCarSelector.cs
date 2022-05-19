@@ -2,8 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuControllerClientCarSelector : MonoBehaviour {
-	public Button quitBtn;
+public class MenuControllerClientCarSelector : MonoBehaviour
+{
+    public Button quitBtn;
     public Button backbtn;
     public Button startBtn;
     public Button nextCarBtn;
@@ -13,39 +14,50 @@ public class MenuControllerClientCarSelector : MonoBehaviour {
     public Image carImageThingy;
     private Config configScript;
     private Client clientScript;
-	void Start()
+    void Start()
     {
         configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         clientScript = GameObject.Find("Client").GetComponent<Client>();
+        quitBtn.onClick.RemoveAllListeners();
+        backbtn.onClick.RemoveAllListeners();
+        startBtn.onClick.RemoveAllListeners();
+        nextCarBtn.onClick.RemoveAllListeners();
+        prevCarBtn.onClick.RemoveAllListeners();
         updateCarSelector();
-		quitBtn.onClick.AddListener( () => {
+        quitBtn.onClick.AddListener(() =>
+        {
             Debug.Log("quit");
             Application.Quit();
         });
-        backbtn.onClick.AddListener( () => {
+        backbtn.onClick.AddListener(() =>
+        {
             Debug.Log("back");
-            clientScript.client.DisconnectAll();
-            Destroy(GameObject.Find("Client"));
+            clientScript.isStarted = false;
+            clientScript.connected = false;
+            clientScript.client.Stop();
             SceneManager.LoadScene("JoinServer");
         });
-        startBtn.onClick.AddListener( () => {
+        startBtn.onClick.AddListener(() =>
+        {
             Debug.Log("start");
             configScript.carSelector = carIndex;
-            clientScript.sendData((int.Parse(clientScript.selfName)-1).ToString()+ " " + carIndex.ToString());
-            configScript.playerCars[(int.Parse(clientScript.selfName)-1)] = carIndex;
+            clientScript.sendData((int.Parse(clientScript.selfName) - 1).ToString() + " " + carIndex.ToString());
+            configScript.playerCars[(int.Parse(clientScript.selfName) - 1)] = carIndex;
             SceneManager.LoadScene("ClientWaiting2");
         });
-        nextCarBtn.onClick.AddListener( () => {
+        nextCarBtn.onClick.AddListener(() =>
+        {
             Debug.Log("next");
             carIndex++;
             updateCarSelector();
         });
-        prevCarBtn.onClick.AddListener( () => {
+        prevCarBtn.onClick.AddListener(() =>
+        {
             Debug.Log("prev");
             carIndex--;
             updateCarSelector();
         });
-	}
+    }
     void updateCarSelector()
     {
         if (carIndex > 5)

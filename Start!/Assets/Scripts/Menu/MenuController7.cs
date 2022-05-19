@@ -11,6 +11,10 @@ public class MenuController7 : MonoBehaviour {
 	void Start()
     {
         configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
+        quitBtn.onClick.RemoveAllListeners();
+        backbtn.onClick.RemoveAllListeners();
+        map1Btn.onClick.RemoveAllListeners();
+        map2Btn.onClick.RemoveAllListeners();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();

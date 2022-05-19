@@ -851,68 +851,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645275204}
   m_CullTransparentMesh: 1
---- !u!1 &2109687926
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2109687929}
-  - component: {fileID: 2109687928}
-  - component: {fileID: 2109687927}
-  m_Layer: 0
-  m_Name: Client
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2109687927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109687926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5d1bd21296e8422b6428bc3a12d9a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ip: localhost
-  port: 3344
-  selfName: 
-  mapName: 
-  isStarted: 0
-  isSend: 0
---- !u!114 &2109687928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109687926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3afa4f0c1fd630a5b06a6765d473313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2109687929
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109687926}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 570.97797, y: 180.70766, z: -345.41794}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &23400985339435644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1039,7 @@ MonoBehaviour:
   backbtn: {fileID: 7653492470923634903}
   Joinbtn: {fileID: 1433774252}
   ipInput: {fileID: 856871548}
-  client: {fileID: 2109687927}
+  client: {fileID: 0}
 --- !u!4 &3900691537273809916
 Transform:
   m_ObjectHideFlags: 0
