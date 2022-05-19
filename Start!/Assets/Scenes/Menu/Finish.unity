@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   okBtn: {fileID: 1327196505061320681}
+  statusText: {fileID: 2097315381}
 --- !u!4 &126182476
 Transform:
   m_ObjectHideFlags: 0
@@ -670,10 +671,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 232
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 7
     m_MaxSize: 237
     m_Alignment: 4
     m_AlignByGeometry: 0

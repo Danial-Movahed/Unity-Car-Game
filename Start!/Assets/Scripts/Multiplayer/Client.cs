@@ -20,7 +20,9 @@ public class Client : MonoBehaviour
     public bool isStarted = false;
     private bool connected = false;
     private Config config;
-    private int totalConnected = 0;
+    public int totalConnected = 0;
+    public Dictionary<string, string> scoreboard = new Dictionary<string, string>();
+    public int num = 1;
     public void connect()
     {
         client.Start();
@@ -36,7 +38,13 @@ public class Client : MonoBehaviour
                 Destroy(GameObject.Find(dataSplit[1]));
                 totalConnected--;
             }
-            if (isStarted)
+            else if(data.Contains("FN"))
+            {
+                num++;
+                string[] dataSplit = data.Split(' ');
+                scoreboard.Add(dataSplit[1], dataSplit[2]);
+            }
+            else if (isStarted)
             {
                 string[] tmp = data.Split(' ');
                 GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));

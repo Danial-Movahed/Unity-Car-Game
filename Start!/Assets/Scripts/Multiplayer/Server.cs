@@ -20,6 +20,8 @@ public class Server : MonoBehaviour
     public string Key = "SomeConnectionKey";
     private Config config;
     private Dictionary<string, string> peerNames = new Dictionary<string, string>();
+    public Dictionary<string, string> scoreboard = new Dictionary<string, string>();
+    public int num = 1;
     void Awake()
     {
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
@@ -57,7 +59,13 @@ public class Server : MonoBehaviour
             string data = dataReader.GetString(400);
             NetDataWriter writer = new NetDataWriter();
             writer.Put(data);
-            if (isStarted)
+            if(data.Contains("FN"))
+            {
+                num++;
+                string[] dataSplit = data.Split(' ');
+                scoreboard.Add(dataSplit[1], dataSplit[2]);
+            }
+            else if (isStarted)
             {
                 server.SendToAll(writer, DeliveryMethod.Sequenced, fromPeer);
                 string[] tmp = data.Split(' ');

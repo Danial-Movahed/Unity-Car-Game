@@ -14,6 +14,7 @@ public class Config : MonoBehaviour
     public GameObject[] cars2ghost;
     public int[] playerCars = new int[4];
     public string selfName = "";
+    public string message = "";
     public void startGame()
     {
         Debug.Log(mapSelector);

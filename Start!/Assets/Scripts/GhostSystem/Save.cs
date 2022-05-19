@@ -29,6 +29,10 @@ public class Save : MonoBehaviour
             if(lap.lap == -1)
             {
                 running = false;
+                if(load.running)
+                    config.message = "You were faster than the ghost!";
+                else
+                    config.message = "You were slower than the ghost!";
                 fixAndCopyFiles();
                 SceneManager.LoadScene("Finish");
             }
