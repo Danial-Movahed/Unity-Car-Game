@@ -15,8 +15,15 @@ public class MenuControllerFinish : MonoBehaviour
     void Start()
     {
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
-        server = GameObject.Find("Server").GetComponent<Server>();
-        client = GameObject.Find("Client").GetComponent<Client>();
+        try
+        {
+            server = GameObject.Find("Server").GetComponent<Server>();
+            client = GameObject.Find("Client").GetComponent<Client>();
+        }
+        catch
+        {
+            Debug.Log("hmmm");
+        }
         if (server || client)
         {
             mode = true;
@@ -61,7 +68,7 @@ public class MenuControllerFinish : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(mode)
+        if (mode)
         {
             statusText.text = "Finished\n";
             foreach (KeyValuePair<string, string> entry in server.scoreboard)
