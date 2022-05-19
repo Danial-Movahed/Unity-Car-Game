@@ -2,21 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
-public class Save : Lap
+public class Save : MonoBehaviour
 {
     private FileStream fs;
     private StreamWriter sw;
     private Config config;
+    private Load load;
+    private Lap lap;
+    private bool running = false;
     void Start()
     {
+        load = GameObject.Find("Ghost").GetComponent<Load>();
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
+        lap = GameObject.Find("Player").GetComponent<Lap>();
+        DeleteFile("tmp.ghost");
         fs = new FileStream(Application.dataPath + "/" + "tmp.ghost", FileMode.OpenOrCreate, FileAccess.Write);
         sw = new StreamWriter(fs);
-        // InvokeRepeating("copy", 0, 0.03f);
+        running = true;
     }
-    void FixedUpdate() {
-        copy();
+    void FixedUpdate()
+    {
+        if(running)
+        {
+            if(lap.lap == -1)
+            {
+                running = false;
+                fixAndCopyFiles();
+                SceneManager.LoadScene("Finish");
+            }
+            else
+                copy();
+        }
     }
     void copy()
     {
@@ -26,7 +44,6 @@ public class Save : Lap
     {
         string filePath = Application.dataPath + "/" + input;
 
-        // check if file exists
         if (!File.Exists(filePath))
         {
             Debug.Log("no " + filePath + " file exists");
@@ -42,8 +59,6 @@ public class Save : Lap
     {
         string filePath = Application.dataPath + "/" + "tmp.ghost";
         string filePath2 = Application.dataPath + "/" + "saved" + config.mapSelector.ToString() + config.carSelector.ToString() + ".ghost";
-
-        // check if file exists
         if (!File.Exists(filePath))
         {
             Debug.Log("no " + filePath + " file exists");
@@ -55,20 +70,20 @@ public class Save : Lap
             File.Copy(filePath, filePath2);
         }
     }
-    void LateUpdate()
-    {
-        if(lap == 3)
-        {
-            fixAndCopyFiles();
-            lap=-1;
-        }
-    }
     void fixAndCopyFiles()
     {
+        try
+        {
+            load.reader.Close();
+        }
+        catch
+        {
+            Debug.Log("no file to close");
+        }
+        load.running = false;
         sw.Flush();
         sw.Close();
         fs.Close();
-        CancelInvoke();
         DeleteFile("saved" + config.mapSelector.ToString() + config.carSelector.ToString() + ".ghost");
         CopyFile();
         DeleteFile("tmp.ghost");

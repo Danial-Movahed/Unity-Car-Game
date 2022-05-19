@@ -155,7 +155,7 @@ public class VehicleControl : MonoBehaviour
     [HideInInspector]
     public bool shift;
 
-    private float torque = 100f;
+    // private float torque = 100f;
 
     [HideInInspector]
     public float speed = 0.0f;
@@ -163,7 +163,7 @@ public class VehicleControl : MonoBehaviour
     private float lastSpeed = -10.0f;
 
 
-    private bool shifting = false;
+    // private bool shifting = false;
 
 
     float[] efficiencyTable = { 0.6f, 0.65f, 0.7f, 0.75f, 0.8f, 0.85f, 0.9f, 1.0f, 1.0f, 0.95f, 0.80f, 0.70f, 0.60f, 0.5f, 0.45f, 0.40f, 0.36f, 0.33f, 0.30f, 0.20f, 0.10f, 0.05f };

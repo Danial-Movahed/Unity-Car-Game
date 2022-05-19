@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Lap : MonoBehaviour
 {
     public int lap = 0;
+    private Config config;
+    void Start()
+    {
+        config = GameObject.Find("ConfigStart").GetComponent<Config>();
+    }
     void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.name == "StartLapCounter")
@@ -18,7 +24,10 @@ public class Lap : MonoBehaviour
             }
             else
             {
-               Debug.Log("Done game");
+                Debug.Log("Done game");
+                lap=-1;
+                if(config.modeSelector == 0)
+                    SceneManager.LoadScene("Finish");
             }
         }
     }

@@ -266,21 +266,27 @@ public class VehicleCamera : MonoBehaviour
                 GameObject.Find("camera").GetComponent<VehicleCamera>().height = 5.1f;
                 GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = 11.67f;
             }
+            carLoaded.name = "Player";
             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
         }
         if (configScript.modeSelector == 1)
         {
             if (configScript.mapSelector == 2)
+            {
                 carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
+                carGhost.name = "Ghost";
+            }
             else
             {
                 carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(537.3964f, 1.5f, 224.3f), Quaternion.Euler(0, 90, 0));
+                carGhost.name = "Ghost";
                 GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = 0.3f;
                 GameObject.Find("camera").GetComponent<VehicleCamera>().distance = 16.2f;
                 GameObject.Find("camera").GetComponent<VehicleCamera>().height = 5.1f;
                 GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = 11.67f;
             }
             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
+            carLoaded.name="Player";
             carLoaded.AddComponent<Save>();
         }
         carScript = (VehicleControl)target.GetComponent<VehicleControl>();
