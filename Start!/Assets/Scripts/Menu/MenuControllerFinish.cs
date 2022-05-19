@@ -12,7 +12,11 @@ public class MenuControllerFinish : MonoBehaviour
             Debug.Log("ok");
             Destroy(GameObject.Find("VideoMainCamera"));
             Destroy(GameObject.Find("ConfigStart"));
-            SceneManager.LoadScene("1");
+            Destroy(GameObject.Find("Config"));
+            Destroy(GameObject.Find("Video"));
+            Destroy(GameObject.Find("Server"));
+            Destroy(GameObject.Find("Client"));
+            SceneManager.LoadScene("Bootstrap");
         });
 	}
 }
