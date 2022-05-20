@@ -19,6 +19,7 @@ public class Client : MonoBehaviour
     public string mapName = "";
     public bool isStarted = false;
     public bool connected = false;
+    public bool finished = false;
     private Config config;
     public int totalConnected = 0;
     public Dictionary<string, string> scoreboard = new Dictionary<string, string>();
@@ -31,6 +32,7 @@ public class Client : MonoBehaviour
         mapName = "";
         isStarted = false;
         connected = false;
+        finished = false;
         totalConnected = 0;
         num = 1;
         scoreboard.Clear();
@@ -67,59 +69,41 @@ public class Client : MonoBehaviour
                 mapName = "";
                 SceneManager.LoadScene("ClientWaiting");
             }
-            else if (isStarted)
+            if (!finished)
             {
-                string[] tmp = data.Split(' ');
-                GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
-                GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
-
-            }
-            else
-            {
-                if (selfName == "")
+                if (isStarted)
                 {
-                    selfName = data;
-                    if (selfName != "")
-                    {
-                        GameObject.Find("StatusText").GetComponent<Text>().text = "We are Player" + selfName;
-                        Debug.Log(selfName);
-                        config.selfName = selfName;
-                    }
-
-                }
-                else if (totalConnected == 0)
-                {
-                    totalConnected = int.Parse(data);
-                    Debug.Log(totalConnected);
-
-                }
-                else if (mapName == "")
-                {
-                    mapName = data;
-                    if (mapName != "")
-                    {
-                        GameObject.Find("StatusText").GetComponent<Text>().text = "Map is " + mapName;
-                        Debug.Log(mapName);
-                        if (mapName == "map1")
-                        {
-                            config.mapSelector = 1;
-                        }
-                        else if (mapName == "map2")
-                        {
-                            config.mapSelector = 2;
-                        }
-                        SceneManager.LoadScene("ClientCarSelector");
-                    }
+                    string[] tmp = data.Split(' ');
+                    GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
+                    GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
 
                 }
                 else
                 {
-                    string tmp2 = data;
-                    if (tmp2 != null)
+                    if (selfName == "")
                     {
-                        if (tmp2 == "start")
+                        selfName = data;
+                        if (selfName != "")
                         {
-                            isStarted = true;
+                            GameObject.Find("StatusText").GetComponent<Text>().text = "We are Player" + selfName;
+                            Debug.Log(selfName);
+                            config.selfName = selfName;
+                        }
+
+                    }
+                    else if (totalConnected == 0)
+                    {
+                        totalConnected = int.Parse(data);
+                        Debug.Log(totalConnected);
+
+                    }
+                    else if (mapName == "")
+                    {
+                        mapName = data;
+                        if (mapName != "")
+                        {
+                            GameObject.Find("StatusText").GetComponent<Text>().text = "Map is " + mapName;
+                            Debug.Log(mapName);
                             if (mapName == "map1")
                             {
                                 config.mapSelector = 1;
@@ -128,24 +112,17 @@ public class Client : MonoBehaviour
                             {
                                 config.mapSelector = 2;
                             }
-                            config.startGame();
-
+                            SceneManager.LoadScene("ClientCarSelector");
                         }
-                        else
+
+                    }
+                    else
+                    {
+                        string tmp2 = data;
+                        if (tmp2 != null)
                         {
-                            string[] tmp = tmp2.Split(' ');
-                            config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
-                            int knownCarNum = 0;
-                            for (int i = 0; i < totalConnected; i++)
+                            if (tmp2 == "start")
                             {
-                                if (config.playerCars[i] != 0)
-                                {
-                                    knownCarNum++;
-                                }
-                            }
-                            if (knownCarNum == totalConnected)
-                            {
-                                Debug.Log("Yay!");
                                 isStarted = true;
                                 if (mapName == "map1")
                                 {
@@ -156,7 +133,35 @@ public class Client : MonoBehaviour
                                     config.mapSelector = 2;
                                 }
                                 config.startGame();
-                                sendData("start");
+
+                            }
+                            else
+                            {
+                                string[] tmp = tmp2.Split(' ');
+                                config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
+                                int knownCarNum = 0;
+                                for (int i = 0; i < totalConnected; i++)
+                                {
+                                    if (config.playerCars[i] != 0)
+                                    {
+                                        knownCarNum++;
+                                    }
+                                }
+                                if (knownCarNum == totalConnected)
+                                {
+                                    Debug.Log("Yay!");
+                                    isStarted = true;
+                                    if (mapName == "map1")
+                                    {
+                                        config.mapSelector = 1;
+                                    }
+                                    else if (mapName == "map2")
+                                    {
+                                        config.mapSelector = 2;
+                                    }
+                                    config.startGame();
+                                    sendData("start");
+                                }
                             }
                         }
                     }

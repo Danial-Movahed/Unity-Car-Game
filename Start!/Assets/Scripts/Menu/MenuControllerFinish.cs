@@ -31,15 +31,17 @@ public class MenuControllerFinish : MonoBehaviour
             if (server)
             {
                 server.isStarted = false;
+                server.finished = true;
                 server.connectedNow = -1;
-                server.sendData("FN" + config.selfName + " " + server.num);
+                server.sendData("FN " + config.selfName + " " + server.num);
                 server.scoreboard.Add(config.selfName, server.num.ToString());
             }
             else
             {
                 client.isStarted = false;
+                client.finished = true;
                 client.totalConnected = -1;
-                client.sendData("FN" + config.selfName + " " + client.num);
+                client.sendData("FN " + config.selfName + " " + client.num);
                 client.scoreboard.Add(config.selfName, client.num.ToString());
             }
             statusText.fontSize = 20;

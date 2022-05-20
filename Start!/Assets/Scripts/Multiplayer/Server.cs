@@ -18,6 +18,7 @@ public class Server : MonoBehaviour
     public int connectedNow = 1;
     public bool isStarted = false;
     public bool connected = false;
+    public bool finished = false;
     public string Key = "SomeConnectionKey";
     private Config config;
     private Dictionary<string, string> peerNames = new Dictionary<string, string>();
@@ -33,6 +34,7 @@ public class Server : MonoBehaviour
         connectedNow = 1;
         isStarted = false;
         connected = false;
+        finished = false;
         Key = "SomeConnectionKey";
         num = 1;
         connected = true;
@@ -76,41 +78,44 @@ public class Server : MonoBehaviour
                 string[] dataSplit = data.Split(' ');
                 scoreboard.Add(dataSplit[1], dataSplit[2]);
             }
-            else if (isStarted)
+            if(!finished)
             {
-                server.SendToAll(writer, DeliveryMethod.Sequenced, fromPeer);
-                string[] tmp = data.Split(' ');
-                GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
-                GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
-                dataReader.Recycle();
-            }
-            else
-            {
-                server.SendToAll(writer, DeliveryMethod.ReliableOrdered, fromPeer);
-                if (data == "start")
+                if (isStarted)
                 {
-                    isStarted = true;
-                    config.startGame();
+                    server.SendToAll(writer, DeliveryMethod.Sequenced, fromPeer);
+                    string[] tmp = data.Split(' ');
+                    GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
+                    GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
                     dataReader.Recycle();
                 }
                 else
                 {
-                    string[] tmp = data.Split(' ');
-                    config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
-                    int knownCarNum = 0;
-                    for (int i = 0; i < connectedNow; i++)
+                    server.SendToAll(writer, DeliveryMethod.ReliableOrdered, fromPeer);
+                    if (data == "start")
                     {
-                        if (config.playerCars[i] != 0)
-                        {
-                            knownCarNum++;
-                        }
-                    }
-                    if (knownCarNum == connectedNow)
-                    {
-                        Debug.Log("Yay!");
                         isStarted = true;
                         config.startGame();
-                        sendData("start");
+                        dataReader.Recycle();
+                    }
+                    else
+                    {
+                        string[] tmp = data.Split(' ');
+                        config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
+                        int knownCarNum = 0;
+                        for (int i = 0; i < connectedNow; i++)
+                        {
+                            if (config.playerCars[i] != 0)
+                            {
+                                knownCarNum++;
+                            }
+                        }
+                        if (knownCarNum == connectedNow)
+                        {
+                            Debug.Log("Yay!");
+                            isStarted = true;
+                            config.startGame();
+                            sendData("start");
+                        }
                     }
                 }
             }
