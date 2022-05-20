@@ -72,49 +72,56 @@ public class Server : MonoBehaviour
             string data = dataReader.GetString(400);
             NetDataWriter writer = new NetDataWriter();
             writer.Put(data);
+            server.SendToAll(writer, deliveryMethod, fromPeer);
             if (data.Contains("FN"))
             {
+                Debug.Log(data);
                 num++;
                 string[] dataSplit = data.Split(' ');
                 scoreboard.Add(dataSplit[1], dataSplit[2]);
             }
-            if(!finished)
+            else if (data.Contains("DL"))
             {
-                if (isStarted)
+                Destroy(GameObject.Find(data.Split(' ')[1]));
+            }
+            else
+            {
+                if (!finished)
                 {
-                    server.SendToAll(writer, DeliveryMethod.Sequenced, fromPeer);
-                    string[] tmp = data.Split(' ');
-                    GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
-                    GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
-                    dataReader.Recycle();
-                }
-                else
-                {
-                    server.SendToAll(writer, DeliveryMethod.ReliableOrdered, fromPeer);
-                    if (data == "start")
+                    if (isStarted)
                     {
-                        isStarted = true;
-                        config.startGame();
+                        string[] tmp = data.Split(' ');
+                        GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
+                        GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
                         dataReader.Recycle();
                     }
                     else
                     {
-                        string[] tmp = data.Split(' ');
-                        config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
-                        int knownCarNum = 0;
-                        for (int i = 0; i < connectedNow; i++)
+                        if (data == "start")
                         {
-                            if (config.playerCars[i] != 0)
-                            {
-                                knownCarNum++;
-                            }
-                        }
-                        if (knownCarNum == connectedNow)
-                        {
-                            Debug.Log("Yay!");
                             isStarted = true;
                             config.startGame();
-                            sendData("start");
+                            dataReader.Recycle();
+                        }
+                        else
+                        {
+                            string[] tmp = data.Split(' ');
+                            config.playerCars[int.Parse(tmp[0])] = int.Parse(tmp[1]);
+                            int knownCarNum = 0;
+                            for (int i = 0; i < connectedNow; i++)
+                            {
+                                if (config.playerCars[i] != 0)
+                                {
+                                    knownCarNum++;
+                                }
+                            }
+                            if (knownCarNum == connectedNow)
+                            {
+                                Debug.Log("Yay!");
+                                isStarted = true;
+                                config.startGame();
+                                sendData("start");
+                            }
                         }
                     }
                 }
@@ -128,11 +135,28 @@ public class Server : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (isStarted)
+        if (!finished)
         {
-            NetDataWriter writer = new NetDataWriter();
-            writer.Put(selfName + " " + GameObject.Find(selfName).transform.position.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.z.ToString(CultureInfo.InvariantCulture.NumberFormat));
-            server.SendToAll(writer, DeliveryMethod.Sequenced);
+            if (isStarted)
+            {
+                if (GameObject.Find(selfName).GetComponent<Lap>().lap == -1)
+                {
+                    finished = true;
+                    isStarted = false;
+                    finished = true;
+                    connectedNow = -1;
+                    sendData("FN " + selfName + " " + num);
+                    sendData("DL " + selfName);
+                    scoreboard.Add(selfName, num.ToString());
+                    SceneManager.LoadScene("Finish");
+                }
+                else
+                {
+                    NetDataWriter writer = new NetDataWriter();
+                    writer.Put(selfName + " " + GameObject.Find(selfName).transform.position.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.position.z.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.x.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.y.ToString(CultureInfo.InvariantCulture.NumberFormat) + " " + GameObject.Find(selfName).transform.localEulerAngles.z.ToString(CultureInfo.InvariantCulture.NumberFormat));
+                    server.SendToAll(writer, DeliveryMethod.Sequenced);
+                }
+            }
         }
     }
     private void OnApplicationQuit()

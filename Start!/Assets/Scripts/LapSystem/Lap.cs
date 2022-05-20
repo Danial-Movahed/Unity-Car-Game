@@ -26,7 +26,7 @@ public class Lap : MonoBehaviour
             {
                 Debug.Log("Done game");
                 lap=-1;
-                if(config.modeSelector == 0)
+                if(config.modeSelector == 0 && config.selfName == "")
                     SceneManager.LoadScene("Finish");
             }
         }
