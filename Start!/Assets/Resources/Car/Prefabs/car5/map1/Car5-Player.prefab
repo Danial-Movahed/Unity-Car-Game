@@ -15111,7 +15111,7 @@ GameObject:
   - component: {fileID: 4613880481190123305}
   - component: {fileID: 1023985125330223925}
   m_Layer: 0
-  m_Name: Car5-Player 1
+  m_Name: Car5-Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
