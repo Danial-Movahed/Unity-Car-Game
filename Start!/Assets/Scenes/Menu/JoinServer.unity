@@ -346,7 +346,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 13.3, y: 15}
-  m_SizeDelta: {x: 700, y: 50}
+  m_SizeDelta: {x: 720.7, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &856871548
 MonoBehaviour:
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

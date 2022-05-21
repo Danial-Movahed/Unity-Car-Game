@@ -23,6 +23,14 @@ public class MenuControllerSettingsGame : MonoBehaviour
     public void savePrefs()
     {
         PlayerPrefs.SetInt("isFullscreen", GameObject.Find("Fullscreen Switch").GetComponent<Toggle>().isOn ? 1 : 0);
+        if (PlayerPrefs.GetInt("isFullscreen") == 1)
+        {
+            Screen.fullScreen = true;
+        }
+        else
+        {
+            Screen.fullScreen = false;
+        }
         PlayerPrefs.SetFloat("volume", GameObject.Find("Sound Slider").GetComponent<Slider>().value);
         PlayerPrefs.SetFloat("cameraSmooth2", GameObject.Find("Smooth Slider2").GetComponent<Slider>().value);
         PlayerPrefs.SetFloat("cameraDistance2", GameObject.Find("Distance Slider2").GetComponent<Slider>().value * 23.34f);
