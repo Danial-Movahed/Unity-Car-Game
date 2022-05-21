@@ -2843,7 +2843,7 @@ Transform:
   m_LocalScale: {x: 1.25, y: 25, z: 260}
   m_Children: []
   m_Father: {fileID: 798440603}
-  m_RootOrder: 47
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &80974249
 GameObject:
@@ -30969,6 +30969,7 @@ Transform:
   - {fileID: 891827306}
   - {fileID: 1148195596}
   - {fileID: 1213816531}
+  - {fileID: 79933484}
   - {fileID: 42202238}
   - {fileID: 1529866210}
   - {fileID: 1035882656}
@@ -30977,7 +30978,6 @@ Transform:
   - {fileID: 768674165}
   - {fileID: 1323366638}
   - {fileID: 1807519318}
-  - {fileID: 79933484}
   - {fileID: 217430942}
   - {fileID: 180776273}
   - {fileID: 762646729}
@@ -40581,6 +40581,7 @@ GameObject:
   - component: {fileID: 1056522869}
   - component: {fileID: 1056522871}
   - component: {fileID: 1056522870}
+  - component: {fileID: 1056522872}
   m_Layer: 0
   m_Name: HighwayJoinRoad (1)
   m_TagString: Untagged
@@ -40650,6 +40651,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056522868}
+  m_Mesh: {fileID: -132671967645699893, guid: dc0558cb22ef5f13db09ca2bf9db3b17, type: 3}
+--- !u!64 &1056522872
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056522868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -132671967645699893, guid: dc0558cb22ef5f13db09ca2bf9db3b17, type: 3}
 --- !u!1001 &1058736342
 PrefabInstance:
