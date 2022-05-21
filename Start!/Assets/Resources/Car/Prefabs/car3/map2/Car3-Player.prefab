@@ -875,7 +875,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426790804926192305}
   serializedVersion: 2
-  m_Mass: 2000
+  m_Mass: 3000
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -946,7 +946,7 @@ MonoBehaviour:
     - {fileID: 8129361081998042164}
     springs: 25000
     dampers: 1500
-    carPower: 120
+    carPower: 200
     shiftPower: 150
     brakePower: 12000
     shiftCentre: {x: 0, y: -0.05, z: 0}
@@ -954,7 +954,7 @@ MonoBehaviour:
     shiftDownRPM: 2000
     shiftUpRPM: 4000
     idleRPM: 700
-    stiffness: 3.69
+    stiffness: 3
     automaticGear: 1
     gears:
     - -9
@@ -13929,8 +13929,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5682649832237422206}
   m_LocalRotation: {x: 0.000000021855707, y: -0, z: -2.664535e-15, w: 1}
-  m_LocalPosition: {x: 0.4171, y: 0.5261, z: 0.0137}
-  m_LocalScale: {x: 0.8291304, y: 0.89097136, z: 0.78782666}
+  m_LocalPosition: {x: 0.4171, y: 0.6398, z: 0.0366}
+  m_LocalScale: {x: 0.8291304, y: 0.7849393, z: 0.7713802}
   m_Children: []
   m_Father: {fileID: 1277617816991606000}
   m_RootOrder: 0

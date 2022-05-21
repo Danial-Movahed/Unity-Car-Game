@@ -14190,7 +14190,7 @@ MonoBehaviour:
     - 2
     - 1
     LimitBackwardSpeed: 60
-    LimitForwardSpeed: 220
+    LimitForwardSpeed: 300
   brake: 0
   curTorque: 100
   powerShift: 100

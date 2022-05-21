@@ -5918,8 +5918,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532112747488051197}
   m_LocalRotation: {x: 0.000000021855707, y: -0, z: -2.664535e-15, w: 1}
-  m_LocalPosition: {x: 0.5033, y: 0.7101, z: -0.1115}
-  m_LocalScale: {x: 0.97744685, y: 0.91827536, z: 0.8658234}
+  m_LocalPosition: {x: 0.5033, y: 0.8439, z: -0.102}
+  m_LocalScale: {x: 0.97744685, y: 0.7933899, z: 0.8629662}
   m_Children: []
   m_Father: {fileID: 8449931589815649179}
   m_RootOrder: 0
@@ -17057,15 +17057,15 @@ MonoBehaviour:
     - {fileID: 399220876888562784}
     springs: 25000
     dampers: 1500
-    carPower: 120
+    carPower: 200
     shiftPower: 150
-    brakePower: 12000
+    brakePower: 15000
     shiftCentre: {x: 0, y: -0.05, z: 0}
     maxSteerAngle: 30
     shiftDownRPM: 2000
     shiftUpRPM: 4000
     idleRPM: 700
-    stiffness: 3.69
+    stiffness: 4
     automaticGear: 1
     gears:
     - -9
@@ -17075,7 +17075,7 @@ MonoBehaviour:
     - 2
     - 1
     LimitBackwardSpeed: 60
-    LimitForwardSpeed: 220
+    LimitForwardSpeed: 300
   brake: 0
   curTorque: 100
   powerShift: 100
