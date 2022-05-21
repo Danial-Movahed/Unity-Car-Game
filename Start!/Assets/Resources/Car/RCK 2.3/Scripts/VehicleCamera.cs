@@ -248,6 +248,7 @@ public class VehicleCamera : MonoBehaviour
                         {
                             carLoaded = Instantiate(configScript.cars1[configScript.playerCars[i] - 1], new Vector3(517f, 1.5f, 223.3f + i * 6f), Quaternion.Euler(0, 90, 0));
                             carLoaded.name = (i + 1).ToString();
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
                             GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth1", 0.3f);
                             GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance1", 16.2f);
                             GameObject.Find("camera").GetComponent<VehicleCamera>().height = PlayerPrefs.GetFloat("cameraHeight1", 5.1f);
