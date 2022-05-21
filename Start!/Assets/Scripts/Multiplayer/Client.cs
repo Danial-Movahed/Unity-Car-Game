@@ -12,7 +12,7 @@ public class Client : MonoBehaviour
 {
     private static EventBasedNetListener listener = new EventBasedNetListener();
     public NetManager client = new NetManager(listener);
-    public string ip = "localhost";
+    public string ip = "31.25.133.135";
     public int port = 3344;
     private NetPacketProcessor netProcessor;
     public string selfName = "";
