@@ -223,12 +223,12 @@ public class VehicleCamera : MonoBehaviour
                     {
                         if (i != int.Parse(configScript.selfName) - 1)
                         {
-                            carLoaded = Instantiate(configScript.cars2bots[configScript.playerCars[i] - 1], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
+                            carLoaded = Instantiate(configScript.cars2bots[configScript.playerCars[i] - 1], new Vector3(940.17f + i * 2.5f, 4.5f, 376.6745f), Quaternion.identity);
                             carLoaded.name = (i + 1).ToString();
                         }
                         else
                         {
-                            carLoaded = Instantiate(configScript.cars2[configScript.playerCars[i] - 1], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
+                            carLoaded = Instantiate(configScript.cars2[configScript.playerCars[i] - 1], new Vector3(940.17f + i * 2.5f, 4.5f, 376.6745f), Quaternion.identity);
                             carLoaded.name = (i + 1).ToString();
                             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
                             GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth2", 0.3f);
@@ -241,12 +241,12 @@ public class VehicleCamera : MonoBehaviour
                     {
                         if (i != int.Parse(configScript.selfName) - 1)
                         {
-                            carLoaded = Instantiate(configScript.cars1bots[configScript.playerCars[i] - 1], new Vector3(517f, 0.5f, 223.3f + i * 6f), Quaternion.Euler(0, 90, 0));
+                            carLoaded = Instantiate(configScript.cars1bots[configScript.playerCars[i] - 1], new Vector3(517f, 1.5f, 223.3f + i * 6f), Quaternion.Euler(0, 90, 0));
                             carLoaded.name = (i + 1).ToString();
                         }
                         else
                         {
-                            carLoaded = Instantiate(configScript.cars1[configScript.playerCars[i] - 1], new Vector3(517f, 0.5f, 223.3f + i * 6f), Quaternion.Euler(0, 90, 0));
+                            carLoaded = Instantiate(configScript.cars1[configScript.playerCars[i] - 1], new Vector3(517f, 1.5f, 223.3f + i * 6f), Quaternion.Euler(0, 90, 0));
                             carLoaded.name = (i + 1).ToString();
                             GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth1", 0.3f);
                             GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance1", 16.2f);
@@ -261,7 +261,7 @@ public class VehicleCamera : MonoBehaviour
         {
             if (configScript.mapSelector == 2)
             {
-                carLoaded = Instantiate(configScript.cars2[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
+                carLoaded = Instantiate(configScript.cars2[configScript.carSelector - 1], new Vector3(947.61f, 4.5f, 377.3556f), Quaternion.identity);
                 GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth2", 0.3f);
                 GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance2", 7f);
                 GameObject.Find("camera").GetComponent<VehicleCamera>().height = PlayerPrefs.GetFloat("cameraHeight2", 2.5f);
@@ -282,7 +282,7 @@ public class VehicleCamera : MonoBehaviour
         {
             if (configScript.mapSelector == 2)
             {
-                carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
+                carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(947.61f, 4.5f, 377.3556f), Quaternion.identity);
                 carGhost.name = "Ghost";
                 GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth2", 0.3f);
                 GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance2", 7f);

@@ -14172,15 +14172,15 @@ MonoBehaviour:
     - {fileID: 4090807369604629325}
     springs: 25000
     dampers: 1500
-    carPower: 360
+    carPower: 240
     shiftPower: 150
-    brakePower: 12000
+    brakePower: 20000
     shiftCentre: {x: 0, y: -0.05, z: 0}
     maxSteerAngle: 30
     shiftDownRPM: 2000
     shiftUpRPM: 4000
     idleRPM: 700
-    stiffness: 5
+    stiffness: 4
     automaticGear: 1
     gears:
     - -9
