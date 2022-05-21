@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,6 +158,8 @@ MonoBehaviour:
   selfName: 
   mapName: 
   isStarted: 0
+  connected: 0
+  finished: 0
   totalConnected: 0
   num: 1
 --- !u!114 &127861124
@@ -370,7 +372,7 @@ MonoBehaviour:
   cars2:
   - {fileID: 7153617762889773819, guid: 69c46884aa2939117a987a1183426431, type: 3}
   - {fileID: 576011273009767253, guid: e87d5bdf4e76f9bd2a0f9b4823f087be, type: 3}
-  - {fileID: 1426790804926192305, guid: 3d7650e40c39a0577b81b4001a286c1c, type: 3}
+  - {fileID: 2964067555104329110, guid: 0e39928fce23ec74f8996ba02a88dbfb, type: 3}
   - {fileID: 7575765316382502298, guid: c97ee4af1a379a7498fe5c6f2504c691, type: 3}
   - {fileID: 8718579520838718854, guid: 27e0f084a6af2bddea9f00ee85338639, type: 3}
   cars2bots:
@@ -388,7 +390,7 @@ MonoBehaviour:
   cars1ghost:
   - {fileID: 26005216650286153, guid: 2696b6c096e56b242bb088d204219a52, type: 3}
   - {fileID: 5422893928235598382, guid: 105f11d106c770e4693aea29c9f4c3e2, type: 3}
-  - {fileID: 2964067555104329110, guid: 0e39928fce23ec74f8996ba02a88dbfb, type: 3}
+  - {fileID: 1426790804926192305, guid: 01507cdbc125908498b1670420369f32, type: 3}
   - {fileID: 7984649885318715201, guid: f5f9e2f613c1c3347b2b574da11454cc, type: 3}
   - {fileID: 7893939519490369526, guid: 8516a8366265cf046873d1ddfb437bdb, type: 3}
   cars2ghost:
@@ -400,6 +402,7 @@ MonoBehaviour:
   playerCars: 00000000000000000000000000000000
   selfName: 
   message: 
+  isStarted: 0
 --- !u!4 &419600870
 Transform:
   m_ObjectHideFlags: 0
@@ -450,6 +453,7 @@ MonoBehaviour:
   connectedNow: 0
   isStarted: 0
   connected: 0
+  finished: 0
   Key: SomeConnectionKey
   num: 1
 --- !u!114 &1425192198
