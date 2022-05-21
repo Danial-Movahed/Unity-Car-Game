@@ -125,13 +125,13 @@ public class VehicleControl : MonoBehaviour
 
     }
 
-    
+
 
 
     [System.Serializable]
     public class HitGround
     {
-       
+
         public string tag = "street";
         public bool grounded = false;
         public AudioClip brakeSound;
@@ -268,7 +268,7 @@ public class VehicleControl : MonoBehaviour
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    
+
 
     void Awake()
     {
@@ -286,7 +286,7 @@ public class VehicleControl : MonoBehaviour
         wheels[3] = SetWheelComponent(carWheels.wheels.backLeft, 0, carWheels.wheels.backWheelDrive, carWheels.wheels.backLeft.position.y);
 
         if (carSetting.carSteer)
-        steerCurAngle = carSetting.carSteer.localEulerAngles;
+            steerCurAngle = carSetting.carSteer.localEulerAngles;
 
         foreach (WheelComponent w in wheels)
         {
@@ -322,7 +322,6 @@ public class VehicleControl : MonoBehaviour
 
         }
 
-
     }
 
 
@@ -337,17 +336,18 @@ public class VehicleControl : MonoBehaviour
         if (currentGear < carSetting.gears.Length - 1)
         {
 
-           // if (!carSounds.switchGear.isPlaying)
-                carSounds.switchGear.GetComponent<AudioSource>().Play();
+            // if (!carSounds.switchGear.isPlaying)
+            carSounds.switchGear.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("volume", 1f);
+            carSounds.switchGear.GetComponent<AudioSource>().Play();
 
 
-                if (!carSetting.automaticGear)
+            if (!carSetting.automaticGear)
             {
                 if (currentGear == 0)
                 {
-                    if (NeutralGear){currentGear++;NeutralGear = false;}
+                    if (NeutralGear) { currentGear++; NeutralGear = false; }
                     else
-                    { NeutralGear = true;}
+                    { NeutralGear = true; }
                 }
                 else
                 {
@@ -360,8 +360,8 @@ public class VehicleControl : MonoBehaviour
             }
 
 
-           shiftDelay = now + 1.0f;
-           shiftTime = 1.5f;
+            shiftDelay = now + 1.0f;
+            shiftTime = 1.5f;
         }
     }
 
@@ -372,22 +372,23 @@ public class VehicleControl : MonoBehaviour
     {
         float now = Time.timeSinceLevelLoad;
 
-       if (now < shiftDelay) return;
+        if (now < shiftDelay) return;
 
         if (currentGear > 0 || NeutralGear)
         {
 
-           //w if (!carSounds.switchGear.isPlaying)
-                carSounds.switchGear.GetComponent<AudioSource>().Play();
+            //w if (!carSounds.switchGear.isPlaying)
+            carSounds.switchGear.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("volume", 1f);
+            carSounds.switchGear.GetComponent<AudioSource>().Play();
 
-                if (!carSetting.automaticGear)
+            if (!carSetting.automaticGear)
             {
 
                 if (currentGear == 1)
                 {
-                    if (!NeutralGear){currentGear--;NeutralGear = true;}
+                    if (!NeutralGear) { currentGear--; NeutralGear = true; }
                 }
-                else if (currentGear == 0){NeutralGear = false;}else{currentGear--;}
+                else if (currentGear == 0) { NeutralGear = false; } else { currentGear--; }
             }
             else
             {
@@ -424,7 +425,7 @@ public class VehicleControl : MonoBehaviour
     void OnCollisionStay(Collision collision)
     {
 
-       if (collision.transform.root.GetComponent<VehicleControl>())
+        if (collision.transform.root.GetComponent<VehicleControl>())
             collision.transform.root.GetComponent<VehicleControl>().slip2 = 5.0f;
 
     }
@@ -433,7 +434,7 @@ public class VehicleControl : MonoBehaviour
 
 
 
-    
+
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -574,21 +575,21 @@ public class VehicleControl : MonoBehaviour
 
         if (currentGear == 0 && Backward == true)
         {
-          //  carSetting.shiftCentre.z = -accel / -5;
+            //  carSetting.shiftCentre.z = -accel / -5;
             if (speed < carSetting.gears[0] * -10)
                 accel = -accel;
         }
         else
         {
             Backward = false;
-         //   if (currentGear > 0)
-         //   carSetting.shiftCentre.z = -(accel / currentGear) / -5;
+            //   if (currentGear > 0)
+            //   carSetting.shiftCentre.z = -(accel / currentGear) / -5;
         }
 
 
 
 
-      //  carSetting.shiftCentre.x = -Mathf.Clamp(steer * (speed / 100), -0.03f, 0.03f);
+        //  carSetting.shiftCentre.x = -Mathf.Clamp(steer * (speed / 100), -0.03f, 0.03f);
 
 
 
@@ -669,8 +670,10 @@ public class VehicleControl : MonoBehaviour
                     if (!NeutralGear)
                     {
                         rpm += col.rpm;
-                    }else{
-                        rpm += (carSetting.idleRPM*accel);
+                    }
+                    else
+                    {
+                        rpm += (carSetting.idleRPM * accel);
                     }
                 }
 
@@ -749,7 +752,7 @@ public class VehicleControl : MonoBehaviour
             {
                 if (powerShift == 0) { shifmotor = false; }
                 powerShift = Mathf.MoveTowards(powerShift, 0.0f, Time.deltaTime * 10.0f);
-                carSounds.nitro.volume = Mathf.Lerp(carSounds.nitro.volume, 1.0f, Time.deltaTime * 10.0f);
+                carSounds.nitro.volume = Mathf.Lerp(carSounds.nitro.volume, PlayerPrefs.GetFloat("volume", 1f), Time.deltaTime * 10.0f);
                 if (!carSounds.nitro.isPlaying)
                 {
                     carSounds.nitro.GetComponent<AudioSource>().Play();
@@ -792,8 +795,8 @@ public class VehicleControl : MonoBehaviour
 
 
             w.rotation = Mathf.Repeat(w.rotation + Time.deltaTime * col.rpm * 360.0f / 60.0f, 360.0f);
-            w.rotation2 = Mathf.Lerp(w.rotation2,col.steerAngle,0.1f);
-            w.wheel.localRotation = Quaternion.Euler(w.rotation,w.rotation2, 0.0f);
+            w.rotation2 = Mathf.Lerp(w.rotation2, col.steerAngle, 0.1f);
+            w.wheel.localRotation = Quaternion.Euler(w.rotation, w.rotation2, 0.0f);
 
 
 
@@ -854,7 +857,7 @@ public class VehicleControl : MonoBehaviour
                         var pcemission = pc.emission;
                         pcemission.enabled = true;
 
-                        Particle[currentWheel].GetComponent<AudioSource>().volume = 0.5f;
+                        Particle[currentWheel].GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("volume", 1f) / 2;
 
                         if (!Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
                             Particle[currentWheel].GetComponent<AudioSource>().Play();
@@ -870,7 +873,7 @@ public class VehicleControl : MonoBehaviour
                                 Particle[currentWheel].GetComponent<AudioSource>().Play();
                             var pcemission = pc.emission;
                             pcemission.enabled = true;
-                            Particle[currentWheel].GetComponent<AudioSource>().volume = 10;
+                            Particle[currentWheel].GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("volume", 1f) * 10;
 
                         }
 
@@ -1005,8 +1008,8 @@ public class VehicleControl : MonoBehaviour
 
         if (Pitch == 1)
         {
-            carSounds.IdleEngine.volume = Mathf.Lerp(carSounds.IdleEngine.volume, 1.0f, 0.1f);
-            carSounds.LowEngine.volume = Mathf.Lerp(carSounds.LowEngine.volume, 0.5f, 0.1f);
+            carSounds.IdleEngine.volume = Mathf.Lerp(carSounds.IdleEngine.volume, PlayerPrefs.GetFloat("volume", 1f), 0.1f);
+            carSounds.LowEngine.volume = Mathf.Lerp(carSounds.LowEngine.volume, PlayerPrefs.GetFloat("volume", 1f)/2, 0.1f);
             carSounds.HighEngine.volume = Mathf.Lerp(carSounds.HighEngine.volume, 0.0f, 0.1f);
 
         }
@@ -1019,11 +1022,11 @@ public class VehicleControl : MonoBehaviour
             if ((Pitch > PitchDelay || accel > 0) && shiftTime == 0.0f)
             {
                 carSounds.LowEngine.volume = Mathf.Lerp(carSounds.LowEngine.volume, 0.0f, 0.2f);
-                carSounds.HighEngine.volume = Mathf.Lerp(carSounds.HighEngine.volume, 1.0f, 0.1f);
+                carSounds.HighEngine.volume = Mathf.Lerp(carSounds.HighEngine.volume, PlayerPrefs.GetFloat("volume", 1f), 0.1f);
             }
             else
             {
-                carSounds.LowEngine.volume = Mathf.Lerp(carSounds.LowEngine.volume, 0.5f, 0.1f);
+                carSounds.LowEngine.volume = Mathf.Lerp(carSounds.LowEngine.volume, PlayerPrefs.GetFloat("volume", 1f)/2, 0.1f);
                 carSounds.HighEngine.volume = Mathf.Lerp(carSounds.HighEngine.volume, 0.0f, 0.2f);
             }
 
@@ -1053,7 +1056,7 @@ public class VehicleControl : MonoBehaviour
         Gizmos.matrix = rotationMatrix;
         Gizmos.color = new Color(1, 0, 0, 0.5f);
 
-        Gizmos.DrawCube(Vector3.up/1.5f, new Vector3(2.5f, 2.0f, 6));
+        Gizmos.DrawCube(Vector3.up / 1.5f, new Vector3(2.5f, 2.0f, 6));
         Gizmos.DrawSphere(carSetting.shiftCentre / transform.lossyScale.x, 0.2f);
 
     }
