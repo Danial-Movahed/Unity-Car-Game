@@ -15,8 +15,10 @@ public class Config : MonoBehaviour
     public int[] playerCars = new int[4];
     public string selfName = "";
     public string message = "";
+    public bool isStarted = false;
     public void startGame()
     {
+        isStarted = true;
         Debug.Log(mapSelector);
         Debug.Log(carSelector);
         if (mapSelector == 1)

@@ -17,6 +17,7 @@ public class MenuController : MonoBehaviour {
         });
         settingBtn.onClick.AddListener( () => {
             Debug.Log("setting");
+            SceneManager.LoadScene("Settings");
         });
         startBtn.onClick.AddListener( () => 
         {

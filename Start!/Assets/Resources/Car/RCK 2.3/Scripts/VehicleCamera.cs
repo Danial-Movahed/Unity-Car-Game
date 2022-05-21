@@ -211,7 +211,7 @@ public class VehicleCamera : MonoBehaviour
     void Start()
     {
         configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
-        if (GameObject.Find("Client") || GameObject.Find("Server"))
+        if (configScript.selfName != "")
         {
             Debug.Log("Client or Server is existent");
             for (int i = 0; i < 4; i++)
@@ -231,6 +231,10 @@ public class VehicleCamera : MonoBehaviour
                             carLoaded = Instantiate(configScript.cars2[configScript.playerCars[i] - 1], new Vector3(940.17f + i * 2.5f, 3.5f, 376.6745f), Quaternion.identity);
                             carLoaded.name = (i + 1).ToString();
                             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth2", 0.3f);
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance2", 7f);
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().height = PlayerPrefs.GetFloat("cameraHeight2", 2.5f);
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = PlayerPrefs.GetFloat("cameraAngle2", 4f);
                         }
                     }
                     else
@@ -244,11 +248,10 @@ public class VehicleCamera : MonoBehaviour
                         {
                             carLoaded = Instantiate(configScript.cars1[configScript.playerCars[i] - 1], new Vector3(517f, 0.5f, 223.3f + i * 6f), Quaternion.Euler(0, 90, 0));
                             carLoaded.name = (i + 1).ToString();
-                            GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
-                            GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = 0.3f;
-                            GameObject.Find("camera").GetComponent<VehicleCamera>().distance = 16.2f;
-                            GameObject.Find("camera").GetComponent<VehicleCamera>().height = 5.1f;
-                            GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = 11.67f;
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth1", 0.3f);
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance1", 16.2f);
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().height = PlayerPrefs.GetFloat("cameraHeight1", 5.1f);
+                            GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = PlayerPrefs.GetFloat("cameraAngle1", 11.67f);
                         }
                     }
                 }
@@ -257,14 +260,20 @@ public class VehicleCamera : MonoBehaviour
         else
         {
             if (configScript.mapSelector == 2)
+            {
                 carLoaded = Instantiate(configScript.cars2[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth2", 0.3f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance2", 7f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().height = PlayerPrefs.GetFloat("cameraHeight2", 2.5f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = PlayerPrefs.GetFloat("cameraAngle2", 4f);
+            }
             else
             {
                 carLoaded = Instantiate(configScript.cars1[configScript.carSelector - 1], new Vector3(537.3964f, 1.5f, 224.3f), Quaternion.Euler(0, 90, 0));
-                GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = 0.3f;
-                GameObject.Find("camera").GetComponent<VehicleCamera>().distance = 16.2f;
-                GameObject.Find("camera").GetComponent<VehicleCamera>().height = 5.1f;
-                GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = 11.67f;
+                GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth1", 0.3f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance1", 16.2f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().height = PlayerPrefs.GetFloat("cameraHeight1", 5.1f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = PlayerPrefs.GetFloat("cameraAngle1", 11.67f);
             }
             carLoaded.name = "Player";
             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
@@ -275,18 +284,22 @@ public class VehicleCamera : MonoBehaviour
             {
                 carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(947.61f, 3f, 377.3556f), Quaternion.identity);
                 carGhost.name = "Ghost";
+                GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth2", 0.3f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance2", 7f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().height = PlayerPrefs.GetFloat("cameraHeight2", 2.5f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = PlayerPrefs.GetFloat("cameraAngle2", 4f);
             }
             else
             {
                 carGhost = Instantiate(configScript.cars2ghost[configScript.carSelector - 1], new Vector3(537.3964f, 1.5f, 224.3f), Quaternion.Euler(0, 90, 0));
                 carGhost.name = "Ghost";
-                GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = 0.3f;
-                GameObject.Find("camera").GetComponent<VehicleCamera>().distance = 16.2f;
-                GameObject.Find("camera").GetComponent<VehicleCamera>().height = 5.1f;
-                GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = 11.67f;
+                GameObject.Find("camera").GetComponent<VehicleCamera>().smooth = PlayerPrefs.GetFloat("cameraSmooth1", 0.3f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().distance = PlayerPrefs.GetFloat("cameraDistance1", 16.2f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().height = PlayerPrefs.GetFloat("cameraHeight1", 5.1f);
+                GameObject.Find("camera").GetComponent<VehicleCamera>().Angle = PlayerPrefs.GetFloat("cameraAngle1", 11.67f);
             }
             GameObject.Find("camera").GetComponent<VehicleCamera>().target = carLoaded.transform;
-            carLoaded.name="Player";
+            carLoaded.name = "Player";
             carLoaded.AddComponent<Save>();
         }
         carScript = (VehicleControl)target.GetComponent<VehicleControl>();
