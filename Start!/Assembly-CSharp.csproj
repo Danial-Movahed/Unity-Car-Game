@@ -76,12 +76,12 @@
      <Compile Include="Assets/Scripts/LapSystem/OneWayCollider.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerClientCarSelector.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/SliderValuePass.cs" />
+     <Compile Include="Assets/CTI URP/CTI Runtime Components URP/Scripts/CTI_SRP_CustomWind.cs" />
      <Compile Include="Assets/Map2 Assets/IgniteCoders/Simple Water Shader/Resources/WaterReflection.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerJoinServer.cs" />
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCamera.cs" />
-     <Compile Include="Assets/CTI URP/CTI Runtime Components URP/Scripts/CTI_SRP_CustomWind.cs" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard GBuffer Pass.hlsl" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/CTI URP Leaves.shader" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Lighting.hlsl" />
@@ -128,6 +128,7 @@
      <None Include="Assets/Map2 Assets/Five Seamless Tileable Ground Textures/read me.txt" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Inputs.hlsl" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Bark SurfaceData.hlsl" />
+     <None Include="Assets/SkySeries Freebie/Hdri setup.txt" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Leaves ShadowCaster Pass.hlsl" />
      <None Include="Assets/Map2 Assets/BarProps/Credits.txt" />
      <None Include="Assets/Map1 Assets/generic-f1-vintage-car/Read - VFXDownload.txt" />
