@@ -2843,7 +2843,7 @@ Transform:
   m_LocalScale: {x: 1.25, y: 25, z: 260}
   m_Children: []
   m_Father: {fileID: 798440603}
-  m_RootOrder: 47
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &80974249
 GameObject:
@@ -26901,7 +26901,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.23584908, g: 0.23256586, b: 0.22361162, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -26914,7 +26914,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -26959,13 +26959,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 146, y: 198, z: 177}
+  m_LocalRotation: {x: 0.20495416, y: 0.37233323, z: -0.06313205, w: 0.9029818}
+  m_LocalPosition: {x: 297.2, y: 292.8, z: 67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 24.655, y: 45.349, z: 2.435}
 --- !u!1001 &707228177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30961,6 +30961,7 @@ Transform:
   - {fileID: 980786317}
   - {fileID: 2063931141}
   - {fileID: 1967074087}
+  - {fileID: 79933484}
   - {fileID: 1424315234}
   - {fileID: 1413465881}
   - {fileID: 1551848344}
@@ -30977,7 +30978,6 @@ Transform:
   - {fileID: 768674165}
   - {fileID: 1323366638}
   - {fileID: 1807519318}
-  - {fileID: 79933484}
   - {fileID: 217430942}
   - {fileID: 180776273}
   - {fileID: 762646729}
@@ -40581,6 +40581,7 @@ GameObject:
   - component: {fileID: 1056522869}
   - component: {fileID: 1056522871}
   - component: {fileID: 1056522870}
+  - component: {fileID: 1056522872}
   m_Layer: 0
   m_Name: HighwayJoinRoad (1)
   m_TagString: Untagged
@@ -40650,6 +40651,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056522868}
+  m_Mesh: {fileID: -132671967645699893, guid: dc0558cb22ef5f13db09ca2bf9db3b17, type: 3}
+--- !u!64 &1056522872
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056522868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -132671967645699893, guid: dc0558cb22ef5f13db09ca2bf9db3b17, type: 3}
 --- !u!1001 &1058736342
 PrefabInstance:
