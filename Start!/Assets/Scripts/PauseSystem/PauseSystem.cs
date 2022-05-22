@@ -38,16 +38,20 @@ public class PauseSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Time.timeScale == 1)
-            {
-                Time.timeScale = 0;
-                pauseMenu.SetActive(true);
-            }
-            else
-            {
-                Time.timeScale = 1;
-                pauseMenu.SetActive(false);
-            }
+            pauseShowMenu();
+        }
+    }
+    public void pauseShowMenu()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pauseMenu.SetActive(false);
         }
     }
 }
