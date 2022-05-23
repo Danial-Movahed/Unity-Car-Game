@@ -11804,12 +11804,12 @@ MonoBehaviour:
     carPower: 300
     shiftPower: 150
     brakePower: 25000
-    shiftCentre: {x: 0, y: -0.05, z: 0}
-    maxSteerAngle: 30
+    shiftCentre: {x: 0, y: -0.5, z: 0}
+    maxSteerAngle: 40
     shiftDownRPM: 2000
     shiftUpRPM: 4000
     idleRPM: 700
-    stiffness: 3
+    stiffness: 3.6
     automaticGear: 1
     gears:
     - -9
@@ -11819,7 +11819,7 @@ MonoBehaviour:
     - 2
     - 1
     LimitBackwardSpeed: 60
-    LimitForwardSpeed: 220
+    LimitForwardSpeed: 200
   brake: 0
   curTorque: 100
   powerShift: 100
@@ -11865,9 +11865,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7575765316382502298}
   serializedVersion: 2
-  m_Mass: 3000
+  m_Mass: 4000
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 2
