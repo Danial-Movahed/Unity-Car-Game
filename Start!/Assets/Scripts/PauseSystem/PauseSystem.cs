@@ -12,6 +12,8 @@ public class PauseSystem : MonoBehaviour
     public Button resumeBtn;
     public Button quitBtn;
     public Button settingsBtn;
+    public GameObject lastlap;
+    private bool isLastLapShown = false;
     void Start()
     {
         resumeBtn.onClick.RemoveAllListeners();
@@ -33,12 +35,24 @@ public class PauseSystem : MonoBehaviour
         });
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
+        lastlap.SetActive(false);
+    }
+    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
+    {
+        yield return new WaitForSeconds(seconds);
+        obj.SetActive(false);
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseShowMenu();
+        }
+        if (GameObject.Find("Player").GetComponent<Lap>().lap == 3 && !isLastLapShown)
+        {
+            lastlap.SetActive(true);
+            StartCoroutine(RemoveAfterSeconds(3, lastlap));
+            isLastLapShown = true;
         }
     }
     public void pauseShowMenu()
