@@ -8,7 +8,7 @@ public class MenuControllerJoinServer : MonoBehaviour
     public Button backbtn;
     public Button Joinbtn;
     public InputField ipInput;
-    public Client client;
+    private Client client;
     void Start()
     {
         client = GameObject.Find("Client").GetComponent<Client>();
