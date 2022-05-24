@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/Settings.unity
     guid: cad5942e9a549fdac842dc07349f87ed
+  - enabled: 1
+    path: Assets/Scenes/Menu/FinishServer.unity
+    guid: a8f3fcd425ef2d9f1be177e2abd52fd6
   m_configObjects: {}

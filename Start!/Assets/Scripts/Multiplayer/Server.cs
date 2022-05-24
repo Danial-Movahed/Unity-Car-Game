@@ -148,7 +148,7 @@ public class Server : MonoBehaviour
                     sendData("FN " + selfName + " " + num);
                     sendData("DL " + selfName);
                     scoreboard.Add(selfName, num.ToString());
-                    SceneManager.LoadScene("Finish");
+                    SceneManager.LoadScene("FinishServer");
                 }
                 else
                 {
