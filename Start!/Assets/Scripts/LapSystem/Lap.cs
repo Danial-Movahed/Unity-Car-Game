@@ -14,9 +14,9 @@ public class Lap : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.name == "StartLapCounter")
+        if (col.gameObject.name == "StartLapCounter")
         {
-            if(lap < 3)
+            if (lap < 3)
             {
                 lap++;
                 GameObject.Find("lapCount").GetComponent<Text>().text = lap.ToString();
@@ -25,8 +25,8 @@ public class Lap : MonoBehaviour
             else
             {
                 Debug.Log("Done game");
-                lap=-1;
-                if(config.modeSelector == 0 && config.selfName == "")
+                lap = -1;
+                if (config.modeSelector == 0 && config.selfName == "")
                     SceneManager.LoadScene("Finish");
             }
         }

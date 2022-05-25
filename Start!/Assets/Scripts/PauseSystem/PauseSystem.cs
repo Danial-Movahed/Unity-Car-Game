@@ -12,8 +12,14 @@ public class PauseSystem : MonoBehaviour
     public Button resumeBtn;
     public Button quitBtn;
     public Button settingsBtn;
+    public GameObject lastlap;
+    private bool isLastLapShown = false;
+    private Server server;
+    private Client client;
     void Start()
     {
+        server = GameObject.Find("Server").GetComponent<Server>();
+        client = GameObject.Find("Client").GetComponent<Client>();
         resumeBtn.onClick.RemoveAllListeners();
         resumeBtn.onClick.AddListener(() =>
         {
@@ -33,12 +39,42 @@ public class PauseSystem : MonoBehaviour
         });
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
+        lastlap.SetActive(false);
+    }
+    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
+    {
+        yield return new WaitForSeconds(seconds);
+        obj.SetActive(false);
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseShowMenu();
+        }
+        if(server.isStarted)
+        {
+            if(GameObject.Find(server.selfName).GetComponent<Lap>().lap == 3 && !isLastLapShown)
+            {
+                lastlap.SetActive(true);
+                StartCoroutine(RemoveAfterSeconds(3, lastlap));
+                isLastLapShown = true;
+            }
+        }
+        else if(client.isStarted)
+        {
+            if (GameObject.Find(client.selfName).GetComponent<Lap>().lap == 3 && !isLastLapShown)
+            {
+                lastlap.SetActive(true);
+                StartCoroutine(RemoveAfterSeconds(3, lastlap));
+                isLastLapShown = true;
+            }
+        }
+        else if(GameObject.Find("Player").GetComponent<Lap>().lap == 3 && !isLastLapShown)
+        {
+            lastlap.SetActive(true);
+            StartCoroutine(RemoveAfterSeconds(3, lastlap));
+            isLastLapShown = true;
         }
     }
     public void pauseShowMenu()

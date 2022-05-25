@@ -84,6 +84,13 @@ public class Server : MonoBehaviour
             {
                 Destroy(GameObject.Find(data.Split(' ')[1]));
             }
+            else if(data.Contains("Banana"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject tmp = Instantiate(Resources.Load("Maps/PowerUps/Prefabs/1"), new Vector3(float.Parse(dataSplit[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(dataSplit[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(dataSplit[3], CultureInfo.InvariantCulture.NumberFormat)), Quaternion.Euler(-90,0,0)) as GameObject;
+                tmp.GetComponent<NameSaver>().ExcludeName = dataSplit[4];
+                tmp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+            }
             else
             {
                 if (!finished)
@@ -148,7 +155,7 @@ public class Server : MonoBehaviour
                     sendData("FN " + selfName + " " + num);
                     sendData("DL " + selfName);
                     scoreboard.Add(selfName, num.ToString());
-                    SceneManager.LoadScene("Finish");
+                    SceneManager.LoadScene("FinishServer");
                 }
                 else
                 {
