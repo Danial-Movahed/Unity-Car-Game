@@ -214,6 +214,13 @@ public class VehicleCamera : MonoBehaviour
         if (configScript.selfName != "")
         {
             Debug.Log("Client or Server is existent");
+            if(configScript.mapSelector == 2)
+            {
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(939.974792f,3.5f,401.813507f), transform.rotation);
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(942.570007f,3.5f,401.813507f), transform.rotation);
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(945.570007f,3.5f,401.813507f), transform.rotation);
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(948.570007f,3.5f,401.813507f), transform.rotation);
+            }
             for (int i = 0; i < 4; i++)
             {
                 Debug.Log("car #" + i + " is " + configScript.playerCars[i]);

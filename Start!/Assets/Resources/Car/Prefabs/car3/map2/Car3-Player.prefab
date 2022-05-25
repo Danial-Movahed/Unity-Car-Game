@@ -859,7 +859,7 @@ Transform:
   - {fileID: 2141496017156897462}
   - {fileID: 3064447742087830134}
   - {fileID: 2297893856193647422}
-  - {fileID: 1277617816991606000}
+  - {fileID: 5770916385615384118}
   - {fileID: 1410238513631952033}
   - {fileID: 3879839458003672481}
   - {fileID: 2462951967227439132}
@@ -13929,11 +13929,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5682649832237422206}
   m_LocalRotation: {x: 0.000000021855707, y: -0, z: -2.664535e-15, w: 1}
-  m_LocalPosition: {x: 0.4171, y: 0.6398, z: 0.0366}
-  m_LocalScale: {x: 0.8291304, y: 0.7849393, z: 0.7713802}
+  m_LocalPosition: {x: 8.544922, y: 194.61703, z: -69.70215}
+  m_LocalScale: {x: 414.56525, y: 392.46964, z: 385.69012}
   m_Children: []
-  m_Father: {fileID: 1277617816991606000}
-  m_RootOrder: 0
+  m_Father: {fileID: 1767427566355546123}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2413330704212963082
 MeshFilter:
@@ -15810,37 +15810,6 @@ Transform:
   - {fileID: 7776828900361732411}
   m_Father: {fileID: 1767427566355546123}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7642918868533063209
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1277617816991606000}
-  m_Layer: 0
-  m_Name: Collisions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1277617816991606000
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642918868533063209}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -200, y: -125.28287, z: -88}
-  m_LocalScale: {x: 500, y: 500, z: 500}
-  m_Children:
-  - {fileID: 5770916385615384118}
-  m_Father: {fileID: 1767427566355546123}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7693536375532155580
 GameObject:

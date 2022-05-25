@@ -14,8 +14,12 @@ public class PauseSystem : MonoBehaviour
     public Button settingsBtn;
     public GameObject lastlap;
     private bool isLastLapShown = false;
+    private Server server;
+    private Client client;
     void Start()
     {
+        server = GameObject.Find("Server").GetComponent<Server>();
+        client = GameObject.Find("Client").GetComponent<Client>();
         resumeBtn.onClick.RemoveAllListeners();
         resumeBtn.onClick.AddListener(() =>
         {
@@ -48,7 +52,25 @@ public class PauseSystem : MonoBehaviour
         {
             pauseShowMenu();
         }
-        if (GameObject.Find("Player").GetComponent<Lap>().lap == 3 && !isLastLapShown)
+        if(server.isStarted)
+        {
+            if(GameObject.Find(server.selfName).GetComponent<Lap>().lap == 3 && !isLastLapShown)
+            {
+                lastlap.SetActive(true);
+                StartCoroutine(RemoveAfterSeconds(3, lastlap));
+                isLastLapShown = true;
+            }
+        }
+        else if(client.isStarted)
+        {
+            if (GameObject.Find(client.selfName).GetComponent<Lap>().lap == 3 && !isLastLapShown)
+            {
+                lastlap.SetActive(true);
+                StartCoroutine(RemoveAfterSeconds(3, lastlap));
+                isLastLapShown = true;
+            }
+        }
+        else if(GameObject.Find("Player").GetComponent<Lap>().lap == 3 && !isLastLapShown)
         {
             lastlap.SetActive(true);
             StartCoroutine(RemoveAfterSeconds(3, lastlap));

@@ -34,10 +34,8 @@ public class OneWayCollider : MonoBehaviour
         }
         else
         {
-            Debug.Log("aaaaaaa");
             if (col.gameObject.name == "StartLapCollider" && GetComponent<Rigidbody>().velocity.x < 0)
             {
-                Debug.Log("Topol ali");
                 ifStillColliding = true;
                 GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             }
