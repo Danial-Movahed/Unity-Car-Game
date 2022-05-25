@@ -62,6 +62,7 @@
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/PoliceLights.cs" />
      <Compile Include="Assets/Scripts/Menu/Config.cs" />
      <Compile Include="Assets/Scripts/Multiplayer/Client.cs" />
+     <Compile Include="Assets/Scripts/PowerUpSystem/UsePowerUp.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/CircleSlider.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerServerWaiting.cs" />
      <Compile Include="Assets/Scripts/Multiplayer/Server.cs" />
@@ -76,6 +77,7 @@
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/CarSwitch.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerSettings.cs" />
      <Compile Include="Assets/Scripts/LapSystem/OneWayCollider.cs" />
+     <Compile Include="Assets/Scripts/PowerUpSystem/NameSaver.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerClientCarSelector.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/SliderValuePass.cs" />
      <Compile Include="Assets/CTI URP/CTI Runtime Components URP/Scripts/CTI_SRP_CustomWind.cs" />
@@ -84,8 +86,6 @@
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCamera.cs" />
-     <Compile Include="Assets/Scripts/PowerUpSystem/UsePowerUp.cs" />
-     <Compile Include="Assets/Scripts/PowerUpSystem/NameSaver.cs" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard GBuffer Pass.hlsl" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/CTI URP Leaves.shader" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Lighting.hlsl" />
