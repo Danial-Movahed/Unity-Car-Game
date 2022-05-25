@@ -15,10 +15,12 @@ public class DestroySpawn : MonoBehaviour
     void OnTriggerEnter(Collider collisionInfo)
     {
         Debug.Log("Collision with powerup. " + collisionInfo.gameObject.transform.parent.name);
+        if(GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp != 0)
+            return;
         if (collisionInfo.gameObject.name == "Collision")
         {
             Destroy(gameObject);
-            if (GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp == 0 && collisionInfo.gameObject.transform.parent.name == configscript.selfName)
+            if (collisionInfo.gameObject.transform.parent.name == configscript.selfName)
             {
                 int random = Random.Range(1, maxPowerUps);
                 PowerUpImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Maps/PowerUps/PowerUps/" + random);
