@@ -89,7 +89,7 @@ public class Client : MonoBehaviour
             }
             else if (data.Contains("Dirty"))
             {
-                StartCoroutine(ShowAndHideSeconds(10, GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().DirtyImage));
+                StartCoroutine(ShowAndHideSeconds(15, GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().DirtyImage));
             }
             else
             {
