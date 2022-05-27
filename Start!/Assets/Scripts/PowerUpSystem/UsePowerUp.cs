@@ -57,6 +57,10 @@ public class UsePowerUp : MonoBehaviour
                     Debug.Log("Turbo!");
                     StartCoroutine(Turbo(5));
                     break;
+                case 3:
+                    Debug.Log("Super turbo!");
+                    StartCoroutine(Turbo(20));
+                    break;
             }
             currentPowerUp = 0;
             PowerUpImage.SetActive(false);
