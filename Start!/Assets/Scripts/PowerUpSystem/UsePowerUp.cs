@@ -32,7 +32,7 @@ public class UsePowerUp : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.stiffness -= 10;
         GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.LimitForwardSpeed -= 1000;
-   }
+    }
     void Update()
     {
         if (Input.GetKey("e"))
@@ -61,9 +61,17 @@ public class UsePowerUp : MonoBehaviour
                     Debug.Log("Super turbo!");
                     StartCoroutine(Turbo(20));
                     break;
+                case 4:
+                    Debug.Log("Sheild!");
+                    GameObject.Find(configscript.selfName).GetComponent<SheildEnabler>().ifEnabled = true;
+                    PowerUpImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Maps/PowerUps/PowerUps/SheildUp");
+                    break;
             }
-            currentPowerUp = 0;
-            PowerUpImage.SetActive(false);
+            if (!GameObject.Find(configscript.selfName).GetComponent<SheildEnabler>().ifEnabled)
+            {
+                currentPowerUp = 0;
+                PowerUpImage.SetActive(false);
+            }
         }
     }
 }

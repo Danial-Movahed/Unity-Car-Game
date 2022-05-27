@@ -86,6 +86,7 @@
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCamera.cs" />
+     <Compile Include="Assets/Scripts/PowerUpSystem/SheildEnabler.cs" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard GBuffer Pass.hlsl" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/CTI URP Leaves.shader" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Lighting.hlsl" />
