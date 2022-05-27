@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class DestroySpawn : MonoBehaviour
 {
     public Vector3[] spawnPoints;
-    private int maxPowerUps = 4;
+    private int maxPowerUps = 5;
     private Config configscript;
     private GameObject PowerUpImage;
     void Start()
