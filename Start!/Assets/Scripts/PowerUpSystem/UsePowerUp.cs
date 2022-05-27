@@ -25,6 +25,14 @@ public class UsePowerUp : MonoBehaviour
         }
         PowerUpImage.SetActive(false);
     }
+    IEnumerator Turbo(int seconds)
+    {
+        GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.stiffness += 10;
+        GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.LimitForwardSpeed += 1000;
+        yield return new WaitForSeconds(seconds);
+        GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.stiffness -= 10;
+        GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.LimitForwardSpeed -= 1000;
+   }
     void Update()
     {
         if (Input.GetKey("e"))
@@ -35,15 +43,19 @@ public class UsePowerUp : MonoBehaviour
                     Debug.Log("Banana!");
                     if (mode)
                     {
-                        server.sendData("Banana " + (GameObject.Find(configscript.selfName).transform.position.x).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.y+1).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.z).ToString() + " " + (configscript.selfName).ToString());
+                        server.sendData("Banana " + (GameObject.Find(configscript.selfName).transform.position.x).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.y + 1).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.z).ToString() + " " + (configscript.selfName).ToString());
                     }
                     else
                     {
-                        client.sendData("Banana " + (GameObject.Find(configscript.selfName).transform.position.x).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.y+1).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.z).ToString() + " " + (configscript.selfName).ToString());
+                        client.sendData("Banana " + (GameObject.Find(configscript.selfName).transform.position.x).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.y + 1).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.z).ToString() + " " + (configscript.selfName).ToString());
                     }
-                    GameObject tmp = Instantiate(Resources.Load("Maps/PowerUps/Prefabs/1"), new Vector3(GameObject.Find(configscript.selfName).transform.position.x, GameObject.Find(configscript.selfName).transform.position.y+1, GameObject.Find(configscript.selfName).transform.position.z), Quaternion.Euler(-90,0,0)) as GameObject;
+                    GameObject tmp = Instantiate(Resources.Load("Maps/PowerUps/Prefabs/1"), new Vector3(GameObject.Find(configscript.selfName).transform.position.x, GameObject.Find(configscript.selfName).transform.position.y + 1, GameObject.Find(configscript.selfName).transform.position.z), Quaternion.Euler(-90, 0, 0)) as GameObject;
                     tmp.GetComponent<NameSaver>().ExcludeName = configscript.selfName;
                     tmp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+                    break;
+                case 2:
+                    Debug.Log("Turbo!");
+                    StartCoroutine(Turbo(5));
                     break;
             }
             currentPowerUp = 0;
