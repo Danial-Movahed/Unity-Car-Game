@@ -63,11 +63,11 @@ public class UsePowerUp : MonoBehaviour
                     break;
                 case 4:
                     Debug.Log("Sheild!");
-                    GameObject.Find(configscript.selfName).GetComponent<SheildEnabler>().ifEnabled = true;
                     PowerUpImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Maps/PowerUps/PowerUps/SheildUp");
+                    currentPowerUp = -1;
                     break;
             }
-            if (!GameObject.Find(configscript.selfName).GetComponent<SheildEnabler>().ifEnabled)
+            if (currentPowerUp != -1)
             {
                 currentPowerUp = 0;
                 PowerUpImage.SetActive(false);
