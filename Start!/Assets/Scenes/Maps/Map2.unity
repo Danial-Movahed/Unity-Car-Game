@@ -20875,7 +20875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPowerUp: 0
   PowerUpImage: {fileID: 980385688}
-  DirtyImage: {fileID: 0}
+  DirtyImage: {fileID: 1821785311}
 --- !u!4 &873269495
 Transform:
   m_ObjectHideFlags: 0
