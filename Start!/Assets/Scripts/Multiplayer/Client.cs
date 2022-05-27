@@ -89,7 +89,13 @@ public class Client : MonoBehaviour
             }
             else if (data.Contains("Dirty"))
             {
-                StartCoroutine(ShowAndHideSeconds(15, GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().DirtyImage));
+                if (GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp != -1)
+                    StartCoroutine(ShowAndHideSeconds(15, GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().DirtyImage));
+                else
+                {
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp = 0;
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.SetActive(false);
+                }
             }
             else
             {
