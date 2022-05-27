@@ -6,6 +6,7 @@ public class UsePowerUp : MonoBehaviour
 {
     public int currentPowerUp = 0;
     public GameObject PowerUpImage;
+    public GameObject DirtyImage;
     private Config configscript;
     private Client client;
     private Server server;
@@ -65,6 +66,17 @@ public class UsePowerUp : MonoBehaviour
                     Debug.Log("Sheild!");
                     PowerUpImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Maps/PowerUps/PowerUps/SheildUp");
                     currentPowerUp = -1;
+                    break;
+                case 5:
+                    Debug.Log("Time to make the screen dirty!");
+                    if(mode)
+                    {
+                        server.sendData("Dirty");
+                    }
+                    else
+                    {
+                        client.sendData("Dirty");
+                    }
                     break;
             }
             if (currentPowerUp != -1)

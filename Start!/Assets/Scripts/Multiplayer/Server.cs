@@ -24,6 +24,12 @@ public class Server : MonoBehaviour
     private Dictionary<string, string> peerNames = new Dictionary<string, string>();
     public Dictionary<string, string> scoreboard = new Dictionary<string, string>();
     public int num = 1;
+    IEnumerator ShowAndHideSeconds(int seconds, GameObject go)
+    {
+        go.SetActive(true);
+        yield return new WaitForSeconds(seconds);
+        go.SetActive(false);
+    }
     public void connect()
     {
         scoreboard.Clear();
@@ -84,12 +90,16 @@ public class Server : MonoBehaviour
             {
                 Destroy(GameObject.Find(data.Split(' ')[1]));
             }
-            else if(data.Contains("Banana"))
+            else if (data.Contains("Banana"))
             {
                 string[] dataSplit = data.Split(' ');
-                GameObject tmp = Instantiate(Resources.Load("Maps/PowerUps/Prefabs/1"), new Vector3(float.Parse(dataSplit[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(dataSplit[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(dataSplit[3], CultureInfo.InvariantCulture.NumberFormat)), Quaternion.Euler(-90,0,0)) as GameObject;
+                GameObject tmp = Instantiate(Resources.Load("Maps/PowerUps/Prefabs/1"), new Vector3(float.Parse(dataSplit[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(dataSplit[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(dataSplit[3], CultureInfo.InvariantCulture.NumberFormat)), Quaternion.Euler(-90, 0, 0)) as GameObject;
                 tmp.GetComponent<NameSaver>().ExcludeName = dataSplit[4];
                 tmp.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+            }
+            else if (data.Contains("Dirty"))
+            {
+                StartCoroutine(ShowAndHideSeconds(10, GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().DirtyImage));
             }
             else
             {
