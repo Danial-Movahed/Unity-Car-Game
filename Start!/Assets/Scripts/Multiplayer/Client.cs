@@ -32,6 +32,8 @@ public class Client : MonoBehaviour
     }
     public void connect()
     {
+        for(int i=0;i<4;i++)
+            config.playerCars[i] = 0;
         listener = new EventBasedNetListener();
         client = new NetManager(listener);
         selfName = "";

@@ -32,6 +32,8 @@ public class Server : MonoBehaviour
     }
     public void connect()
     {
+        for(int i=0;i<4;i++)
+            config.playerCars[i] = 0;
         scoreboard.Clear();
         peerNames.Clear();
         listener = new EventBasedNetListener();
