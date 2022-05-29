@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/FinishServer.unity
     guid: a8f3fcd425ef2d9f1be177e2abd52fd6
+  - enabled: 1
+    path: Assets/Scenes/Maps/Map2Video.unity
+    guid: a43316fd38d263eb2ac725e7f895a76c
   m_configObjects: {}
