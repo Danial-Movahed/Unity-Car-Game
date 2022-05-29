@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,6 +155,7 @@ MonoBehaviour:
   quitBtn: {fileID: 1809946530}
   settingBtn: {fileID: 1759578548}
   startBtn: {fileID: 760563387}
+  videoBtn: {fileID: 164098997}
 --- !u!4 &126182476
 Transform:
   m_ObjectHideFlags: 0
