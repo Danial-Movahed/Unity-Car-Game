@@ -61,7 +61,7 @@ public class MenuControllerFinishServer : MonoBehaviour
                 if (config.mapSelector == 1)
                     Map[int.Parse(entry.Value)-1].GetComponent<Text>().text = "Map1";
                 else
-                    Map[int.Parse(entry.Value)-1].GetComponent<Text>().text = "Map1";
+                    Map[int.Parse(entry.Value)-1].GetComponent<Text>().text = "Map2";
             }
         }
         else if (isClient)
@@ -73,7 +73,7 @@ public class MenuControllerFinishServer : MonoBehaviour
                 if (config.mapSelector == 1)
                     Map[int.Parse(entry.Value)-1].GetComponent<Text>().text = "Map1";
                 else
-                    Map[int.Parse(entry.Value)-1].GetComponent<Text>().text = "Map1";
+                    Map[int.Parse(entry.Value)-1].GetComponent<Text>().text = "Map2";
             }
         }
     }
