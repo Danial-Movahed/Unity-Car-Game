@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -390,7 +390,7 @@ MonoBehaviour:
   cars1ghost:
   - {fileID: 26005216650286153, guid: 2696b6c096e56b242bb088d204219a52, type: 3}
   - {fileID: 5422893928235598382, guid: 105f11d106c770e4693aea29c9f4c3e2, type: 3}
-  - {fileID: 1426790804926192305, guid: 01507cdbc125908498b1670420369f32, type: 3}
+  - {fileID: 2964067555104329110, guid: 0e39928fce23ec74f8996ba02a88dbfb, type: 3}
   - {fileID: 7984649885318715201, guid: f5f9e2f613c1c3347b2b574da11454cc, type: 3}
   - {fileID: 7893939519490369526, guid: 8516a8366265cf046873d1ddfb437bdb, type: 3}
   cars2ghost:
@@ -403,6 +403,7 @@ MonoBehaviour:
   selfName: 
   message: 
   isStarted: 0
+  ifVideo: 0
 --- !u!4 &419600870
 Transform:
   m_ObjectHideFlags: 0

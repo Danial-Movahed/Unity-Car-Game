@@ -1380,7 +1380,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444750588527992860}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -1962,7 +1962,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7889,8 +7889,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3971445650679664338}
   m_LocalRotation: {x: 0.000000021855707, y: -0, z: -2.664535e-15, w: 1}
-  m_LocalPosition: {x: -0.020774841, y: 0.8011286, z: 0.1414032}
-  m_LocalScale: {x: 1.0860521, y: 1.020306, z: 0.96202606}
+  m_LocalPosition: {x: -0.020774841, y: 0.9532, z: 0.1174}
+  m_LocalScale: {x: 1.0860521, y: 0.8784077, z: 0.95423365}
   m_Children: []
   m_Father: {fileID: 5902827023452175891}
   m_RootOrder: 6
@@ -8242,7 +8242,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -15150,9 +15150,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6530462776660403369}
   serializedVersion: 2
-  m_Mass: 2000
+  m_Mass: 3000
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 2
@@ -15182,7 +15182,7 @@ MonoBehaviour:
       backLeft: {fileID: 1478893222248804483}
     setting:
       Radius: 1.2
-      Weight: 500
+      Weight: 700
       Distance: 0.2
   carLights:
     brakeLights:
@@ -15219,17 +15219,17 @@ MonoBehaviour:
     - {fileID: 5524937440872611521}
     - {fileID: 478309097935113948}
     - {fileID: 2869938583044336975}
-    springs: 25000
+    springs: 30000
     dampers: 1500
-    carPower: 120
+    carPower: 400
     shiftPower: 150
-    brakePower: 12000
+    brakePower: 15000
     shiftCentre: {x: 0, y: -0.05, z: 0}
     maxSteerAngle: 30
     shiftDownRPM: 2000
     shiftUpRPM: 4000
     idleRPM: 700
-    stiffness: 3.69
+    stiffness: 60
     automaticGear: 1
     gears:
     - -9
@@ -15239,7 +15239,7 @@ MonoBehaviour:
     - 2
     - 1
     LimitBackwardSpeed: 60
-    LimitForwardSpeed: 220
+    LimitForwardSpeed: 300
   brake: 0
   curTorque: 100
   powerShift: 100
