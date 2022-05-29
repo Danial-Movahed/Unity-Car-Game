@@ -340,7 +340,7 @@ public class VehicleCameraVideo : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             Switch++;
-            if (Switch > cameraSwitchView.Count) { Switch = 0; }
+            if (Switch > cameraSwitchView.Count) { Switch = 1; }
         }
 
 
