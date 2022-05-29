@@ -7,19 +7,23 @@ public class MenuControllerServerWaiting : MonoBehaviour
 {
     public Button quitBtn;
     public Button backbtn;
+    public Button settingsBtn;
     public Text text;
     private Server server;
     public GameObject StartBtn;
     public Button startbtn;
     private string strHostName = "";
+    private Config configScript;
     void Start()
     {
         StartBtn.SetActive(false);
+        configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         server = GameObject.Find("Server").GetComponent<Server>();
         server.connect();
         quitBtn.onClick.RemoveAllListeners();
         backbtn.onClick.RemoveAllListeners();
         startbtn.onClick.RemoveAllListeners();
+        settingsBtn.onClick.RemoveAllListeners();
         quitBtn.onClick.AddListener(() =>
         {
             Debug.Log("quit");
@@ -41,7 +45,12 @@ public class MenuControllerServerWaiting : MonoBehaviour
             server.sendData((server.connectedNow).ToString());
             SceneManager.LoadScene("ServerMapSelector");
         });
-
+        settingsBtn.onClick.AddListener(() =>
+        {
+            Debug.Log("settings");
+            configScript.lastSceneSettings = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene("Settings");
+        });
         IPHostEntry ipEntry = Dns.GetHostEntry(Dns.GetHostName());
         IPAddress[] addr = ipEntry.AddressList;
         for (int i = 0; i < addr.Length; i++)

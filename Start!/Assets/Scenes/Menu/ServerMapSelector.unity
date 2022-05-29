@@ -2149,6 +2149,7 @@ MonoBehaviour:
   backbtn: {fileID: 86096872}
   map1Btn: {fileID: 1873989015}
   map2Btn: {fileID: 780921289}
+  settingsBtn: {fileID: 1569665216}
 --- !u!4 &8492774541632874724
 Transform:
   m_ObjectHideFlags: 0

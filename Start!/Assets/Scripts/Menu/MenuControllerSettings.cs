@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class MenuControllerSettings : MonoBehaviour
 {
     public Button backBtn;
+    private Config configScript;
     void Start()
     {
+        configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         backBtn.onClick.RemoveAllListeners();
         backBtn.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene("1");
+            SceneManager.LoadScene(configScript.lastSceneSettings);
         });
     }
     public void savePrefs()

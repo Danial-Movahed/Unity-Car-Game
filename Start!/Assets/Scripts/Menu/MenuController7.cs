@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuController7 : MonoBehaviour {
 	public Button quitBtn;
+    public Button settingBtn;
     public Button backbtn;
     public Button map1Btn;
     public Button map2Btn;
@@ -12,12 +13,18 @@ public class MenuController7 : MonoBehaviour {
     {
         configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         quitBtn.onClick.RemoveAllListeners();
+        settingBtn.onClick.RemoveAllListeners();
         backbtn.onClick.RemoveAllListeners();
         map1Btn.onClick.RemoveAllListeners();
         map2Btn.onClick.RemoveAllListeners();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();
+        });
+        settingBtn.onClick.AddListener( () => {
+            Debug.Log("setting");
+            configScript.lastSceneSettings = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene("Settings");
         });
         backbtn.onClick.AddListener( () => {
             Debug.Log("back");

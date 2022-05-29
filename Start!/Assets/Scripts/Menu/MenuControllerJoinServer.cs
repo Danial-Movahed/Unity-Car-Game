@@ -7,11 +7,14 @@ public class MenuControllerJoinServer : MonoBehaviour
     public Button quitBtn;
     public Button backbtn;
     public Button Joinbtn;
+    public Button settingsBtn;
     public InputField ipInput;
     private Client client;
+    private Config configScript;
     void Start()
     {
         client = GameObject.Find("Client").GetComponent<Client>();
+        configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         quitBtn.onClick.RemoveAllListeners();
         backbtn.onClick.RemoveAllListeners();
         Joinbtn.onClick.RemoveAllListeners();
@@ -34,6 +37,12 @@ public class MenuControllerJoinServer : MonoBehaviour
             client.ip = ipInput.text;
             client.connect();
             SceneManager.LoadScene("ClientWaiting");
+        });
+        settingsBtn.onClick.AddListener(() =>
+        {
+            Debug.Log("settings");
+            configScript.lastSceneSettings = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene("Settings");
         });
     }
 }

@@ -7,11 +7,15 @@ public class MenuController6 : MonoBehaviour {
     public Button backbtn;
     public Button Createbtn;
     public Button Joinbtn;
+    public Button settingsBtn;
+    private Config configScript;
 	void Start () {
+        configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         quitBtn.onClick.RemoveAllListeners();
         backbtn.onClick.RemoveAllListeners();
         Createbtn.onClick.RemoveAllListeners();
         Joinbtn.onClick.RemoveAllListeners();
+        settingsBtn.onClick.RemoveAllListeners();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();
@@ -27,6 +31,11 @@ public class MenuController6 : MonoBehaviour {
         Joinbtn.onClick.AddListener( () => {
             Debug.Log("join");
             SceneManager.LoadScene("JoinServer");
+        });
+        settingsBtn.onClick.AddListener( () => {
+            Debug.Log("settings");
+            configScript.lastSceneSettings = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene("Settings");
         });
 	}
 }

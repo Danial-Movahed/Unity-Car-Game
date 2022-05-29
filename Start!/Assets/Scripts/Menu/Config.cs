@@ -17,6 +17,7 @@ public class Config : MonoBehaviour
     public string message = "";
     public bool isStarted = false;
     public bool ifVideo = false;
+    public string lastSceneSettings = "";
     public void startGame()
     {
         string maprunning = "Map";

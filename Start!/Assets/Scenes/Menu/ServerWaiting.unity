@@ -1740,6 +1740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitBtn: {fileID: 274530021}
   backbtn: {fileID: 657455743}
+  settingsBtn: {fileID: 93897524}
   text: {fileID: 791118803}
   StartBtn: {fileID: 1294152145}
   startbtn: {fileID: 2117547759}

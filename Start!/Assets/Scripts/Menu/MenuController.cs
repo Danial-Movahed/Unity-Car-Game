@@ -21,6 +21,7 @@ public class MenuController : MonoBehaviour {
         });
         settingBtn.onClick.AddListener( () => {
             Debug.Log("setting");
+            configScript.lastSceneSettings = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene("Settings");
         });
         startBtn.onClick.AddListener( () => 

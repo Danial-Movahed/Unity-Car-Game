@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuControllerClientWaiting2 : MonoBehaviour {
 	public Button quitBtn;
     public Button backBtn;
+    public Button settingsBtn;
     private Config configScript;
     private Client clientScript;
 	void Start()
@@ -13,6 +14,7 @@ public class MenuControllerClientWaiting2 : MonoBehaviour {
         clientScript = GameObject.Find("Client").GetComponent<Client>();
         quitBtn.onClick.RemoveAllListeners();
         backBtn.onClick.RemoveAllListeners();
+        settingsBtn.onClick.RemoveAllListeners();
         quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();
@@ -24,6 +26,12 @@ public class MenuControllerClientWaiting2 : MonoBehaviour {
             clientScript.sendData((int.Parse(clientScript.selfName)-1).ToString()+ " 0");
             configScript.playerCars[(int.Parse(clientScript.selfName)-1)] = 0;
             SceneManager.LoadScene("ClientCarSelector");
+        });
+        settingsBtn.onClick.AddListener( () => 
+        {
+            Debug.Log("settings");
+            configScript.lastSceneSettings = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene("Settings");
         });
 	}
 }

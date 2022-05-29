@@ -7,6 +7,7 @@ public class MenuControllerServerMapSelector : MonoBehaviour {
     public Button backbtn;
     public Button map1Btn;
     public Button map2Btn;
+    public Button settingsBtn;
     private Config configScript;
     private Server server;
 	void Start()
@@ -36,6 +37,11 @@ public class MenuControllerServerMapSelector : MonoBehaviour {
             configScript.mapSelector = 2;
             server.sendData("map2");
             SceneManager.LoadScene("ServerCarSelector");
+        });
+        settingsBtn.onClick.AddListener( () => {
+            Debug.Log("settings");
+            configScript.lastSceneSettings = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene("Settings");
         });
 	}
 }

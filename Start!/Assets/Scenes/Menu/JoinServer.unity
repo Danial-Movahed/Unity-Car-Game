@@ -2043,6 +2043,7 @@ MonoBehaviour:
   quitBtn: {fileID: 1615406573}
   backbtn: {fileID: 1936382435}
   Joinbtn: {fileID: 1100547073}
+  settingsBtn: {fileID: 1947201975}
   ipInput: {fileID: 155961655}
 --- !u!4 &3900691537273809916
 Transform:

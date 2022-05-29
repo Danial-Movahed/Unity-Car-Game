@@ -1721,6 +1721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitBtn: {fileID: 1173602680}
   backBtn: {fileID: 1973547213}
+  settingsBtn: {fileID: 547872726}
 --- !u!4 &3900691537273809916
 Transform:
   m_ObjectHideFlags: 0

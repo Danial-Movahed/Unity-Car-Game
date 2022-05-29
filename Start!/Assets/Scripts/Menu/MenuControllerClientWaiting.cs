@@ -6,8 +6,11 @@ public class MenuControllerClientWaiting : MonoBehaviour
 {
     public Button quitBtn;
     public Button backBtn;
+    public Button settingsBtn;
+    private Config configScript;
     void Start()
     {
+        configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         quitBtn.onClick.RemoveAllListeners();
         backBtn.onClick.RemoveAllListeners();
         quitBtn.onClick.AddListener(() =>
@@ -22,6 +25,12 @@ public class MenuControllerClientWaiting : MonoBehaviour
             GameObject.Find("Client").GetComponent<Client>().connected = false;
             GameObject.Find("Client").GetComponent<Client>().client.Stop();
             SceneManager.LoadScene("JoinServer");
+        });
+        settingsBtn.onClick.AddListener(() =>
+        {
+            Debug.Log("settings");
+            configScript.lastSceneSettings = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene("Settings");
         });
     }
 }
