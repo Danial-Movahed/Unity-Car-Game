@@ -298,8 +298,6 @@ public class VehicleCameraVideo : MonoBehaviour
 
         myRigidbody = target.GetComponent<Rigidbody>();
 
-        cameraSwitchView = carScript.carSetting.cameraSwitchView;
-
     }
 
 
