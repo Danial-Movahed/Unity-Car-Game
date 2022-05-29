@@ -16,22 +16,18 @@ public class Config : MonoBehaviour
     public string selfName = "";
     public string message = "";
     public bool isStarted = false;
+    public bool ifVideo = false;
     public void startGame()
     {
+        string maprunning = "Map";
+        maprunning += mapSelector.ToString();
         isStarted = true;
         Debug.Log(mapSelector);
         Debug.Log(carSelector);
-        if (mapSelector == 1)
-        {
-            SceneManager.LoadScene("Map1");
-            Destroy(GameObject.Find("Video"));
-            Destroy(GameObject.Find("VideoMainCamera"));
-        }
-        else
-        {
-            SceneManager.LoadScene("Map2");
-            Destroy(GameObject.Find("Video"));
-            Destroy(GameObject.Find("VideoMainCamera"));
-        }
+        if(ifVideo)
+            maprunning += "Video";
+        SceneManager.LoadScene(maprunning);
+        Destroy(GameObject.Find("Video"));
+        Destroy(GameObject.Find("VideoMainCamera"));
     }
 }

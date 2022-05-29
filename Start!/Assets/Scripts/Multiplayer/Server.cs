@@ -154,7 +154,7 @@ public class Server : MonoBehaviour
     {
         if (!finished)
         {
-            if (isStarted)
+            if (isStarted && !config.ifVideo)
             {
                 if (GameObject.Find(selfName).GetComponent<Lap>().lap == -1)
                 {
