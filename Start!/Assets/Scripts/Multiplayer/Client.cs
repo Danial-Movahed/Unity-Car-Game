@@ -32,8 +32,6 @@ public class Client : MonoBehaviour
     }
     public void connect()
     {
-        for (int i = 0; i < 4; i++)
-            config.playerCars[i] = 0;
         listener = new EventBasedNetListener();
         client = new NetManager(listener);
         selfName = "";
@@ -48,6 +46,8 @@ public class Client : MonoBehaviour
         client.Connect(ip, port, "SomeConnectionKey");
         connected = true;
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
+        for (int i = 0; i < 4; i++)
+            config.playerCars[i] = 0;
         listener.PeerDisconnectedEvent += (peer, dcInfo) =>
         {
             Debug.Log("Disconnected");

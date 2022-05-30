@@ -32,8 +32,6 @@ public class Server : MonoBehaviour
     }
     public void connect()
     {
-        for(int i=0;i<4;i++)
-            config.playerCars[i] = 0;
         scoreboard.Clear();
         peerNames.Clear();
         listener = new EventBasedNetListener();
@@ -47,6 +45,8 @@ public class Server : MonoBehaviour
         num = 1;
         connected = true;
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
+        for(int i=0;i<4;i++)
+            config.playerCars[i] = 0;
         connectedNow = 1;
         config.selfName = selfName;
         server.Start(port);
