@@ -233,6 +233,18 @@ public class VehicleCamera : MonoBehaviour
                 Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(476.25f,24.3799992f,107.720001f), Quaternion.Euler(0,90,0));
                 Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(476.25f,24.3799992f,104.720001f), Quaternion.Euler(0,90,0));
             }
+            else
+            {
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp1"), new Vector3(605f,3.1400001f,223.029999f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp1"), new Vector3(605f,3.1400001f,228.949997f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp1"), new Vector3(605f,3.1400001f,234.869995f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp1"), new Vector3(605f,3.1400001f,240.789993f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp1"), new Vector3(535.679993f,3.1400001f,886.440002f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp1"), new Vector3(535.679993f,3.1400001f,891.369995f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp1"), new Vector3(535.679993f,3.1400001f,895.290009f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp1"), new Vector3(535.679993f,3.1400001f,900.210022f), Quaternion.Euler(0,90,0));
+
+            }
             for (int i = 0; i < 4; i++)
             {
                 Debug.Log("car #" + i + " is " + configScript.playerCars[i]);
@@ -279,6 +291,7 @@ public class VehicleCamera : MonoBehaviour
         }
         else
         {
+            GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.transform.parent.gameObject.SetActive(false);
             if (configScript.mapSelector == 2)
             {
                 carLoaded = Instantiate(configScript.cars2[configScript.carSelector - 1], new Vector3(947.61f, 4.5f, 377.3556f), Quaternion.identity);
