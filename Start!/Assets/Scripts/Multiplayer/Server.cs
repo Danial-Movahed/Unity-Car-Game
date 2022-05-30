@@ -122,6 +122,16 @@ public class Server : MonoBehaviour
                     GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.SetActive(false);
                 }
             }
+            else if(data.Contains("Big"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.x * 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.y * 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.z * 1.5f);
+            }
+            else if(data.Contains("Unbig"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.x / 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.y / 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.z / 1.5f);
+            }
             else
             {
                 if (!finished)

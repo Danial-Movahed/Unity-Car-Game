@@ -46,9 +46,25 @@ public class UsePowerUp : MonoBehaviour
     {
         GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale.x * 1.5f, GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale.y * 1.5f, GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale.z * 1.5f);
         GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.stiffness += 15;
+        if (mode)
+        {
+            server.sendData("Big " + configscript.selfName);
+        }
+        else
+        {
+            client.sendData("Big " + configscript.selfName);
+        }
         yield return new WaitForSeconds(seconds);
         GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.stiffness -= 15;
         GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale.x / 1.5f, GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale.y / 1.5f, GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale.z / 1.5f);
+        if (mode)
+        {
+            server.sendData("Unbig " + configscript.selfName);
+        }
+        else
+        {
+            client.sendData("Unbig " + configscript.selfName);
+        }
     }
     IEnumerator AllStar(int seconds)
     {
