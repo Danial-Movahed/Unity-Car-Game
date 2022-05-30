@@ -34,6 +34,14 @@ public class UsePowerUp : MonoBehaviour
         GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.stiffness -= 10;
         GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.LimitForwardSpeed -= 1000;
     }
+    IEnumerator Sheild(int seconds)
+    {
+        PowerUpImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Maps/PowerUps/PowerUps/SheildUp");
+        currentPowerUp = -1;
+        yield return new WaitForSeconds(seconds);
+        PowerUpImage.SetActive(false);
+        currentPowerUp = 0;
+    }
     IEnumerator Big(int seconds)
     {
         GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale.x * 1.5f, GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale.y * 1.5f, GameObject.Find(configscript.selfName).GetComponent<Transform>().localScale.z * 1.5f);
@@ -46,21 +54,21 @@ public class UsePowerUp : MonoBehaviour
     {
         GameObject.Find(configscript.selfName).AddComponent<AllStar>();
         GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.stiffness += 15;
-        for(int i=0;i<4;i++)
+        for (int i = 0; i < 4; i++)
         {
-            if(configscript.playerCars[i] != 0 && (i+1).ToString() != configscript.selfName)
+            if (configscript.playerCars[i] != 0 && (i + 1).ToString() != configscript.selfName)
             {
-                GameObject.Find((i+1).ToString()).transform.Find("Collision").GetComponent<MeshCollider>().isTrigger = true;
+                GameObject.Find((i + 1).ToString()).transform.Find("Collision").GetComponent<MeshCollider>().isTrigger = true;
             }
         }
         yield return new WaitForSeconds(seconds);
         Destroy(GameObject.Find(configscript.selfName).GetComponent<AllStar>());
         GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.stiffness -= 15;
-        for(int i=0;i<4;i++)
+        for (int i = 0; i < 4; i++)
         {
-            if(configscript.playerCars[i] != 0 && (i+1).ToString() != configscript.selfName)
+            if (configscript.playerCars[i] != 0 && (i + 1).ToString() != configscript.selfName)
             {
-                GameObject.Find((i+1).ToString()).transform.Find("Collision").GetComponent<MeshCollider>().isTrigger = false;
+                GameObject.Find((i + 1).ToString()).transform.Find("Collision").GetComponent<MeshCollider>().isTrigger = false;
             }
         }
         GameObject tmp = null;
@@ -107,8 +115,7 @@ public class UsePowerUp : MonoBehaviour
                     break;
                 case 4:
                     Debug.Log("Sheild!");
-                    PowerUpImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Maps/PowerUps/PowerUps/SheildUp");
-                    currentPowerUp = -1;
+                    StartCoroutine(Sheild(60));
                     break;
                 case 5:
                     Debug.Log("Time to make the screen dirty!");
