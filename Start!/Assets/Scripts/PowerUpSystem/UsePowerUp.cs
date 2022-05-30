@@ -129,6 +129,17 @@ public class UsePowerUp : MonoBehaviour
                     Debug.Log("All star!");
                     StartCoroutine(AllStar(40));
                     break;
+                case 8:
+                    Debug.Log("Smoll!");
+                    if (mode)
+                    {
+                        server.sendData("Small");
+                    }
+                    else
+                    {
+                        client.sendData("Small");
+                    }
+                    break;
             }
             if (currentPowerUp != -1)
             {
