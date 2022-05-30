@@ -32,7 +32,7 @@ public class Client : MonoBehaviour
     }
     public void connect()
     {
-        for(int i=0;i<4;i++)
+        for (int i = 0; i < 4; i++)
             config.playerCars[i] = 0;
         listener = new EventBasedNetListener();
         client = new NetManager(listener);
@@ -51,9 +51,20 @@ public class Client : MonoBehaviour
         listener.PeerDisconnectedEvent += (peer, dcInfo) =>
         {
             Debug.Log("Disconnected");
+            if (isStarted)
+            {
+                Destroy(GameObject.Find("VideoMainCamera"));
+                Destroy(GameObject.Find("ConfigStart"));
+                Destroy(GameObject.Find("Config"));
+                Destroy(GameObject.Find("Video"));
+                SceneManager.LoadScene("Bootstrap");
+            }
+            else
+            {
+                SceneManager.LoadScene("JoinServer");
+            }
             connected = false;
             isStarted = false;
-            SceneManager.LoadScene("JoinServer");
         };
         listener.NetworkReceiveEvent += (fromPeer, dataReader, deliveryMethod) =>
         {
