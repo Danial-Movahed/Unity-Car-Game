@@ -220,6 +220,18 @@ public class VehicleCamera : MonoBehaviour
                 Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(942.570007f,3.5f,401.813507f), transform.rotation);
                 Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(945.570007f,3.5f,401.813507f), transform.rotation);
                 Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(948.570007f,3.5f,401.813507f), transform.rotation);
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(852.936279f,3.57999992f,732.625427f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(852.936279f,3.57999992f,734.97998f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(852.936279f,3.57999992f,737.334961f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(852.936279f,3.57999992f,739.689819f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(313.369995f,18.5300007f,472.649994f), transform.rotation);
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(310.769989f,18.5300007f,472.649994f), transform.rotation);
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(308.169983f,18.5300007f,472.649994f), transform.rotation);
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(305.569946f,18.5300007f,472.649994f), transform.rotation);
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(476.25f,24.3799992f,113.339996f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(476.25f,24.3799992f,110.720001f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(476.25f,24.3799992f,107.720001f), Quaternion.Euler(0,90,0));
+                Instantiate(Resources.Load("Maps/PowerUps/PowerUp2"), new Vector3(476.25f,24.3799992f,104.720001f), Quaternion.Euler(0,90,0));
             }
             for (int i = 0; i < 4; i++)
             {
