@@ -33,11 +33,11 @@ public class Client : MonoBehaviour
     IEnumerator Small(int seconds)
     {
         float tmp = GameObject.Find(selfName).GetComponent<VehicleControl>().carSetting.stiffness;
-        GameObject.Find(config.selfName).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(config.selfName).GetComponent<Transform>().localScale.x / 1.5f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.y / 1.5f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.z / 1.5f);
+        GameObject.Find(config.selfName).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(config.selfName).GetComponent<Transform>().localScale.x / 2f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.y / 2f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.z / 2f);
         GameObject.Find(config.selfName).GetComponent<VehicleControl>().carSetting.stiffness = 1;
         yield return new WaitForSeconds(seconds);
         GameObject.Find(config.selfName).GetComponent<VehicleControl>().carSetting.stiffness = tmp;
-        GameObject.Find(config.selfName).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(config.selfName).GetComponent<Transform>().localScale.x * 1.5f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.y * 1.5f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.z * 1.5f);
+        GameObject.Find(config.selfName).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(config.selfName).GetComponent<Transform>().localScale.x * 2f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.y * 2f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.z * 2f);
     }
     public void connect()
     {
