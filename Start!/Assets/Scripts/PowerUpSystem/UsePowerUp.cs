@@ -95,6 +95,14 @@ public class UsePowerUp : MonoBehaviour
                 GameObject.Find((i + 1).ToString()).transform.Find("Collision").GetComponent<MeshCollider>().isTrigger = false;
             }
         }
+        if (mode)
+        {
+            server.sendData("UnallStar " + configscript.selfName);
+        }
+        else
+        {
+            client.sendData("UnallStar " + configscript.selfName);
+        }
         GameObject tmp = null;
         if (configscript.mapSelector == 2)
         {
@@ -107,14 +115,6 @@ public class UsePowerUp : MonoBehaviour
         for (int i = 0; i < GameObject.Find(configscript.selfName).GetComponentsInChildren<Renderer>().Length; i++)
         {
             GameObject.Find(configscript.selfName).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
-        }
-        if (mode)
-        {
-            server.sendData("UnallStar " + configscript.selfName);
-        }
-        else
-        {
-            client.sendData("UnallStar " + configscript.selfName);
         }
     }
     void Update()
