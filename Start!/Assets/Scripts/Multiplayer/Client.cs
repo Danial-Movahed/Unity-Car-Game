@@ -158,11 +158,11 @@ public class Client : MonoBehaviour
                 GameObject tmp = null;
                 if (config.mapSelector == 2)
                 {
-                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1])-1]];
+                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1])-1]-1];
                 }
                 else
                 {
-                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1])-1]];
+                    tmp = config.cars1[config.playerCars[int.Parse(dataSplit[1])-1]-1];
                 }
                 for (int i = 0; i < GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>().Length; i++)
                 {
