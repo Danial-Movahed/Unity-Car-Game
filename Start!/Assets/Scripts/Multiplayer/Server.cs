@@ -159,7 +159,14 @@ public class Server : MonoBehaviour
                 }
                 for (int i = 0; i < GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>().Length; i++)
                 {
-                    GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
+                    try
+                    {
+                        GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
+                    }
+                    catch
+                    {
+                        continue;
+                    }
                 }
             }
             else if(data.Contains("scaleDown"))

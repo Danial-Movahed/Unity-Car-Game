@@ -154,27 +154,34 @@ public class Client : MonoBehaviour
             {
                 Debug.Log("UnallStar");
                 string[] dataSplit = data.Split(' ');
-                Debug.Log(config.playerCars[int.Parse(dataSplit[1])-1]);
+                Debug.Log(config.playerCars[int.Parse(dataSplit[1]) - 1]);
                 GameObject tmp = null;
                 if (config.mapSelector == 2)
                 {
-                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1])-1]-1];
+                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1]) - 1] - 1];
                 }
                 else
                 {
-                    tmp = config.cars1[config.playerCars[int.Parse(dataSplit[1])-1]-1];
+                    tmp = config.cars1[config.playerCars[int.Parse(dataSplit[1]) - 1] - 1];
                 }
                 for (int i = 0; i < GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>().Length; i++)
                 {
-                    GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
+                    try
+                    {
+                        GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
+                    }
+                    catch
+                    {
+                        continue;
+                    }
                 }
             }
-            else if(data.Contains("scaleDown"))
+            else if (data.Contains("scaleDown"))
             {
                 string[] dataSplit = data.Split(' ');
                 GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.x / 2, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.y / 2, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.z / 2);
             }
-            else if(data.Contains("scaleUp"))
+            else if (data.Contains("scaleUp"))
             {
                 string[] dataSplit = data.Split(' ');
                 GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.x * 2, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.y * 2, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.z * 2);
