@@ -143,7 +143,13 @@ public class Client : MonoBehaviour
             }
             else if (data.Contains("PowBlock"))
             {
-                GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity = new Vector3(GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.x, 50, GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.z);
+                if(GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp != -1)
+                    GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity = new Vector3(GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.x, 50, GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.z);
+                else
+                {
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp = 0;
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.SetActive(false);
+                }
             }
             else if (data.Contains("AllStar"))
             {
