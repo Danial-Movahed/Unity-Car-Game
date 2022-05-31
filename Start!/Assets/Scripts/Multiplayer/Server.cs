@@ -132,6 +132,32 @@ public class Server : MonoBehaviour
                 string[] dataSplit = data.Split(' ');
                 GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.x / 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.y / 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.z / 1.5f);
             }
+            else if(data.Contains("PowBlock"))
+            {
+                GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity = new Vector3(GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.x, 50, GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.z);
+            }
+            else if (data.Contains("AllStar"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject.Find(dataSplit[1]).AddComponent<AllStar>();
+            }
+            else if (data.Contains("UnallStar"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject tmp = null;
+                if (config.mapSelector == 2)
+                {
+                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1])-1]];
+                }
+                else
+                {
+                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1])-1]];
+                }
+                for (int i = 0; i < GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>().Length; i++)
+                {
+                    GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
+                }
+            }
             else
             {
                 if (!finished)

@@ -77,6 +77,14 @@ public class UsePowerUp : MonoBehaviour
                 GameObject.Find((i + 1).ToString()).transform.Find("Collision").GetComponent<MeshCollider>().isTrigger = true;
             }
         }
+        if(mode)
+        {
+            server.sendData("AllStar " + configscript.selfName);
+        }
+        else
+        {
+            client.sendData("AllStar " + configscript.selfName);
+        }
         yield return new WaitForSeconds(seconds);
         Destroy(GameObject.Find(configscript.selfName).GetComponent<AllStar>());
         GameObject.Find(configscript.selfName).GetComponent<VehicleControl>().carSetting.stiffness -= 15;
@@ -99,6 +107,14 @@ public class UsePowerUp : MonoBehaviour
         for (int i = 0; i < GameObject.Find(configscript.selfName).GetComponentsInChildren<Renderer>().Length; i++)
         {
             GameObject.Find(configscript.selfName).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
+        }
+        if (mode)
+        {
+            server.sendData("UnallStar " + configscript.selfName);
+        }
+        else
+        {
+            client.sendData("UnallStar " + configscript.selfName);
         }
     }
     void Update()
@@ -161,6 +177,18 @@ public class UsePowerUp : MonoBehaviour
                     else
                     {
                         client.sendData("Small");
+                    }
+                    break;
+                case 9:
+                    // Pow block
+                    Debug.Log("Pow block!");
+                    if (mode)
+                    {
+                        server.sendData("PowBlock");
+                    }
+                    else
+                    {
+                        client.sendData("PowBlock");
                     }
                     break;
             }
