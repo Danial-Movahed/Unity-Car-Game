@@ -147,26 +147,19 @@ public class Server : MonoBehaviour
             {
                 Debug.Log("UnallStar");
                 string[] dataSplit = data.Split(' ');
-                Debug.Log(config.playerCars[int.Parse(dataSplit[1])-1]);
+                Destroy(GameObject.Find(dataSplit[1]).GetComponent<AllStar>());
                 GameObject tmp = null;
                 if (config.mapSelector == 2)
                 {
-                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1])-1]-1];
+                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1]) - 1] - 1];
                 }
                 else
                 {
-                    tmp = config.cars1[config.playerCars[int.Parse(dataSplit[1])-1]-1];
+                    tmp = config.cars1[config.playerCars[int.Parse(dataSplit[1]) - 1] - 1];
                 }
                 for (int i = 0; i < GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>().Length; i++)
                 {
-                    try
-                    {
-                        GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
-                    }
-                    catch
-                    {
-                        continue;
-                    }
+                    GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
                 }
             }
             else if(data.Contains("scaleDown"))
