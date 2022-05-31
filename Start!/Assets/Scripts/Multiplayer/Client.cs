@@ -154,6 +154,7 @@ public class Client : MonoBehaviour
             {
                 Debug.Log("UnallStar");
                 string[] dataSplit = data.Split(' ');
+                Debug.Log(config.playerCars[int.Parse(dataSplit[1])-1]);
                 GameObject tmp = null;
                 if (config.mapSelector == 2)
                 {
