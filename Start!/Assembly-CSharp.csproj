@@ -88,54 +88,14 @@
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCamera.cs" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard GBuffer Pass.hlsl" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/CTI URP Leaves.shader" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Lighting.hlsl" />
-     <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Documentation/Readme.txt" />
      <None Include="Assets/Resources/Car/RCK 2.3/Shaders/ReflectionBlurFresnel.shader" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Bark DepthNormal Pass.hlsl" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Bark GBuffer Pass.hlsl" />
-     <None Include="Assets/Map2 Assets/Conifers [BOTD]/Conifers [BOTD] URP Readme.txt" />
-     <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Water/Shaders/WaterInclude.cginc" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Leaves SurfaceData.hlsl" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard ShadowCaster Pass.hlsl" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard.hlsl" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Bending.hlsl" />
      <None Include="Assets/Resources/Car/RCK 2.3/Standard Assets/Projectors/Guidelines.txt" />
-     <None Include="Assets/Map2 Assets/Conifers [BOTD]/Getting started.txt" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard ForwardLit Pass.hlsl" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Bark ShadowCaster Pass.hlsl" />
-     <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Water/Shaders/FXWater4Advanced.shader" />
-     <None Include="Assets/Map1 Assets/BEDRILL/Modular_Track_Free/Readme.txt" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Leaves DepthOnly Pass.hlsl" />
-     <None Include="Assets/Map2 Assets/Parkgarage/parkinggarage_readMe.txt" />
-     <None Include="Assets/Map2 Assets/Sean&apos;s Water.shader" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Leaves DepthNormal Pass.hlsl" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/CTI URP Bark Array.shader" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard SurfaceData.hlsl" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Leaves ForwardLit Pass.hlsl" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/CTI URP Billboard.shader" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard DepthNormal Pass.hlsl" />
-     <None Include="Assets/Map2 Assets/Stylize Water Texture/StylizedGrass/READMEdoc.txt" />
-     <None Include="Assets/Map1 Assets/RealisticRaceTrack/Documentation.txt" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard DepthOnly Pass.hlsl" />
-     <None Include="Assets/Map2 Assets/greyRoadStudio/LowPolyTreePack/readme.txt" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Meta.hlsl" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/CTI URP Bark.shader" />
-     <None Include="Assets/Map2 Assets/Exterior_swimming_pool/Water/Shaders/FXWater4Simple.shader" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Bark ForwardLit Pass.hlsl" />
      <None Include="Assets/Resources/Car/RCK 2.3/Standard Assets/Projectors/Sources/Shaders/Projector Light.shader" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Bark DepthOnly Pass.hlsl" />
      <None Include="Assets/Resources/Car/RCK 2.3/Shaders/TransparentRef.shader" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Leaves GBuffer Pass.hlsl" />
      <None Include="Assets/Resources/Car/RCK 2.3/Standard Assets/Projectors/Sources/Shaders/Projector Multiply.shader" />
-     <None Include="Assets/Map2 Assets/Five Seamless Tileable Ground Textures/read me.txt" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Inputs.hlsl" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Bark SurfaceData.hlsl" />
-     <None Include="Assets/SkySeries Freebie/Hdri setup.txt" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Leaves ShadowCaster Pass.hlsl" />
-     <None Include="Assets/Map2 Assets/BarProps/Credits.txt" />
-     <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Leaves DepthNormal Pass VFACE.hlsl" />
     <Reference Include="UnityEngine">
         <HintPath>/home/danial/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -800,6 +760,14 @@
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
       <Project>{2a0142ec-6b55-51f3-0688-65ce0a34a4ac}</Project>
       <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AH_AssemblyDefinition.csproj">
+      <Project>{45dfa9ef-805d-c5bb-6512-e47191bb3abb}</Project>
+      <Name>AH_AssemblyDefinition</Name>
+    </ProjectReference>
+    <ProjectReference Include="Heureka_GlobalAssemblyDefinition.csproj">
+      <Project>{c35829d0-723c-3584-9b05-f4bee2268f55}</Project>
+      <Name>Heureka_GlobalAssemblyDefinition</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Editor.csproj">
       <Project>{8d15bab9-6f14-3a3a-6fd7-9bb12923d2cd}</Project>

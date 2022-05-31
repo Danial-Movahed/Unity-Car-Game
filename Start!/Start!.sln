@@ -41,7 +41,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.CollabProxy.Editor", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.TestRunner", "UnityEditor.TestRunner.csproj", "{1f1f3033-217e-8eaa-a072-6ba98d521391}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH_AssemblyDefinition", "AH_AssemblyDefinition.csproj", "{45dfa9ef-805d-c5bb-6512-e47191bb3abb}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Rider.Editor", "Unity.Rider.Editor.csproj", "{21f9f9a9-4834-4234-6adb-4754dde878a2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heureka_GlobalAssemblyDefinition", "Heureka_GlobalAssemblyDefinition.csproj", "{c35829d0-723c-3584-9b05-f4bee2268f55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Universal.Editor", "Unity.RenderPipelines.Universal.Editor.csproj", "{16e64bf2-86e0-39a5-5706-74138d701139}"
 EndProject
@@ -114,8 +118,12 @@ Global
 		{f27b3548-94c5-a122-093c-f03049d13c45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1f1f3033-217e-8eaa-a072-6ba98d521391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1f1f3033-217e-8eaa-a072-6ba98d521391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45dfa9ef-805d-c5bb-6512-e47191bb3abb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45dfa9ef-805d-c5bb-6512-e47191bb3abb}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21f9f9a9-4834-4234-6adb-4754dde878a2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{21f9f9a9-4834-4234-6adb-4754dde878a2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c35829d0-723c-3584-9b05-f4bee2268f55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c35829d0-723c-3584-9b05-f4bee2268f55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16e64bf2-86e0-39a5-5706-74138d701139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{16e64bf2-86e0-39a5-5706-74138d701139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{b0117d7c-179b-0b4b-c06a-e51a67ab1bb1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
