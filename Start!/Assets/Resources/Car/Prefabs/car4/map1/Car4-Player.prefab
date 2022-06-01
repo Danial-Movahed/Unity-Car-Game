@@ -6286,6 +6286,7 @@ GameObject:
   - component: {fileID: 719580477006128947}
   - component: {fileID: 1783691305448935038}
   - component: {fileID: 3232910871444330837}
+  - component: {fileID: 2500693319710723996}
   m_Layer: 0
   m_Name: Car4-Player
   m_TagString: Player
@@ -6452,6 +6453,19 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2500693319710723996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113000560207926579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f03ddfdc28efcc3a39a7f58e36aadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: 1b33d9b36af3adc2aa0c3209b9d50382, type: 2}
 --- !u!1 &5156882461973344014
 GameObject:
   m_ObjectHideFlags: 0

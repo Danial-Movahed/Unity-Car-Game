@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6080418248728440463}
   - component: {fileID: 5210852224947496551}
   - component: {fileID: 776938669505838754}
+  - component: {fileID: -5538768641505366213}
   m_Layer: 0
   m_Name: Car3-Player
   m_TagString: Player
@@ -179,6 +180,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lap: 0
+--- !u!114 &-5538768641505366213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101209189993834993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f03ddfdc28efcc3a39a7f58e36aadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: 154ee3c3904ed3b7fa9cbaf4ddb77150, type: 2}
 --- !u!1 &175743394577349999
 GameObject:
   m_ObjectHideFlags: 0

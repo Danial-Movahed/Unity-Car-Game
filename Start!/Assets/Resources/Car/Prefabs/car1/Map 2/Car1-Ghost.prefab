@@ -4802,6 +4802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7497668577093773377}
   - component: {fileID: 4616781560600235711}
+  - component: {fileID: 4810787382648065347}
   m_Layer: 0
   m_Name: Car1-Ghost
   m_TagString: Untagged
@@ -4841,6 +4842,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e78d92e64fba6d0adcc5531a941888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  running: 0
+--- !u!114 &4810787382648065347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153617762889773819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f03ddfdc28efcc3a39a7f58e36aadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: 221575453e414e723840f0118934d213, type: 2}
 --- !u!1 &7323873648776444128
 GameObject:
   m_ObjectHideFlags: 0
