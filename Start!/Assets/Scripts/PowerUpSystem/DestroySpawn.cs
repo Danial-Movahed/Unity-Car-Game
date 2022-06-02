@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class DestroySpawn : MonoBehaviour
 {
-    private int maxPowerUps = 5;
+    private int maxPowerUps = 9;
     private Config configscript;
     private GameObject PowerUpImage;
     void Start()

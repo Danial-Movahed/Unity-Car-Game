@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5210852224947496551}
   m_Layer: 0
   m_Name: Car3-Bot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 1086340430606486006}
   - {fileID: 4047734863470111030}
   - {fileID: 957201684046848126}
-  - {fileID: 220792066911999920}
+  - {fileID: 4809002679322492278}
   - {fileID: 88180701356511201}
   - {fileID: 2845323869326634721}
   - {fileID: 3496273624746023772}
@@ -10547,11 +10547,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6662997032414537022}
   m_LocalRotation: {x: 0.000000021855707, y: -0, z: -2.664535e-15, w: 1}
-  m_LocalPosition: {x: 0.4171, y: 0.5261, z: 0.0137}
-  m_LocalScale: {x: 0.8291304, y: 0.89097136, z: 0.78782666}
+  m_LocalPosition: {x: 8.551025, y: 137.7671, z: -81.15234}
+  m_LocalScale: {x: 414.56522, y: 445.4857, z: 393.91333}
   m_Children: []
-  m_Father: {fileID: 220792066911999920}
-  m_RootOrder: 0
+  m_Father: {fileID: 733032944392090443}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3735371852023143498
 MeshFilter:
@@ -16637,37 +16637,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8699390571622833513
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 220792066911999920}
-  m_Layer: 0
-  m_Name: Collisions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &220792066911999920
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8699390571622833513}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -200, y: -125.28287, z: -88}
-  m_LocalScale: {x: 500, y: 500, z: 500}
-  m_Children:
-  - {fileID: 4809002679322492278}
-  m_Father: {fileID: 733032944392090443}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8773758536286770865
 GameObject:
   m_ObjectHideFlags: 0

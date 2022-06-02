@@ -6286,7 +6286,7 @@ GameObject:
   - component: {fileID: 3232910871444330837}
   m_Layer: 0
   m_Name: Car4-Bot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6307,7 +6307,7 @@ Transform:
   - {fileID: 87028378858120704}
   - {fileID: 230823595621080105}
   - {fileID: 4947123241483282262}
-  - {fileID: 999538140874676443}
+  - {fileID: 5727581903491304858}
   - {fileID: 3103671283785632005}
   - {fileID: 8555866968840350759}
   - {fileID: 9106590934460843638}
@@ -12150,11 +12150,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7798303602295045656}
   m_LocalRotation: {x: 0.000000021855707, y: -0, z: -2.664535e-15, w: 1}
-  m_LocalPosition: {x: -2.1447, y: 0.6648, z: 0.0042}
-  m_LocalScale: {x: 0.8705088, y: 0.8479757, z: 0.8007523}
+  m_LocalPosition: {x: -0.9814453, y: 21.243143, z: -12.143555}
+  m_LocalScale: {x: 87.05089, y: 84.79758, z: 80.075226}
   m_Children: []
-  m_Father: {fileID: 999538140874676443}
-  m_RootOrder: 0
+  m_Father: {fileID: 5602150591039098761}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1566834556282929952
 MeshFilter:
@@ -12249,37 +12249,6 @@ Transform:
   - {fileID: 7593651034776892006}
   m_Father: {fileID: 5602150591039098761}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8248041753044494905
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 999538140874676443}
-  m_Layer: 0
-  m_Name: Collisions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &999538140874676443
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248041753044494905}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 213.48877, y: -45.23685, z: -12.564087}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_Children:
-  - {fileID: 5727581903491304858}
-  m_Father: {fileID: 5602150591039098761}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8553500172046820602
 GameObject:

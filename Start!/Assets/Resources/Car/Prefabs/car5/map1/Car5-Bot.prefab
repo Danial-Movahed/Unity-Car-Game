@@ -7889,11 +7889,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3971445650679664338}
   m_LocalRotation: {x: 0.000000021855707, y: -0, z: -2.664535e-15, w: 1}
-  m_LocalPosition: {x: 0.5033, y: 0.7101, z: -0.1115}
-  m_LocalScale: {x: 0.97744685, y: 0.91827536, z: 0.8658234}
+  m_LocalPosition: {x: -0.020774841, y: 0.8011286, z: 0.1414032}
+  m_LocalScale: {x: 1.0860521, y: 1.020306, z: 0.96202606}
   m_Children: []
-  m_Father: {fileID: 6276452901091488436}
-  m_RootOrder: 0
+  m_Father: {fileID: 5902827023452175891}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4481157250501034404
 MeshFilter:
@@ -15110,7 +15110,7 @@ GameObject:
   - component: {fileID: 4613880481190123305}
   m_Layer: 0
   m_Name: Car5-Bot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15132,7 +15132,7 @@ Transform:
   - {fileID: 909547469424180258}
   - {fileID: 1478893222248804483}
   - {fileID: 3959367911131077611}
-  - {fileID: 6276452901091488436}
+  - {fileID: 6021840255323547506}
   - {fileID: 2819654581572101986}
   - {fileID: 2931048808720893832}
   - {fileID: 7535015830387225685}
@@ -15457,37 +15457,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6858738298600394878
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6276452901091488436}
-  m_Layer: 0
-  m_Name: Collisions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6276452901091488436
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6858738298600394878}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.58, y: 0.012128619, z: 0.2652995}
-  m_LocalScale: {x: 1.1111112, y: 1.1111112, z: 1.1111112}
-  m_Children:
-  - {fileID: 6021840255323547506}
-  m_Father: {fileID: 5902827023452175891}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6925317018159291508
 GameObject:
   m_ObjectHideFlags: 0

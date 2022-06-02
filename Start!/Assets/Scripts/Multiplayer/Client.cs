@@ -30,6 +30,17 @@ public class Client : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         go.SetActive(false);
     }
+    IEnumerator Small(int seconds)
+    {
+        float tmp = GameObject.Find(selfName).GetComponent<VehicleControl>().carSetting.stiffness;
+        GameObject.Find(config.selfName).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(config.selfName).GetComponent<Transform>().localScale.x / 2f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.y / 2f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.z / 2f);
+        GameObject.Find(config.selfName).GetComponent<VehicleControl>().carSetting.stiffness = 1;
+        sendData("scaleDown " + config.selfName);
+        yield return new WaitForSeconds(seconds);
+        GameObject.Find(config.selfName).GetComponent<VehicleControl>().carSetting.stiffness = tmp;
+        GameObject.Find(config.selfName).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(config.selfName).GetComponent<Transform>().localScale.x * 2f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.y * 2f, GameObject.Find(config.selfName).GetComponent<Transform>().localScale.z * 2f);
+        sendData("scaleUp " + config.selfName);
+    }
     public void connect()
     {
         listener = new EventBasedNetListener();
@@ -109,6 +120,70 @@ public class Client : MonoBehaviour
                     GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp = 0;
                     GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.SetActive(false);
                 }
+            }
+            else if (data.Contains("Small"))
+            {
+                if (GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp != -1)
+                    StartCoroutine(Small(30));
+                else
+                {
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp = 0;
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.SetActive(false);
+                }
+            }
+            else if (data.Contains("Big"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.x * 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.y * 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.z * 1.5f);
+            }
+            else if (data.Contains("Unbig"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.x / 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.y / 1.5f, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.z / 1.5f);
+            }
+            else if (data.Contains("PowBlock"))
+            {
+                if(GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp != -1)
+                    GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity = new Vector3(GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.x, 50, GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.z);
+                else
+                {
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp = 0;
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.SetActive(false);
+                }
+            }
+            else if (data.Contains("AllStar"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject.Find(dataSplit[1]).AddComponent<AllStar>();
+            }
+            else if (data.Contains("UnallStar"))
+            {
+                Debug.Log("UnallStar");
+                string[] dataSplit = data.Split(' ');
+                Destroy(GameObject.Find(dataSplit[1]).GetComponent<AllStar>());
+                GameObject tmp = null;
+                if (config.mapSelector == 2)
+                {
+                    tmp = config.cars2[config.playerCars[int.Parse(dataSplit[1]) - 1] - 1];
+                }
+                else
+                {
+                    tmp = config.cars1[config.playerCars[int.Parse(dataSplit[1]) - 1] - 1];
+                }
+                for (int i = 0; i < GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>().Length; i++)
+                {
+                    GameObject.Find(dataSplit[1]).GetComponentsInChildren<Renderer>()[i].material.color = tmp.GetComponentsInChildren<Renderer>()[i].sharedMaterial.color;
+                }
+            }
+            else if (data.Contains("scaleDown"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.x / 2, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.y / 2, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.z / 2);
+            }
+            else if (data.Contains("scaleUp"))
+            {
+                string[] dataSplit = data.Split(' ');
+                GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale = new Vector3(GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.x * 2, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.y * 2, GameObject.Find(dataSplit[1]).GetComponent<Transform>().localScale.z * 2);
             }
             else
             {
