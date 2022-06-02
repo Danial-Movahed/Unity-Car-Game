@@ -14044,7 +14044,6 @@ GameObject:
   - component: {fileID: 7497668577093773377}
   - component: {fileID: 7958560096933228062}
   - component: {fileID: 3025935587833109235}
-  - component: {fileID: -7872945143055466420}
   m_Layer: 0
   m_Name: Car1-Bot
   m_TagString: Player
@@ -14105,19 +14104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c36d4d25e1a8a2ca7d8f817977e88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7872945143055466420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7153617762889773819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f03ddfdc28efcc3a39a7f58e36aadb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 7400000, guid: 221575453e414e723840f0118934d213, type: 2}
 --- !u!1 &7323873648776444128
 GameObject:
   m_ObjectHideFlags: 0
