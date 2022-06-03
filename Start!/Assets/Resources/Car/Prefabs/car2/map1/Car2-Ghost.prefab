@@ -994,7 +994,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4614551239926700180}
   - component: {fileID: 8790977867736132824}
-  - component: {fileID: 1306956170778420830}
   m_Layer: 0
   m_Name: Car2-Ghost
   m_TagString: Untagged
@@ -1034,19 +1033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   running: 0
---- !u!114 &1306956170778420830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5422893928235598382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f03ddfdc28efcc3a39a7f58e36aadb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 7400000, guid: 6a461b9487b9f24e29a465af3afc3e1a, type: 2}
 --- !u!1 &5991148369505161616
 GameObject:
   m_ObjectHideFlags: 0

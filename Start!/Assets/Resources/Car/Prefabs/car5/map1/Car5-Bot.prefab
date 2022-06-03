@@ -15108,7 +15108,6 @@ GameObject:
   - component: {fileID: 5902827023452175891}
   - component: {fileID: 2674778577307933179}
   - component: {fileID: 4613880481190123305}
-  - component: {fileID: -3216465340463774611}
   m_Layer: 0
   m_Name: Car5-Bot
   m_TagString: Player
@@ -15169,19 +15168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c36d4d25e1a8a2ca7d8f817977e88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3216465340463774611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6530462776660403369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f03ddfdc28efcc3a39a7f58e36aadb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 7400000, guid: 36987fecb1fcdaf0983c2251e43d2871, type: 2}
 --- !u!1 &6614057169150097511
 GameObject:
   m_ObjectHideFlags: 0

@@ -11674,7 +11674,6 @@ GameObject:
   - component: {fileID: 7091294498051094304}
   - component: {fileID: 3969766163975091927}
   - component: {fileID: 219018106508747260}
-  - component: {fileID: 7603809914569419402}
   m_Layer: 0
   m_Name: Car4-Bot
   m_TagString: Player
@@ -11734,19 +11733,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 4
   m_CollisionDetection: 0
---- !u!114 &7603809914569419402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7575765316382502298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f03ddfdc28efcc3a39a7f58e36aadb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 7400000, guid: 793e2eaf264d8370fb0629983d824e32, type: 2}
 --- !u!1 &7725028581419163632
 GameObject:
   m_ObjectHideFlags: 0
