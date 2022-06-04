@@ -16986,7 +16986,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8718579520838718854}
   serializedVersion: 2
-  m_Mass: 2000
+  m_Mass: 2500
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -17018,7 +17018,7 @@ MonoBehaviour:
       backLeft: {fileID: 3952002298548847020}
     setting:
       Radius: 0.4
-      Weight: 500
+      Weight: 800
       Distance: 0.2
   carLights:
     brakeLights:
@@ -17057,15 +17057,15 @@ MonoBehaviour:
     - {fileID: 399220876888562784}
     springs: 25000
     dampers: 1500
-    carPower: 200
+    carPower: 150
     shiftPower: 150
     brakePower: 15000
     shiftCentre: {x: 0, y: -0.05, z: 0}
-    maxSteerAngle: 30
+    maxSteerAngle: 20
     shiftDownRPM: 2000
     shiftUpRPM: 4000
     idleRPM: 700
-    stiffness: 4
+    stiffness: 2.5
     automaticGear: 1
     gears:
     - -9
