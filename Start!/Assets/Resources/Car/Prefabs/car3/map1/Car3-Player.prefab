@@ -118,20 +118,20 @@ MonoBehaviour:
       groundSound: {fileID: 8300000, guid: e74738166dc243747b9979b0cd3b6875, type: 3}
       brakeColor: {r: 0.8088235, g: 0.6295862, b: 0.24383649, a: 0.78431374}
     cameraSwitchView:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 7083718891077644496}
+    - {fileID: 1943107667874418157}
+    - {fileID: 7096020724164188020}
     springs: 25000
     dampers: 1500
-    carPower: 120
-    shiftPower: 150
+    carPower: 150
+    shiftPower: 200
     brakePower: 12000
     shiftCentre: {x: 0, y: -1, z: 0}
-    maxSteerAngle: 40
+    maxSteerAngle: 45
     shiftDownRPM: 2000
     shiftUpRPM: 4000
     idleRPM: 700
-    stiffness: 40
+    stiffness: 32
     automaticGear: 1
     gears:
     - -9
@@ -141,7 +141,7 @@ MonoBehaviour:
     - 2
     - 1
     LimitBackwardSpeed: 60
-    LimitForwardSpeed: 220
+    LimitForwardSpeed: 200
   brake: 0
   curTorque: 120
   powerShift: 100

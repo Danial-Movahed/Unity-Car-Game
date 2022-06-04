@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UsePowerUp : MonoBehaviour
 {
     public int currentPowerUp = 0;
+    public int lastPowerUp = 0;
     public GameObject PowerUpImage;
     public GameObject DirtyImage;
     private Config configscript;
@@ -40,6 +41,7 @@ public class UsePowerUp : MonoBehaviour
         currentPowerUp = -1;
         yield return new WaitForSeconds(seconds);
         PowerUpImage.SetActive(false);
+        lastPowerUp = 4;
         currentPowerUp = 0;
     }
     IEnumerator Big(int seconds)
@@ -125,6 +127,7 @@ public class UsePowerUp : MonoBehaviour
             {
                 case 1:
                     Debug.Log("Banana!");
+                    lastPowerUp = currentPowerUp;
                     if (mode)
                     {
                         server.sendData("Banana " + (GameObject.Find(configscript.selfName).transform.position.x).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.y + 1).ToString() + " " + (GameObject.Find(configscript.selfName).transform.position.z).ToString() + " " + (configscript.selfName).ToString());
@@ -139,18 +142,22 @@ public class UsePowerUp : MonoBehaviour
                     break;
                 case 2:
                     Debug.Log("Turbo!");
+                    lastPowerUp = currentPowerUp;
                     StartCoroutine(Turbo(5));
                     break;
                 case 3:
                     Debug.Log("Super turbo!");
+                    lastPowerUp = currentPowerUp;
                     StartCoroutine(Turbo(20));
                     break;
                 case 4:
                     Debug.Log("Sheild!");
-                    StartCoroutine(Sheild(60));
+                    lastPowerUp = currentPowerUp;
+                    StartCoroutine(Sheild(20));
                     break;
                 case 5:
                     Debug.Log("Time to make the screen dirty!");
+                    lastPowerUp = currentPowerUp;
                     if (mode)
                     {
                         server.sendData("Dirty");
@@ -162,14 +169,17 @@ public class UsePowerUp : MonoBehaviour
                     break;
                 case 6:
                     Debug.Log("BIG!");
+                    lastPowerUp = currentPowerUp;
                     StartCoroutine(Big(20));
                     break;
                 case 7:
                     Debug.Log("All star!");
-                    StartCoroutine(AllStar(40));
+                    lastPowerUp = currentPowerUp;
+                    StartCoroutine(AllStar(20));
                     break;
                 case 8:
                     Debug.Log("Smoll!");
+                    lastPowerUp = currentPowerUp;
                     if (mode)
                     {
                         server.sendData("Small");
@@ -182,6 +192,7 @@ public class UsePowerUp : MonoBehaviour
                 case 9:
                     // Pow block
                     Debug.Log("Pow block!");
+                    lastPowerUp = currentPowerUp;
                     if (mode)
                     {
                         server.sendData("PowBlock");

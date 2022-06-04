@@ -21,6 +21,11 @@ public class DestroySpawn : MonoBehaviour
             if (collisionInfo.gameObject.transform.parent.name == configscript.selfName)
             {
                 int random = Random.Range(1, maxPowerUps+1);
+                while(random == GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().lastPowerUp)
+                {
+                    Debug.Log("Random is repeating.");
+                    random = Random.Range(1, maxPowerUps+1);
+                }
                 PowerUpImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Maps/PowerUps/PowerUps/" + random);
                 PowerUpImage.SetActive(true);
                 GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp = random;

@@ -2,7 +2,8 @@ Start\!/Library
 Start\!/Temp
 Start\!/Logs
 Start\!/UserSettings
-menu/Library
-menu/Temp
-menu/Logs
-menu/UserSettings
+Start\!/Recordings
+menu
+Network-testing
+*.csproj
+*.sln
