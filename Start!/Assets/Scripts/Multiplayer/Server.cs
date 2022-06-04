@@ -116,6 +116,7 @@ public class Server : MonoBehaviour
                     StartCoroutine(ShowAndHideSeconds(15, GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().DirtyImage));
                 else
                 {
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().lastPowerUp = 4;
                     GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp = 0;
                     GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.SetActive(false);
                 }
@@ -123,9 +124,10 @@ public class Server : MonoBehaviour
             else if (data.Contains("Small"))
             {
                 if (GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp != -1)
-                    StartCoroutine(Small(30));
+                    StartCoroutine(Small(10));
                 else
                 {
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().lastPowerUp = 4;
                     GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp = 0;
                     GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.SetActive(false);
                 }
@@ -146,6 +148,7 @@ public class Server : MonoBehaviour
                     GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity = new Vector3(GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.x, 50, GameObject.Find(selfName).GetComponent<Rigidbody>().angularVelocity.z);
                 else
                 {
+                    GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().lastPowerUp = 4;
                     GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().currentPowerUp = 0;
                     GameObject.Find("UsePowerUp").GetComponent<UsePowerUp>().PowerUpImage.SetActive(false);
                 }
