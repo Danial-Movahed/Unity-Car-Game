@@ -106,13 +106,13 @@ public class VClient : MonoBehaviour
     {
         NetDataWriter writer = new NetDataWriter();
         writer.PutArray(data);
-        client.SendToAll(writer, DeliveryMethod.ReliableUnordered);
+        client.SendToAll(writer, DeliveryMethod.ReliableOrdered);
     }
     public void sendData(int data)
     {
         NetDataWriter writer = new NetDataWriter();
         writer.Put(data);
-        client.SendToAll(writer, DeliveryMethod.ReliableUnordered);
+        client.SendToAll(writer, DeliveryMethod.ReliableOrdered);
     }
     // - - -
 

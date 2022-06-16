@@ -121,25 +121,25 @@ public class VServer : MonoBehaviour
     {
         NetDataWriter writer = new NetDataWriter();
         writer.PutArray(data);
-        server.SendToAll(writer, DeliveryMethod.ReliableUnordered);
+        server.SendToAll(writer, DeliveryMethod.ReliableOrdered);
     }
     public void sendData(float[] data, NetPeer peer)
     {
         NetDataWriter writer = new NetDataWriter();
         writer.PutArray(data);
-        server.SendToAll(writer, DeliveryMethod.ReliableUnordered, peer);
+        server.SendToAll(writer, DeliveryMethod.ReliableOrdered, peer);
     }
     public void sendData(int data)
     {
         NetDataWriter writer = new NetDataWriter();
         writer.Put(data);
-        server.SendToAll(writer, DeliveryMethod.ReliableUnordered);
+        server.SendToAll(writer, DeliveryMethod.ReliableOrdered);
     }
     public void sendData(int data, NetPeer peer)
     {
         NetDataWriter writer = new NetDataWriter();
         writer.Put(data);
-        server.SendToAll(writer, DeliveryMethod.ReliableUnordered, peer);
+        server.SendToAll(writer, DeliveryMethod.ReliableOrdered, peer);
     }
     // - - -
 
