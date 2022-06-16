@@ -63,10 +63,38 @@ public class Client : MonoBehaviour
             Debug.Log("Disconnected");
             if (isStarted)
             {
-                Destroy(GameObject.Find("VideoMainCamera"));
-                Destroy(GameObject.Find("ConfigStart"));
-                Destroy(GameObject.Find("Config"));
-                Destroy(GameObject.Find("Video"));
+                try
+                {
+                    Destroy(GameObject.Find("VideoMainCamera"));
+                }
+                catch
+                {
+                    Debug.Log("kasi be inja kari nadashte bashe...");
+                }
+                try
+                {
+                    Destroy(GameObject.Find("ConfigStart"));
+                }
+                catch
+                {
+                    Debug.Log("kasi be inja kari nadashte bashe...");
+                }
+                try
+                {
+                    Destroy(GameObject.Find("Config"));
+                }
+                catch
+                {
+                    Debug.Log("kasi be inja kari nadashte bashe...");
+                }
+                try
+                {
+                    Destroy(GameObject.Find("Video"));
+                }
+                catch
+                {
+                    Debug.Log("kasi be inja kari nadashte bashe...");
+                }
                 SceneManager.LoadScene("Bootstrap");
             }
             else
