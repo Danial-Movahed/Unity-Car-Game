@@ -21,6 +21,7 @@ public class Server : MonoBehaviour
     public bool finished = false;
     public string Key = "SomeConnectionKey";
     private Config config;
+    private VServer vserver;
     private Dictionary<string, string> peerNames = new Dictionary<string, string>();
     public Dictionary<string, string> scoreboard = new Dictionary<string, string>();
     public int num = 1;
@@ -55,6 +56,7 @@ public class Server : MonoBehaviour
         num = 1;
         connected = true;
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
+        vserver = GameObject.Find("VServer").GetComponent<VServer>();
         for (int i = 0; i < 4; i++)
             config.playerCars[i] = 0;
         connectedNow = 1;
@@ -195,6 +197,7 @@ public class Server : MonoBehaviour
                         string[] tmp = data.Split(' ');
                         GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
                         GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
+                        vserver.audioSource[int.Parse(tmp[0]) - 1].transform.position = GameObject.Find(tmp[0]).transform.position;
                         dataReader.Recycle();
                     }
                     else

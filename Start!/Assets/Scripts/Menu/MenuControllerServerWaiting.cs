@@ -10,6 +10,7 @@ public class MenuControllerServerWaiting : MonoBehaviour
     public Button settingsBtn;
     public Text text;
     private Server server;
+    private VServer vserver;
     public GameObject StartBtn;
     public Button startbtn;
     private string strHostName = "";
@@ -20,6 +21,8 @@ public class MenuControllerServerWaiting : MonoBehaviour
         configScript = GameObject.Find("ConfigStart").GetComponent<Config>();
         server = GameObject.Find("Server").GetComponent<Server>();
         server.connect();
+        vserver = GameObject.Find("VServer").GetComponent<VServer>();
+        vserver.connect();
         quitBtn.onClick.RemoveAllListeners();
         backbtn.onClick.RemoveAllListeners();
         startbtn.onClick.RemoveAllListeners();

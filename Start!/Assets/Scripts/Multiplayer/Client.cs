@@ -21,6 +21,7 @@ public class Client : MonoBehaviour
     public bool connected = false;
     public bool finished = false;
     private Config config;
+    private VClient vclient;
     public int totalConnected = 0;
     public Dictionary<string, string> scoreboard = new Dictionary<string, string>();
     public int num = 1;
@@ -44,6 +45,7 @@ public class Client : MonoBehaviour
     {
         listener = new EventBasedNetListener();
         client = new NetManager(listener);
+        vclient = GameObject.Find("VClient").GetComponent<VClient>();
         selfName = "";
         mapName = "";
         isStarted = false;
@@ -224,7 +226,7 @@ public class Client : MonoBehaviour
                         string[] tmp = data.Split(' ');
                         GameObject.Find(tmp[0]).transform.position = new Vector3(float.Parse(tmp[1], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[2], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[3], CultureInfo.InvariantCulture.NumberFormat));
                         GameObject.Find(tmp[0]).transform.localEulerAngles = new Vector3(float.Parse(tmp[4], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[5], CultureInfo.InvariantCulture.NumberFormat), float.Parse(tmp[6], CultureInfo.InvariantCulture.NumberFormat));
-
+                        vclient.audioSource[int.Parse(tmp[0]) - 1].transform.position = GameObject.Find(tmp[0]).transform.position;
                     }
                     else
                     {
@@ -236,6 +238,8 @@ public class Client : MonoBehaviour
                                 GameObject.Find("StatusText").GetComponent<Text>().text = "We are Player" + selfName;
                                 Debug.Log(selfName);
                                 config.selfName = selfName;
+                                vclient.ip = ip;
+                                vclient.connect();
                             }
 
                         }
