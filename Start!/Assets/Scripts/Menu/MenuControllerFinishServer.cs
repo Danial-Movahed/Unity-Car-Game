@@ -30,21 +30,15 @@ public class MenuControllerFinishServer : MonoBehaviour
             Debug.Log("ok");
             Destroy(GameObject.Find("VideoMainCamera"));
             Destroy(GameObject.Find("ConfigStart"));
-            Destroy(GameObject.Find("Config"));
             Destroy(GameObject.Find("Video"));
-            if (isServer)
-            {
-                server.Key = "SomeConnectionKey";
-                server.connected = false;
-                server.isStarted = false;
-                server.server.Stop();
-            }
-            if (isClient)
-            {
-                client.isStarted = false;
-                client.connected = false;
-                client.client.Stop();
-            }
+            Destroy(GameObject.Find("VServer"));
+            Destroy(GameObject.Find("VClient"));
+            Destroy(GameObject.Find("Server"));
+            Destroy(GameObject.Find("Client"));
+            Destroy(GameObject.Find("Player1Voice"));
+            Destroy(GameObject.Find("Player2Voice"));
+            Destroy(GameObject.Find("Player3Voice"));
+            Destroy(GameObject.Find("Player4Voice"));
             SceneManager.LoadScene("Bootstrap");
         });
         for (int i = 0; i < 4; i++)

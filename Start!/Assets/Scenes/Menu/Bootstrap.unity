@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 264828815}
   - component: {fileID: 264828814}
   - component: {fileID: 264828813}
+  - component: {fileID: 264828817}
   m_Layer: 0
   m_Name: VideoMainCamera
   m_TagString: MainCamera
@@ -471,6 +472,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &264828817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264828811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9018ec83bdf3cb1bbb8bac7058cfd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedscenes:
+  - 1
+  - 5
+  - 6
+  - 7
+  - 8
+  - 10
+  - ClientCarSelector
+  - ClientWaiting
+  - ClientWaiting2
+  - Finish
+  - FinishServer
+  - JoinServer
+  - ServerCarSelector
+  - ServerMapSelector
+  - ServerWaiting
+  - ServerWaiting2
+  - Settings
 --- !u!1 &380147146
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50842880fc631fc689523796a342554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStreaming: 1
   port: 7777
   Key: SomeConnectionKey
   ip: 
@@ -522,7 +554,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &380147149
 MonoBehaviour:
@@ -764,7 +796,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &692656977
 MonoBehaviour:
@@ -820,6 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d18d9e50898fdb5981308b0833b9f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStreaming: 1
   port: 7777
   connectionLimit: 3
   Key: SomeConnectionKey
@@ -841,7 +874,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &848107793
 MonoBehaviour:
@@ -1047,7 +1080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1461408292
 MonoBehaviour:
@@ -1373,6 +1406,7 @@ GameObject:
   - component: {fileID: 1962178872}
   - component: {fileID: 1962178871}
   - component: {fileID: 1962178870}
+  - component: {fileID: 1962178873}
   m_Layer: 0
   m_Name: Video
   m_TagString: Untagged
@@ -1441,3 +1475,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1962178873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962178869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9018ec83bdf3cb1bbb8bac7058cfd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedscenes:
+  - 1
+  - 5
+  - 6
+  - 7
+  - 8
+  - 10
+  - ClientCarSelector
+  - ClientWaiting
+  - ClientWaiting2
+  - Finish
+  - FinishServer
+  - JoinServer
+  - ServerCarSelector
+  - ServerMapSelector
+  - ServerWaiting
+  - ServerWaiting2
+  - Settings
