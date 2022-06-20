@@ -11,7 +11,7 @@ public class VClient : MonoBehaviour
     public MicCallbackDelegate floatsInDelegate;
     private AudioClip ac;
     private int readHead = 0;
-    private bool isStreaming = true;
+    public bool isStreaming = true;
     private static EventBasedNetListener listener = new EventBasedNetListener();
     public NetManager client = new NetManager(listener);
     public int port = 7777;
@@ -21,6 +21,7 @@ public class VClient : MonoBehaviour
     private Config config;
     public bool connected = false;
     public AudioSource[] audioSource;
+    private float[] zero = new float[8000];
     public void connect()
     {
         config = GameObject.Find("ConfigStart").GetComponent<Config>();
@@ -37,10 +38,11 @@ public class VClient : MonoBehaviour
         listener.NetworkReceiveEvent += (fromPeer, dataReader, deliveryMethod) =>
         {
             float[] data = dataReader.GetFloatArray();
-            int nameAudio = (int)data[data.Length - 1];
+            int nameAudio = (int)data[data.Length - 2];
+            int writeHead = (int)data[data.Length - 1];
             data[data.Length - 1] = 0;
-            audioSource[nameAudio-1].clip.SetData(data, 0);
-            audioSource[nameAudio-1].time = 0;
+            data[data.Length - 2] = 0;
+            audioSource[nameAudio - 1].clip.SetData(data, writeHead);
         };
     }
     class POTBuf
@@ -120,38 +122,46 @@ public class VClient : MonoBehaviour
     {
         int writeHead = Microphone.GetPosition(null);
 
-        if (readHead == writeHead || potBuffers == null || !isStreaming)
+        if (readHead == writeHead || potBuffers == null)
             return;
-
-        int nFloatsToGet = (ac.samples + writeHead - readHead) % ac.samples;
-
-        for (int k = POTBuf.POT_max; k >= POTBuf.POT_min; k--)
+        if (isStreaming)
         {
-            POTBuf B = potBuffers[k];
+            int nFloatsToGet = (ac.samples + writeHead - readHead) % ac.samples;
 
-            int n = B.buf.Length; // i.e.  1 << k;
-
-            while (nFloatsToGet >= n)
+            for (int k = POTBuf.POT_max; k >= POTBuf.POT_min; k--)
             {
+                POTBuf B = potBuffers[k];
 
-                // If the read length from the offset is longer than the clip length,
-                //   the read will wrap around and read the remaining samples
-                //   from the start of the clip.
-                float[] newData = new float[n + 1];
-                ac.GetData(newData, readHead);
-                // ac.GetData(B.buf, readHead);
-                //###############################################
-                newData[n] = int.Parse(selfName);
-                sendData(newData);
-                //###############################################
-                readHead = (readHead + n) % ac.samples;
+                int n = B.buf.Length; // i.e.  1 << k;
 
-                if (floatsInDelegate != null)
-                    floatsInDelegate(B.buf);
+                while (nFloatsToGet >= n)
+                {
 
-                B.Cycle();
-                nFloatsToGet -= n;
+                    // If the read length from the offset is longer than the clip length,
+                    //   the read will wrap around and read the remaining samples
+                    //   from the start of the clip.
+                    float[] newData = new float[n + 2];
+                    ac.GetData(newData, readHead);
+                    //###############################################
+                    newData[n] = int.Parse(selfName);
+                    newData[n + 1] = writeHead;
+                    sendData(newData);
+                    //###############################################
+                    readHead = (readHead + n) % ac.samples;
+
+                    if (floatsInDelegate != null)
+                        floatsInDelegate(B.buf);
+
+                    B.Cycle();
+                    nFloatsToGet -= n;
+                }
             }
+        }
+        else
+        {
+            zero[7998] = int.Parse(selfName);
+            zero[7999] = writeHead;
+            sendData(zero);
         }
     }
 }

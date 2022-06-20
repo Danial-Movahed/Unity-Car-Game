@@ -39,10 +39,12 @@
      <Compile Include="Assets/Scripts/TransformFollower.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerFinish.cs" />
      <Compile Include="Assets/Scripts/straight.cs" />
+     <Compile Include="Assets/Scripts/VoiceChat/VServer.cs" />
      <Compile Include="Assets/Scripts/GhostSystem/Load.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleControl.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXUnityMaterialGetter.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController6.cs" />
+     <Compile Include="Assets/Scripts/VoiceChat/SetupAudioSource.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleDamage.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/JustRotate.cs" />
      <Compile Include="Assets/Packages/UnityFBXExporter/FBXExporter.cs" />
@@ -81,6 +83,7 @@
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/CarSwitch.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerSettings.cs" />
      <Compile Include="Assets/Scripts/LapSystem/OneWayCollider.cs" />
+     <Compile Include="Assets/Scripts/VoiceChat/VClient.cs" />
      <Compile Include="Assets/Scripts/PowerUpSystem/NameSaver.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerClientCarSelector.cs" />
      <Compile Include="Assets/Menu Assets/SCI-FI UI Pack_Components v1/Resources_V1/Scripts/SliderValuePass.cs" />
@@ -90,9 +93,7 @@
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCamera.cs" />
-     <Compile Include="Assets/Scripts/VoiceChat/SetupAudioSource.cs" />
-     <Compile Include="Assets/Scripts/VoiceChat/VServer.cs" />
-     <Compile Include="Assets/Scripts/VoiceChat/VClient.cs" />
+     <Compile Include="Assets/Scripts/VoiceChat/MuteSystem.cs" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard GBuffer Pass.hlsl" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/CTI URP Leaves.shader" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Lighting.hlsl" />
