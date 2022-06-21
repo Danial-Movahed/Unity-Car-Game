@@ -7,8 +7,18 @@ using UnityEngine.SceneManagement;
 public class MenuControllerFinish : MonoBehaviour
 {
     public Button okBtn;
+    private Config configscript;
+    public GameObject textmsg;
+    public GameObject defimg;
     void Start()
     {
+        configscript = GameObject.Find("ConfigStart").GetComponent<Config>();
+        if(configscript.message != "")
+        {
+            defimg.SetActive(false);
+            textmsg.GetComponent<Text>().text = configscript.message;
+            textmsg.SetActive(true);
+        }
         okBtn.onClick.RemoveAllListeners();
         okBtn.onClick.AddListener(() =>
         {
