@@ -502,6 +502,7 @@ MonoBehaviour:
   - ServerWaiting
   - ServerWaiting2
   - Settings
+  - Info
 --- !u!1 &380147146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,3 +1506,4 @@ MonoBehaviour:
   - ServerWaiting
   - ServerWaiting2
   - Settings
+  - Info

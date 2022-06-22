@@ -6,7 +6,7 @@ public class MenuController : MonoBehaviour {
 	public Button quitBtn;
     public Button settingBtn;
     public Button startBtn;
-    public Button videoBtn;
+    public Button infoBtn;
     private Config configScript;
 	void Start()
     {
@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour {
         quitBtn.onClick.RemoveAllListeners();
         settingBtn.onClick.RemoveAllListeners();
         startBtn.onClick.RemoveAllListeners();
-        videoBtn.onClick.RemoveAllListeners();
+        infoBtn.onClick.RemoveAllListeners();
 		quitBtn.onClick.AddListener( () => {
             Debug.Log("quit");
             Application.Quit();
@@ -29,10 +29,9 @@ public class MenuController : MonoBehaviour {
             Debug.Log("Start");
             SceneManager.LoadScene("5");
         });
-        videoBtn.onClick.AddListener( () => 
+        infoBtn.onClick.AddListener( () => 
         {
-            Debug.Log("Video");
-            configScript.ifVideo = true;
+            SceneManager.LoadScene("Info");
         });
 	}
 }

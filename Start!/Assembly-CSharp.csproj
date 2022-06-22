@@ -58,8 +58,10 @@
      <Compile Include="Assets/Scripts/Menu/MenuController7.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCameraVideo.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerServerMapSelector.cs" />
+     <Compile Include="Assets/Scripts/VoiceChat/MuteSystem.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController5.cs" />
      <Compile Include="Assets/Scripts/LapSystem/Lap.cs" />
+     <Compile Include="Assets/Scripts/Menu/Remover.cs" />
      <Compile Include="Assets/Map2 Assets/Wind Turbine/WindGeneratorRotator.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuControllerClientWaiting2.cs" />
      <Compile Include="Assets/Scripts/PowerUpSystem/DestroySpawn.cs" />
@@ -93,8 +95,10 @@
      <Compile Include="Assets/Map1 Assets/RDL/Security_Pack/Scripts/scr_camera.cs" />
      <Compile Include="Assets/Scripts/Menu/MenuController10.cs" />
      <Compile Include="Assets/Resources/Car/RCK 2.3/Scripts/VehicleCamera.cs" />
-     <Compile Include="Assets/Scripts/VoiceChat/MuteSystem.cs" />
-     <Compile Include="Assets/Scripts/Menu/Remover.cs" />
+     <Compile Include="Assets/Scripts/Menu/MenuControllerInfo.cs" />
+     <Compile Include="Assets/RedBlueGames/TextTyper/RichTextTag.cs" />
+     <Compile Include="Assets/RedBlueGames/TextTyper/TextTyper.cs" />
+     <Compile Include="Assets/RedBlueGames/TextTyper/TypedTextGenerator.cs" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Billboard GBuffer Pass.hlsl" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/CTI URP Leaves.shader" />
      <None Include="Assets/CTI URP/CTI Runtime Components URP/Shaders/Includes/CTI URP Lighting.hlsl" />
